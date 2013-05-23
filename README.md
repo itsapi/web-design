@@ -91,6 +91,17 @@ C:
 M:
 > OK, I'll start working on a layout and some basic styling tonight then :)
 
+M:
+> So I've got most of the layout done:
+> http://dvbris.no-ip.org/webDesign/MrDorph How do you like this so far? I
+> havn't done any text styling yet, but the layout is there, and its fairly
+> responsive. Do you have any suggestions, things I've done wrong? What were
+> you planning on putting in the sidebar, adds or more information? I was
+> thinking we could put the login form in there if you had no other plans. The
+> background gives it a sort of rust look, I found this collection:
+> http://blog.spoongraphics.co.uk/freebies/handy-roundup-of-free-seamless-repeating-textures
+> are there any you think would work better / want me to try?
+
 * * *
 
 ###luckydrone
