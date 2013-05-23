@@ -38,7 +38,9 @@ body {
 header {
 	width: 100%;
 	height: 150px;
-	font-size: 8em;
+}
+h1 {
+	font-size: 4em;
 	text-align: center;
 }
 
@@ -54,7 +56,7 @@ nav li {
 }
 nav a {
 	display: block;
-	width: 60px;
+	width: 80px;
 	margin: 5px;
 	padding: 10px 20px;
 	background: rgba(256, 256, 256, 0.1);

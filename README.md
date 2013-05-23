@@ -270,6 +270,10 @@ M:
 > Yes it is, I've got a few requests I'm working on right now, but I'll add
 > yours in if you want? :)
 
+C:
+> For sure! If you want, you can let me know when you're finished with others
+> and we can talk about it then?
+
 * * *
 
 ###ProcrastinatingEddie
