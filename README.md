@@ -6,7 +6,11 @@ Repo for our web designs
 Websites
 --------
 
+<<<<<<< HEAD
 [ ] MrDorph:
+=======
+###MrDorph:
+>>>>>>> be91b1af7d8d97acaf020681a376826d228bc336
 
 C:
 > hey, just inquiring about the webdesign offer you put up, what exactly can 
@@ -89,3 +93,8 @@ C:
 
 M:
 > OK, I'll start working on a layout and some basic styling tonight then :)
+<<<<<<< HEAD
+=======
+
+* * *
+>>>>>>> be91b1af7d8d97acaf020681a376826d228bc336
