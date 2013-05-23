@@ -1,5 +1,5 @@
-webDesign
-=========
+Web Design
+==========
 
 Repo for our web designs
 
