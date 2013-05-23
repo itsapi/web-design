@@ -62,6 +62,11 @@ nav a {
 	border-radius: 1px;
 	text-decoration: none;
 	color: rgba(240, 90, 20, 1);
+	-webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	-ms-transition: all 0.1s;
+	-o-transition: all 0.1s;
+	transition: all 0.1s;
 }
 nav a:hover {
 	padding: 15px 25px;
