@@ -117,11 +117,12 @@ aside {
 	}
 }
 footer {
-	padding-top: 10px;
 	text-align: center;
-	height: 30px;
 	width: 100%;
 	position: absolute;
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.2);
+}
+footer p {
+	margin: 10px 0;
 }
