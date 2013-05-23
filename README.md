@@ -252,12 +252,22 @@ C:
 > be great to have a section where a potential customer could request more
 > info. But I think for now, this is all I would need. What are your thoughts?
 
+M:
+> That's all fine. The contact form should be easily doable as well. Do you
+> have any idea about the style, or layout of the website, or some example
+> websites that sort of match what your after looks-wise?
+
 * * *
 
 ###KingMaxx
 
 C:
-> Hi! I saw your post about free website design, was wondering if the offer was still on the table?
+> Hi! I saw your post about free website design, was wondering if the offer
+> was still on the table?
+
+M:
+> Yes it is, I've got a few requests I'm working on right now, but I'll add
+> yours in if you want? :)
 
 * * *
 
@@ -278,6 +288,10 @@ C:
 >
 > Thanks, Knash
 
+M:
+> Yes, I can.
+> Do you want me to work off an existing style or compleatly from scratch?
+
 * * *
 
 ###pluralgarths
@@ -291,6 +305,10 @@ C:
 >
 > thanks, Garth
 
+M:
+> Yes, that should all be fine, can you give some more detail in what the php
+> will be doing
+
 * * *
 
 ###numbers_1
@@ -300,3 +318,7 @@ C:
 > expand your portfolio.
 >
 > By any chance can you design a logo? Thanks
+
+M:
+> Unfortunatly I'm really rubbish at logos, you could probabky do better than
+> me yourself! Why don't you try posting a request?
