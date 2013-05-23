@@ -102,6 +102,28 @@ M:
 > http://blog.spoongraphics.co.uk/freebies/handy-roundup-of-free-seamless-repeating-textures
 > are there any you think would work better / want me to try?
 
+C:
+> It looks great, We'll be tweaking what goes on that home page, none of the
+> links work is that right? other than that i've put it out to a few of the
+> other members and i'll let you know. Can you get rid of the side bar? what I
+> would want is either side of the center section is a long picture, if you
+> get what i mean, like the one on the world of tanks website (
+> worldoftanks.eu )
+>
+> Other than that I like the background you selected, Hopefully we'll be able
+> to sort out a proper EAB heading. Could you make the Links at the top a
+> solid colour? Orange with black writing and could you make them rounder?
+
+M:
+> Cool :) Correct, the links are dud. I just copied the old text so I could
+> have somethink to work on.
+>
+> Ok, I understand what you mean about the side bar, that can be done and I'll
+> sort out the links. Do you have any ideas about fonts?
+> ( http://google.com/fonts ) is a good place to find free ones. What do you
+> want in the header at the top of the page? A banner image with your logo, or
+> heading?
+
 * * *
 
 ###luckydrone

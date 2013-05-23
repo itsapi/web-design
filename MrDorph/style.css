@@ -1,33 +1,31 @@
 html {
 	background-color: rgb(55, 55, 55);
-	background: url(http://blog.spoongraphics.co.uk/wp-content/uploads/2012/textures/14.jpg);
+	background: url(http://worldoftanks.eu/dcont/gskins_installed/WoT_8_5/img/back.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	font-family: sans-serif;
 	position: relative;
-}
-html:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.7);
+	padding: 0;
 }
 
 body {
+	z-index: 15;
 	position: relative;
 	padding-bottom: 50px;
 	max-width: 1050px;
 	min-width: 200px;
 	min-height: 500px;
-	background-color: rgba(256, 256, 256, 0.17);
+	background: url(rust.jpg);
 }
 @media screen and (min-width: 801px) {
 	body {
-		/* border: 2px solid rgba(240, 90, 20, 1); */
-		border-radius: 2px;
+		border-left: 1px solid rgba(240, 90, 20, 1);
+		border-right: 1px solid rgba(240, 90, 20, 1);
+		border-top: 1px solid transparent;
 		width: 90%;
-		margin: 50px auto;
+		margin: 0 auto;
 	}
 }
 @media screen and (max-width: 800px) {
@@ -38,8 +36,10 @@ body {
 header {
 	width: 100%;
 	height: 150px;
+	margin: 0;
 }
 h1 {
+	margin: 10px;
 	font-size: 4em;
 	text-align: center;
 }
@@ -59,35 +59,30 @@ nav a {
 	width: 80px;
 	margin: 5px;
 	padding: 10px 20px;
-	background: rgba(256, 256, 256, 0.1);
-	border-radius: 1px;
+	background: rgba(240, 90, 20, 1);
+	border-radius: 3px;
 	text-decoration: none;
-	color: rgba(240, 90, 20, 1);
+	color: rgba(0, 0, 0, 1);
 	-webkit-transition: all 0.1s;
 	-moz-transition: all 0.1s;
 	-ms-transition: all 0.1s;
 	-o-transition: all 0.1s;
 	transition: all 0.1s;
+	-webkit-box-shadow: 0 0 10px rgba(50, 50, 50, 1);
+	-moz-box-shadow:    0 0 10px rgba(50, 50, 50, 1);
+	box-shadow:         0 0 10px rgba(50, 50, 50, 1);
 }
 nav a:hover {
 	padding: 15px 25px;
+	background: rgba(260, 110, 40, 1);
 	margin: 0;
-	background: rgba(256, 256, 256, 0.3);
-	border-radius: 2px;
-	color: rgba(240, 90, 20, 1);
+	border-radius: 6px;
+	-webkit-box-shadow: 0 0 10px rgba(50, 50, 50, 1);
+	-moz-box-shadow:    0 0 10px rgba(50, 50, 50, 1);
+	box-shadow:         0 0 10px rgba(50, 50, 50, 1);
 }
-@media screen and (min-width: 801px) {
-	#content {
-		margin: 0 185px 100px 10px;
-	}
-}
-@media screen and (max-width: 800px) {
-	#content {
-		margin: 0 10px 100px 10px;
-	}
-}
-#container{
-	position: relative;
+#content {
+	margin: 0 10px 100px 10px;
 }
 #content > section {
 	padding: 10px;
