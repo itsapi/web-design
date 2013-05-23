@@ -91,3 +91,212 @@ M:
 > OK, I'll start working on a layout and some basic styling tonight then :)
 
 * * *
+
+###luckydrone
+
+C:
+> I'm looking for a very simple one page site for Lucky Drone Honey Co. We're
+> just getting started, but I'd like to start getting word out and have a site
+> to expand on as we add products.
+>
+> I put in a request for a logo a few days and got some great replies. I'd
+> like to apply some updates to the logo submitted here but if you'd rather
+> not do logo design, I can work on that and we can stick with what I've
+> gotten so far.
+>
+> I build web applications (Rails) so I could use a photoshop mockup if that's
+> easiest for you. Let me know if you're interested. Thanks!
+
+M:
+> Hi, Sorry for not replying sooner, I missed your message in my inbox :S
+>
+> I'm interested. What sort of style do you want? I'm happy to work from a
+> photoshop mockup if you like.
+>
+> I'm not great at logos, you'd be a lot better off getting someone else to
+> work on that, I'd just butcher it :)
+
+* * *
+
+###coderqi
+
+C:
+> Hi Olls96,
+> 
+> I've built my own website, doing the full stack, but need a designer to
+> come in and sort out the frontend.
+> 
+> You can have a look at the site here: autobean.co.uk. We crawl second hand
+> car listings, and aggregate them to allow search in one place.
+> 
+> I'm looking for a clean, clear, modern design, but haven't really managed to
+> do it myself.
+> 
+> Currently i'm using jade templates with angular.js and bootstrap, but am
+> really unhappy with the look, though I feel like the basic building blocks
+> are there.
+> 
+> If you could with the mobile version (maybe just by using the responsive
+> features of bootstrap, maybe not), that would also be great.
+> 
+> If you can help, please let me know.
+> 
+> Cheers,
+
+M:
+> I'll be happy to help you design the website, I can do responsive stuff if
+> you need. Do you want to keep the curent layout, or completly redesign it?
+
+C:
+> I don't mind particular either way. If you think you have some interesting
+> ideas for a complete re-design, i'm open to them :). If however you want to
+> help polish it up (and maybe focus on making it work on the phone), i'm also
+> ok with that.
+>
+> I guess my single provision if you do want to do a complete redesign is that
+> it should remain fairly clean, but i'm certainly open to any ideas you have.
+
+M:
+> I think the layout is fine, so we can stick with that. I'm fine to get it
+> working on the phone, do you want to keep the phone fairly similar to what
+> you've got as well?
+
+C:
+> I think on the phone, the results page should just show the adds, and if the
+> user wants to refine their search, there should be someway of bringing up a
+> menu screen where they can add or remove refinements to their search.
+
+C:
+> P.S But yes, the results part doesn't need to be too different between the
+> mobile and desktop/ipad versions.
+
+M:
+> Ok. Do you have any websites that sort of match the style you're going for,
+> so I don't get completly the wrong end of the stick? :D
+
+C:
+> Indeed.co.uk is what I was trying to go for... I like their colour scheme,
+> and relatively clean professional look
+>
+> Otherwise websites in the same field tend to have horrible background
+> colours. I'm trying to keep it clean/minimal with a white background, but as
+> I said, i'm open to expert advice :)
+>
+> Some sites i'm crawling, which i'm trying to avoid looking like: 
+> gumtree.co.uk (horrible background colour) carsite.co.uk (better than
+> gumtree, but I guess I hate the green) autotrader.co.uk (not too bad)
+
+M:
+> Ok, I'll have a play around with what you've got and see what I can do :)
+
+C:
+> No worries. Cheers!
+
+* * *
+
+###IAmElectricReligion
+
+C:
+> Greetings olls96,
+>
+> Saw your post about building some websites to add to your portfolio. I'd
+> love to have your help in building a website for my guitar instruction
+> business. If possible, let me know what you're offering and I can give you
+> some details on what it is I'm looking for. Thank you for your time.
+
+M:
+> Hello, I'll be happy to help you with your website design and any back-end
+> coding you may need, are you planning on selling things on the website or,
+> will it just be static pages? Thanks :)
+
+* * *
+
+###Edge_Sharp
+
+C:
+> olls96, are you offering to help design a website? If so, I would really
+> appreciate any assistance you could offer.
+>
+>Let me know, Thanks,
+
+M:
+> Yes, I'll help you, what do you need?
+
+C:
+> I really could use any advise or help you would be willing to provide. I am
+> in the process of starting up a company that helps small and med sized
+> business increase their onsite (at their office) banking security. I have
+> designed the system (product) and was just beging to test it with small
+> business in my area (about 5), when I happend to discuss my idea with one of
+> my local banks. As it turns out, they loved the idea and want me to come in
+> and present my product to their director. While I have the product, I dont
+> have any online presence of a company yet, so I am trying to get something,
+> anything up that makes this look half way legitimate. To give you a little
+> background about my self, I am a product developer and sales man by trade,
+> but I unfortunately know very little about website design. So with all that
+> said, do you think you could help me get something very basic setup? I am
+> more than happy to write or provide whatever would be needed (text for
+> pages, website requirements, etc...), I just need someone who can tell me/
+> show me what to do.
+>
+> So what do you think?
+
+M:
+> I'm happy to help you set something up, what sort of pages were you planning
+> on having?
+
+C:
+> My initial idea was to keep it as simple as possible, but still have it look
+> professional. I was thinking that it would probably follow the standard
+> 'Home, Product, Blog, Contact' template/design. If at all possible, it would
+> be great to have a section where a potential customer could request more
+> info. But I think for now, this is all I would need. What are your thoughts?
+
+* * *
+
+###KingMaxx
+
+C:
+> Hi! I saw your post about free website design, was wondering if the offer was still on the table?
+
+* * *
+
+###ProcrastinatingEddie
+
+C:
+> Hello Olls96,
+>
+> Do you have a portfolio of your work?
+
+* * *
+
+###KnashDavis
+
+C:
+> Can you do Wordpress design? My site is hosted using Wordpress software on
+> our own servers
+>
+> Thanks, Knash
+
+* * *
+
+###pluralgarths
+
+C:
+> Hey, I need something basic built in PHP. If you feel comfortable with that
+> (really anything that runs on apache, ruby/python as well) please let me
+> know. Its going to be very basic; image (we have it) some text nicely lined
+> up below a youtube video. Maybe a contact us form that will just forward the
+> information to an email account. Let me know if this is do-able.
+>
+> thanks, Garth
+
+* * *
+
+###numbers_1
+
+C:
+> Hi there, thank you for the offer. I hope it helps others and you as well to
+> expand your portfolio.
+>
+> By any chance can you design a logo? Thanks
