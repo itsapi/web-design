@@ -1,0 +1,118 @@
+html {
+	background-color: rgb(55, 55, 55);
+	background: url(http://blog.spoongraphics.co.uk/wp-content/uploads/2012/textures/13.jpg);
+	font-family: sans-serif;
+	position: relative;
+}
+html:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+body {
+	position: relative;
+	max-width: 1050px;
+	min-width: 200px;
+	min-height: 500px;
+	background-color: rgba(256, 256, 256, 0.17);
+}
+@media screen and (min-width: 801px) {
+	body {
+		/*border: 2px solid rgba(240, 90, 20, 1);*/
+		border-radius: 2px;
+		width: 90%;
+		margin: 50px auto;
+	}
+}
+@media screen and (max-width: 800px) {
+	body {
+		margin: 0;
+	}
+}
+
+header {
+	width: 100%;
+	height: 150px;
+	font-size: 8em;
+	text-align: center;
+}
+
+nav ul{
+	list-style: none;
+	width: 100%;
+	padding: 0;
+	margin: 10px auto;
+	text-align: center;
+}
+nav li {
+	display: inline-block;
+}
+nav a {
+	display: block;
+	width: 60px;
+	margin: 5px;
+	padding: 10px 20px;
+	background: rgba(256, 256, 256, 0.1);
+	border-radius: 1px;
+	text-decoration: none;
+	color: rgba(240, 90, 20, 1);
+}
+nav a:hover {
+	padding: 15px 25px;
+	margin: 0;
+	background: rgba(256, 256, 256, 0.3);
+	border-radius: 2px;
+	color: rgba(240, 90, 20, 1);
+}
+@media screen and (min-width: 801px) {
+	#content {
+		margin: 0 185px 100px 10px;
+	}
+}
+@media screen and (max-width: 800px) {
+	#content {
+		margin: 0 10px 100px 10px;
+	}
+}
+#content > section {
+	padding: 10px;
+	border: 1px solid rgba(240, 90, 20, 0.7);
+	border-radius: 2px;
+	background-color: rgba(256, 256, 256, 0.17);
+}
+#content > section:not(:first-child) {
+	margin: 25px 0;
+}
+#content > section:first-child {
+	margin: 0;
+}
+
+aside {
+	border: 1px solid rgba(240, 90, 20, 0.7);
+	border-radius: 2px;
+	font-size: 2.5em;
+}
+@media screen and (min-width: 801px) {
+	aside {
+		position: absolute;
+		right: 5px;
+		top: 219px;
+		width: 170px;
+	}
+}
+@media screen and (max-width: 800px) {
+	aside {
+		display: none;
+	}
+footer {
+	height: 50px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.2);
+}
