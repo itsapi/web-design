@@ -16,6 +16,7 @@ html:before {
 
 body {
 	position: relative;
+	padding-bottom: 50px;
 	max-width: 1050px;
 	min-width: 200px;
 	min-height: 500px;
@@ -109,8 +110,11 @@ aside {
 	aside {
 		display: none;
 	}
+}
 footer {
-	height: 50px;
+	padding-top: 10px;
+	text-align: center;
+	height: 30px;
 	width: 100%;
 	position: absolute;
 	bottom: 0;
