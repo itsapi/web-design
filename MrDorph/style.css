@@ -23,7 +23,7 @@ body {
 }
 @media screen and (min-width: 801px) {
 	body {
-		/*border: 2px solid rgba(240, 90, 20, 1);*/
+		/* border: 2px solid rgba(240, 90, 20, 1); */
 		border-radius: 2px;
 		width: 90%;
 		margin: 50px auto;
