@@ -124,6 +124,17 @@ M:
 > want in the header at the top of the page? A banner image with your logo, or
 > heading?
 
+C:
+> I'll discuss the phont with the team, hopefully we'll have a proper logo
+> sorted soon to put at the top. I'll also have a look for a picture to put
+> wither side. Where it say copyright at the bottom, feel free to put designed
+> by and then your information.
+
+M:
+> Ok, updated with temp stolen worldoftanks background image, is that what you
+> were after? Also updated links, what do you think of the orange color, do
+> you want me to change the shade?
+
 * * *
 
 ###luckydrone
@@ -360,3 +371,6 @@ C:
 M:
 > Unfortunatly I'm really rubbish at logos, you could probabky do better than
 > me yourself! Why don't you try posting a request?
+
+C:
+> Alright then. Thanks very much :)
