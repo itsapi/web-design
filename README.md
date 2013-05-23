@@ -6,7 +6,7 @@ Repo for our web designs
 Websites
 --------
 
-[] MrDorph:
+ - [ ] MrDorph:
 C:
 > hey, just inquiring about the webdesign offer you put up, what exactly can 
 > you do?
@@ -88,3 +88,5 @@ C:
 
 M:
 > OK, I'll start working on a layout and some basic styling tonight then :)
+
+* * * 
