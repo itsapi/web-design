@@ -6,7 +6,7 @@ Repo for our web designs
 Websites
 --------
 
- - [ ] MrDorph:
+###MrDorph:
 C:
 > hey, just inquiring about the webdesign offer you put up, what exactly can 
 > you do?
