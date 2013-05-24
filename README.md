@@ -341,6 +341,16 @@ M:
 > Yes, I can.
 > Do you want me to work off an existing style or compleatly from scratch?
 
+C:
+> It would likely be from scratch.
+>
+> Our site is at www.mygeekreview.com
+>
+> I don't like the theme currently and am looking for a geeky/nerdy/techy kind
+> of theme.
+>
+> I can try and do a design brief if you want.
+
 * * *
 
 ###pluralgarths
