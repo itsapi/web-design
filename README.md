@@ -284,7 +284,7 @@ C:
 > olls96, are you offering to help design a website? If so, I would really
 > appreciate any assistance you could offer.
 >
->Let me know, Thanks,
+> Let me know, Thanks,
 
 M:
 > Yes, I'll help you, what do you need?
@@ -401,7 +401,7 @@ C:
 > By any chance can you design a logo? Thanks
 
 M:
-> Unfortunatly I'm really rubbish at logos, you could probabky do better than
+> Unfortunately I'm really rubbish at logos, you could probabky do better than
 > me yourself! Why don't you try posting a request?
 
 C:
@@ -421,3 +421,20 @@ M:
 > main layout that you could just plonk the forum into. Are you planning on
 > using something like phpbb, if so, I can probably help, otherwise I'm
 > running out of time, sorry.
+
+C:
+> Ok thats what I'm looking. And phpbb will be just fine.
+>
+> The website will be named GragasHut.gr and it will be League of Legends
+> themed.. Gragas is a fat guy who drinks a lot of alcohol and he constantly
+> carries a barrel.
+>
+> So what I want for the main page is something like the wall of a hut. Check
+> out the links and tell me if you get what I'm thinking.
+>
+> I really want to thank you in advance :D
+
+M:
+> Ok, I think I get you. I'll be able to start work on it around wednesday,
+> could you draw a rough mockup of how you want the page to be laid out for
+> me, then I should be able to get it done fairly quickly.
