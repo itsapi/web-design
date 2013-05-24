@@ -135,6 +135,17 @@ M:
 > were after? Also updated links, what do you think of the orange color, do
 > you want me to change the shade?
 
+C:
+> That looks great, really like it, I'll try and get the font sorted out with
+> someone and a proper welcome message for you to put on the home page, but so
+> far I'm really impressed. Thanks
+
+M:
+> Awesome :) Glad you like it.
+>
+> I'm going away without proper internet for the next few days, I'll be back
+> on tuesday, so we'll start sorting out the forum and stuff then.
+
 * * *
 
 ###luckydrone
@@ -236,6 +247,17 @@ M:
 
 C:
 > No worries. Cheers!
+
+M:
+> I've looked through the code on your website and it looks like it may be
+> hard to do anything to change much of the styling easily, without having to
+> significantly rewrite the HTML. Which, from my perspective, looks like it's
+> embedded deeply into the webapp, which would make it near impossible to 
+> change anything without rebuilding the site from scratch. Unless you think
+> there is a way to rewrite the HTML easily, I'm not sure there's much I can
+> do to help.
+>
+> Sorry that I couldn't help you much.
 
 * * *
 
@@ -386,3 +408,16 @@ C:
 > Alright then. Thanks very much :)
 
 * * *
+
+###Dim360
+
+C:
+> We are planning on making a forum about League Of Legends. Would you be
+> interested in helping making a layout?
+
+M:
+> How much of the styling do you need doing? Is it just the main layout, or
+> all the styling for every part of the forum layout. I can help you set up a
+> main layout that you could just plonk the forum into. Are you planning on
+> using something like phpbb, if so, I can probably help, otherwise I'm
+> running out of time, sorry.
