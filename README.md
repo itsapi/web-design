@@ -146,6 +146,21 @@ M:
 > I'm going away without proper internet for the next few days, I'll be back
 > on tuesday, so we'll start sorting out the forum and stuff then.
 
+C:
+> I've been asked to ask you about the possibility of adding advertising for
+> help for heroes and the royal British legion to all the pages, somewhere in
+> the footer, they're UK charities for troops, do you know if there's a
+> protocol to it?
+
+M:
+> I don't know if there are any protocols, but I imagine you could just link
+> to their donate page in the footer. You might what to contact them to ask
+> them if they have any particular way of doing it.
+
+C:
+> I will leave it until its closer to being finished, there were a few other
+> things I was asked to mention but I will leave it for now, time for bed.
+
 * * *
 
 ###luckydrone
@@ -259,6 +274,51 @@ M:
 >
 > Sorry that I couldn't help you much.
 
+C:
+> Erghh, if you're talking about seeing the html, you can just ctrl/command-a
+> to select all, right click and do "view selection source."
+> (see http://stackoverflow.com/questions/7957549/how-can-i-see-javascript-rendered-source).
+> You'll get the html on a few lines, but you can easily prettify it. You can
+> then play with it to your hearts content...
+>
+> Let me know if you need more help with this. I can just create some google
+> docs containing the html and share them with you?
+>
+> If you just want to supply me with some static html pages, that's fine
+> (And what i expected :) ). I can then partition it and convert it into the
+> jade format i use.
+>
+> Does this help?
+
+M:
+> Yes, thank you. I was aware of the javascript source, I just wasn't sure how
+> feasible it would be to switch your HTML, I think it would require almost a
+> full rewrite of the HTML, because honestly, it's a mess! I'll try to keep
+> most of the structure the same, but simplify it, if you're sure you can
+> integrate it back in to the code.
+
+C:
+> P.S the command I gave you in my previous message works in firefox.
+>
+> Also, i've got some draft logos back. You can check them out here:
+> http://imgur.com/euU1A15
+>
+> I'm thinking of going for the third image, though asking for a colour change
+> from the brown to a colour i'm using on the site.
+>
+> Your input would be great; at least if you have an idea of what colour
+> scheme your are using, that is if you are thinking of using something
+> different to what I have already.
+
+M:
+> I was planning on keeping the colour scheme mostly the same as you've
+> already got, but maybe introduce some darker colors to give it some more
+> depth, the brown in the logo would fit quite nicely, maybe a slightly darker
+> shade in the website.
+>
+> I'm going to be away for the next few days with no PC, so nothing will get
+> done now untill tuesday when I get back.
+
 * * *
 
 ###IAmElectricReligion
@@ -323,6 +383,20 @@ M:
 > That's all fine. The contact form should be easily doable as well. Do you
 > have any idea about the style, or layout of the website, or some example
 > websites that sort of match what your after looks-wise?
+
+C:
+> Sorry about not getting back to you right away, I have been tied up for a
+> few days. With regards to your question, I keep coming back to these 3
+> designs.
+> http://www.aeris.com/ http://www.angleseyonline.com/
+> http://www.esourcemarketing.com/ I like the simplicity of their sites, and I
+> think it would fit the needs of my service. Since the product is a secure
+> banking system, it is not really 'flashy', so I don't believe it will
+> warrant a lot of pictures. 
+
+M:
+> Ok, those designs all seem fairly simple, so I'll get build a mockup, then
+> we can go from there.
 
 * * *
 
@@ -438,3 +512,39 @@ M:
 > Ok, I think I get you. I'll be able to start work on it around wednesday,
 > could you draw a rough mockup of how you want the page to be laid out for
 > me, then I should be able to get it done fairly quickly.
+
+C:
+> What do you want me exactly to draw? I don't really get you but if you want
+> you can try what you think it's the best. You're the boss!
+
+* * *
+
+###WizardInABox
+
+C:
+> My friend and I are starting a custom gaming computer company by the name
+> "Manifest Labs". We are looking to purchase a domain shortly and have our
+> website ready to go for selling computers. The website will need a main blog
+> type page to showcase our computers and company. We will need product pages
+> and then custom order forms.
+>
+> If this would be possible, please PM back and I can provide more information
+> on what we want the website to look visually and more details.
+
+M:
+> All this seems possible, I'm a bit busy now with all the requests I'm
+> getting from reddit :D but I can certainly help you out in a couple of weeks
+> when I've got some more time.
+>
+> If you want to start thinking about layouts etc.. that'll give me something
+> to work off.
+
+* * *
+
+###tehhnubz
+
+C:
+> Hey! Are you still looking to expand your portfolio? I'm looking for some
+> help with some design!
+>
+> Have you got a current portfolio?
