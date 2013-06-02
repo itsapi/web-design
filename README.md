@@ -319,6 +319,13 @@ M:
 > I'm going to be away for the next few days with no PC, so nothing will get
 > done now untill tuesday when I get back.
 
+C:
+> Hi,
+>
+> So how's the redesign going?
+>
+> Simon
+
 * * *
 
 ###IAmElectricReligion
