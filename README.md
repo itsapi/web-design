@@ -398,6 +398,19 @@ M:
 > Ok, those designs all seem fairly simple, so I'll get build a mockup, then
 > we can go from there.
 
+M:
+> One more thing, what sort of color scheame do you want/have, do you have a
+> logo for me to base things off?
+
+C:
+> For now I am calling the business 'Secure Banking Transaction Solutions', or
+> SBTS for short. I think the name will change, but for now it is something to
+> use. As for a logo, I have not designed one yet. However, I could submit it
+> to r/freedesign and see what they come up with. With regards to colors, in
+> an effort to keep it simple, I was thinking ; black, blue and white. I have
+> a feeling that should this idea take off, we will have to do a complete
+> re-brand of the company... but that can come later.
+
 * * *
 
 ###KingMaxx
