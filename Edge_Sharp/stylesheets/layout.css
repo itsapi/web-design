@@ -32,11 +32,9 @@
 		text-align: right;
 	}
 		header h1 {
+			position: absolute;
 			margin: 0 175px 0 0;
 			padding: 0 10px;
-			position: absolute;
-			top: 15px;
-			right: 0;
 			font-size: 5em;
 			font-family: 'Open Sans Condensed', sans-serif;
 			font-weight: 300;

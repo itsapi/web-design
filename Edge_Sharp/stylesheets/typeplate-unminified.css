@@ -48,16 +48,16 @@
 	Base Type
  *
  */
-html {
+/*html {
 	font: normal 112.5%/1.65 serif;
 }
 
 body {
-	/*-webkit-hyphens: auto;
+	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
 	-ms-hyphens: auto;
 	hyphens: auto;
-	word-wrap: break-word;*/
+	word-wrap: break-word;
 	color: #444444;
 }
 
@@ -70,7 +70,7 @@ h6 {
 	text-rendering: optimizeLegibility;
 	line-height: 1;
 	margin-top: 0;
-}
+}*/
 
 .tera {
 	font-size: 117px;
@@ -90,7 +90,7 @@ h6 {
 	margin-bottom: 0.4125rem;
 }
 
-h1,
+/*h1,
 .alpha {
 	font-size: 60px;
 	font-size: 3.33333rem;
@@ -130,7 +130,7 @@ h6,
 	font-size: 18px;
 	font-size: 1rem;
 	margin-bottom: 1.65rem;
-}
+}*/
 
 /**
  *
@@ -163,7 +163,7 @@ xmp {
 	Paragraphs
  *
  */
-
+/*
 p {
 	margin: 0 0 1.5em;
 }
@@ -172,7 +172,7 @@ p + p {
 	text-indent: 1.5em;
 	margin-top: -1.5em;
 }
-
+*/
 /**
  *
 	Code Blocks
@@ -212,14 +212,14 @@ abbr:hover {
 	cursor: help;
 }
 
-h1,
+/*h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
 	color: #222222;
-}
+}*/
 
 .drop-cap:first-letter {
 	float: left;
