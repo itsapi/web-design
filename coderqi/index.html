@@ -1,95 +1,36 @@
-<!DOCTYPE html>
-
-<html ng-app="myApp" ng-model="title2show" controller="LayoutCtrl">
+<!doctype html>
+<html lang="en">
 	<head>
-		<meta charset="utf8">
-		<base href="/">
-		<title ng-switch-when="false">Second hand cars UK | Search the entire UK web with one click | AutoBean.co.uk</title>
-		<link rel="Shortcut Icon" href="/img/favicon.ico">
+		<meta charset="UTF-8">
+		<title>AutoBean</title>
+		<!-- (nav>ul>(li>a{Find Cars})+(li>a{Browse Cars}))+(header>h1>img+p{Second hand car search engine.})+(section.main>form>(label{What:}>input[type=text placeholder='The car you are looking for.'])+(label{Where:}>input[type=text placeholder=Where?])+input[type=button])+(footer>p{&copy; AutoBean 2013 - Cookies Use, Privacy and Terms}) -->
+
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
 	</head>
 	<body>
-		<div class="container">
-			<div class="row">
-				<div class="navbar">
-					<ul class="nav">
-						<li>
-							<a href="/">Find Cars</a>
-						</li>
-						<li>
-							<a href="/browse">Browse Cars</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div ng-view>
-			<div class="front-page-container ng-scope" ng-controller="front_page_hero_controller">
-				<table style="align:center;width:100%">
-					<tbody>
-						<tr>
-							<td><img src="/img/autobean_logo_slogan.png"></img></td>
-						</tr>
-						<tr>
-							<td style="align:center">
-								<ng-include src="'partials/searchboxnew.jade'">
-									<form class="ng-scope ng-pristine ng-invalid ng-invalid-required" action="/search" method="get" name="search_form">
-										<table style="align:center;margin-left:auto;margin-right:auto" class="searchform">
-											<tbody>
-												<tr>
-													<td class="formlegend">What:</td>
-													<td class="formlegend">Where:</td>
-												</tr>
-												<tr>
-													<td>
-														<input placeholder="The car you are looking for." ng-model="query.query" name="query" value="aa" required="required" class="input-append ng-pristine ng-invalid ng-invalid-required" type="text">
-													</td>
-													<td>
-														<input placeholder="Where?" ng-model="query.location" name="location" required="required" class="input-prepend ng-pristine ng-invalid ng-invalid-required" type="text">
-													</td>
-													<td>
-														<button type="submit" ng-disable="!search_form.$valid" style="margin-top:0px" class="btn main-search-btn">
-															<i class="icon-road"></i>
-														</button>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<small id="rr">car, make, model, or anything...</small>
-													</td>
-													<td>
-														<small id="rr">city or postcode</small>
-													</td>
-													<td></td>
-												</tr>
-											</tbody>
-										</table>
-									</form>
-								</ng-include>
-							</td>
-						</tr>
-						<tr>
-							<td class="ng-binding">
-								<p class="frontpageinfo"> </p>
-								63277 cars added in the last 7 days<br>	
-								Search the web for all second hand cars in the UK with one click
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<hr class="ng-scope"></hr>
-			<footer class="ng-scope">
-				<small>
-					<!--
-						<p>
-							<Browse>Cars </Browse>
-							<Car>Market Trends </Car>
-							<Cars>Per Capita - Car Market Competition - Press - About </Cars>
-						</p>
-					-->
-					<p> © AutoBean 2013 - <a href="/terms">Cookies Use, Privacy and Terms</a></p>
-				</small>
-			</footer>
-		</div>
+		<nav>
+			<ul>
+				<li><a href="">Find Cars</a></li>
+				<li><a href="">Browse Cars</a></li>
+			</ul>
+		</nav>
+		<header>
+			<h1>
+				<img src="" alt="">
+				<p>Second hand car search engine.</p>
+			</h1>
+		</header>
+		<section class="main">
+			<form action="">
+				<label for="">What:<input type="text" placeholder="The car you are looking for."></label>
+				<label for="">Where:<input type="text" placeholder="Where?"></label>
+				<input type="button">
+			</form>
+			<p>65174 cars added in the last 7 days</p>
+			<p>Search the web for all second hand cars in the UK with one click</p>
+		</section>
+		<footer>
+			<p>&copy; AutoBean 2013 - Cookies Use, Privacy and Terms</p>
+		</footer>
 	</body>
 </html>
