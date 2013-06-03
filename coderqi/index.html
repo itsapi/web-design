@@ -6,6 +6,7 @@
 		<!-- (nav>ul>(li>a{Find Cars})+(li>a{Browse Cars}))+(header>h1>img+p{Second hand car search engine.})+(section.main>form>(label{What:}>input[type=text placeholder='The car you are looking for.'])+(label{Where:}>input[type=text placeholder=Where?])+input[type=button])+(footer>p{&copy; AutoBean 2013 - Cookies Use, Privacy and Terms}) -->
 
 		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<nav>
@@ -24,7 +25,10 @@
 			<form action="">
 				<label for="">What:<input type="text" placeholder="The car you are looking for."></label>
 				<label for="">Where:<input type="text" placeholder="Where?"></label>
-				<input type="button">
+				<button class="pure-button">
+				    <i class="icon-road"></i>
+				    Settings
+				</button>
 			</form>
 			<p>65174 cars added in the last 7 days</p>
 			<p>Search the web for all second hand cars in the UK with one click</p>
