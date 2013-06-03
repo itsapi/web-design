@@ -161,6 +161,17 @@ C:
 > I will leave it until its closer to being finished, there were a few other
 > things I was asked to mention but I will leave it for now, time for bed.
 
+C:
+> Hey, any update on the website?
+
+M:
+> Do you have any plans for hosting/domain name, if you are planning using a
+> free host I recommend 000webhost.com I have used them multiple times and
+> they are good for a free host. If you are using another host, make sure they
+> have php installed as we will need that for phpbb3.
+>
+> Also do you have any update on the logo or background image?
+
 * * *
 
 ###luckydrone
@@ -577,3 +588,25 @@ C:
 > help with some design!
 >
 > Have you got a current portfolio?
+
+###SimpleElegantWebPage
+
+C:
+> Hey there,
+>
+> I saw your advertisement from 10 days ago about you wanting to expand your 
+> portfolio to do a page.
+>
+> I have a host that I have only been using the email for as we never planned
+> to have much traffic through the page. A few days ago, I stumbled upon a
+> simple page that I would like to model our page after. I already have a
+> company logo and it would essentially be one main page (probably themed)
+> with a few links with additional small amount of text (1-4 paragraphs per
+> page roughly).
+>
+> Are you still looking to take on some work?
+
+M:
+> We will be happy to help you create a website, but we are a bit busy at the
+> moment with all the other reddit requests. The offer is still open though,
+> do you want me to message you when we have some more to time for you?
