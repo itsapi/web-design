@@ -30,13 +30,12 @@
 		position: relative;
 		margin: 10px 0;
 		text-align: right;
+		z-index: 10;
 	}
 		header h1 {
+			position: absolute;
 			margin: 0 175px 0 0;
 			padding: 0 10px;
-			position: absolute;
-			top: 15px;
-			right: 0;
 			font-size: 5em;
 			font-family: 'Open Sans Condensed', sans-serif;
 			font-weight: 300;
@@ -48,6 +47,8 @@
 		}
 
 	nav {
+		position: relative;
+		z-index: 20;
 		border-bottom: 1px solid rgba(0, 100, 200, 0.1);
 		margin-bottom: 15px;
 	}

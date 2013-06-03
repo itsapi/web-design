@@ -319,6 +319,13 @@ M:
 > I'm going to be away for the next few days with no PC, so nothing will get
 > done now untill tuesday when I get back.
 
+C:
+> Hi,
+>
+> So how's the redesign going?
+>
+> Simon
+
 * * *
 
 ###IAmElectricReligion
@@ -339,6 +346,7 @@ M:
 * * *
 
 ###Edge_Sharp
+####http://dvbris.no-ip.org/webDesign/Edge_Sharp/
 
 C:
 > olls96, are you offering to help design a website? If so, I would really
@@ -410,6 +418,14 @@ C:
 > an effort to keep it simple, I was thinking ; black, blue and white. I have
 > a feeling that should this idea take off, we will have to do a complete
 > re-brand of the company... but that can come later.
+
+M:
+> http://dvbris.no-ip.org/webDesign/Edge_Sharp/
+>
+> Ok, this is what I've got so far. I haven't done much on the colours yet,
+> but the layout and text styling is there. I didn't no whether you wanted the
+> banner/slider, but you can decide. Tell me what you think of the fonts and 
+> anything you want changing. 
 
 * * *
 
