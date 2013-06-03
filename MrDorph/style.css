@@ -97,25 +97,6 @@ nav a:hover {
 	margin: 0;
 }
 
-aside {
-	border: 1px solid rgba(240, 90, 20, 0.7);
-	border-radius: 2px;
-	font-size: 2.5em;
-	height: 100%;
-}
-@media screen and (min-width: 801px) {
-	aside {
-		position: absolute;
-		top: 0;
-		right: 5px;
-		width: 170px;
-	}
-}
-@media screen and (max-width: 800px) {
-	aside {
-		display: none;
-	}
-}
 footer {
 	text-align: center;
 	width: 100%;
