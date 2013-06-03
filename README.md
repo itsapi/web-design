@@ -337,6 +337,13 @@ C:
 >
 > Simon
 
+M:
+> This is what I've got so far just for the home page:
+> http://dvbris.no-ip.org/webDesign/coderqi/
+> It's not done yet obviously, and I'm just using the logo you sent me, but
+> what do you think of the style? Is it what you were going for or have I got
+> it wrong?
+
 * * *
 
 ###IAmElectricReligion
@@ -610,3 +617,9 @@ M:
 > We will be happy to help you create a website, but we are a bit busy at the
 > moment with all the other reddit requests. The offer is still open though,
 > do you want me to message you when we have some more to time for you?
+
+C:
+> yeah! that would be great. What timeline are you thinking? 2 weeks? 1 month?
+> I'm in no rush at all on this although I'm should probably use email since I
+> just made a throw-away for this. so I don't want to leave you hanging while
+> I forgot my username to re-login
