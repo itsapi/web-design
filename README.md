@@ -643,3 +643,8 @@ C:
 > I'm in no rush at all on this although I'm should probably use email since I
 > just made a throw-away for this. so I don't want to leave you hanging while
 > I forgot my username to re-login
+
+M:
+> We'll probably have time in two to three weeks, but it might be longer.
+>
+> Our email address is mail.itsapi@gmail.com
