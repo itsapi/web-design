@@ -6,13 +6,51 @@ body {
 
 	}
 
+	header {
+		text-align: center;
+		margin-top: 5%;
+	}
+		header h1 {
+			margin: 0;
+		}
+		header img {
+			width: 100%;
+			max-width: 232px;
+		}
+		header p {
+			margin: 0;
+			color: #888;
+			font-size: 0.7em;
+		}
+
 	.main {
 		margin: 30px auto;
 	}
-		.main .pure-g-r > div {
-			-moz-box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-			box-sizing: border-box;
+		.search {
+			position: relative;
+			text-align: center;
+			width: 100%;
+		}
+			.search div {
+				display: inline-block;
+				width: 200px;
+			}
+			.search button {
+				position: absolute;
+				bottom: 0;
+				margin: 10px;
+				width: 50px;
+			}
+		.main p {
+			text-align: center;
+			color: #999;
+			font-size: 0.7em;
+		}
+		.main p:first-of-type {
+			margin-top: 40px;
+		}
+		.main p:last-of-type {
+			margin-bottom: 40px;
 		}
 
 	footer {
