@@ -71,3 +71,9 @@ body {
 		display: inline;
 	}
 }
+@media all and (max-width: 270px) {
+	nav li{
+		width: 100%;
+		text-align: center;
+	}
+}
