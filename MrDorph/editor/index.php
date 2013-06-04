@@ -10,9 +10,14 @@
 	$username = "admin";
 	$password = file_get_contents('passwd.md5');
 
-	if(isset($_POST['submit'])) {
+	if (isset($_COOKIE["loginEditor"])) {
+		$loggedIn = 1;
+	}
+
+	if(isset($_POST['login']) &&  !($loggedIn)) {
 		 if($_POST['username'] == $username && md5($_POST['password']) == $password) {
 			$loggedIn = 1;
+			setcookie("loginEditor", 1);
 		} else {
 		echo "Username or password was incorrect.";
 		}
@@ -23,16 +28,24 @@
 	<div>
 <?
 	if ($handle = opendir('../')) {
-		echo "Entries:\n<br>\n<ul>\n";
-
+?>
+		<h3>Files:</h3>
+		<ul>
+<?
 		while ($entry = readdir($handle)) {
 			if (preg_match("/\.(html)$/", $entry)) {
-				echo "<li>$entry</li>\n";
+?>
+		<li>
+			<a href="../<?=$entry?>" target="_blank"><?=$entry?></a>
+			<input type="submit" value="Edit" name="edit">
+			<input type="text" value="<?=$entry?>" name="entry" hidden>
+		</li>
+<?
 			}
 		}
-
-		echo "</ul>";
-
+?>
+		</ul>
+<?
 	    closedir($handle);
 	}
 ?>
@@ -43,7 +56,7 @@
 	<form method="post">
 		Username: <input type="text" name="username" /><br />
 		Password: <input type="password" name="password" />
-		<input type='submit' name='submit' />
+		<input type='submit' name='login' />
 	</form>
 <?php
 	}
