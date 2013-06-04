@@ -2,81 +2,50 @@ body {
 
 }
 
-	nav {
+nav {
 
-	}
-
-	header {
-		text-align: center;
-		margin-top: 5%;
-	}
-		header h1 {
-			margin: 0;
-		}
-		header img {
-			width: 100%;
-			max-width: 232px;
-		}
-		header p {
-			margin: 0;
-			color: #888;
-			font-size: 0.7em;
-		}
-
-	.main {
-		margin: 30px auto;
-	}
-		.search {
-			position: relative;
-			text-align: center;
-			width: 100%;
-		}
-			.search div {
-				display: inline-block;
-				width: 200px;
-			}
-			.search button {
-				position: absolute;
-				bottom: 0;
-				margin: 10px;
-				width: 50px;
-			}
-		.main p {
-			text-align: center;
-			color: #999;
-			font-size: 0.7em;
-		}
-		.main p:first-of-type {
-			margin-top: 40px;
-		}
-		.main p:last-of-type {
-			margin-bottom: 40px;
-		}
-
-	footer {
-		text-align: center;
-	}
-		footer p {
-			color: #bbb;
-			font-size: 0.7em;
-		}
-		footer a {
-			color: #bbb;
-		}
-		footer a:hover {
-			color: #999;
-		}
-
-@media all and (max-width: 600px) {
-	.search {
-		width: 200px;
-		margin: auto;
-	}
-	.search button {
-		position: relative;
-		display: inline;
-	}
 }
+
+header {
+	text-align: center;
+	margin-top: 5%;
+}
+header h1 {
+	margin: 0;
+}
+header img {
+	width: 100%;
+	max-width: 232px;
+}
+header p {
+	margin: 0;
+	color: #888;
+	font-size: 0.7em;
+}
+
+a {
+	color: rgba(100, 100, 100, 1);
+	text-decoration: none;
+}
+a:hover {
+	color: rgba(0, 0, 0, 1);
+	text-decoration: underline;
+}
+
+footer {
+	text-align: center;
+}
+footer p {
+	color: #bbb;
+	font-size: 0.7em;
+}
+footer a {
+	color: #bbb;
+}
+footer a:hover {
+	color: #999;
+}
+
 @media all and (max-width: 270px) {
 	nav li{
 		width: 100%;
