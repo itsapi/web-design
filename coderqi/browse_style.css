@@ -1,0 +1,41 @@
+body {
+
+}
+
+	nav {
+
+	}
+
+	.main {
+		margin: 30px auto;
+	}
+		.main .pure-g-r > div {
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+	footer {
+		text-align: center;
+	}
+		footer p {
+			color: #bbb;
+			font-size: 0.7em;
+		}
+
+@media all and (max-width: 600px) {
+	.search {
+		width: 200px;
+		margin: auto;
+	}
+	.search button {
+		position: relative;
+		display: inline;
+	}
+}
+@media all and (max-width: 270px) {
+	nav li{
+		width: 100%;
+		text-align: center;
+	}
+}
