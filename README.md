@@ -229,6 +229,28 @@ M:
 > The gallery can do youtube, videos, anything... even other websites if you
 > really want!
 
+C:
+> It will be just to update the images and news section, and to upload images
+> and videos as well. What do you mean by other websites? This threw me a bit.
+>
+> Out of interest do you game at all?
+
+M:
+> That should all work.
+>
+> I just meant you could have a frame where another website could be displayed
+> like an image. You probably wont need to use this though.
+>
+> No I don't really game, I used to a bit, but It meant I ran out of time for
+> other things.
+
+C:
+> This looks pretty much like what I have now, but yep, that is, though
+> unfinished, looking fine.
+
+M:
+> Opps, didnt update the online version, navigation should be right now.
+
 * * *
 
 ###luckydrone

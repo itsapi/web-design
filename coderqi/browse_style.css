@@ -1,20 +1,20 @@
-	.main {
-		margin: 30px auto;
-		width: 50%;
-		font-size: 0.8em;
+.main {
+	margin: 30px auto;
+	width: 50%;
+	font-size: 0.8em;
+}
+	.main h2 {
+		text-align: center;
 	}
-		.main h2 {
-			text-align: center;
-		}
-		.main .pure-g-r > div {
-			-moz-box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-			box-sizing: border-box;
-		}
-		.pure-u-1-4 {
-			width: 24.9%;
-			padding: 5px 10px;
-		}
+	.main .pure-g-r > div {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.pure-u-1-4 {
+		width: 24.9%;
+		padding: 5px 10px;
+	}
 
 @media all and (max-width: 768px) {
 	.pure-u-1-4 {

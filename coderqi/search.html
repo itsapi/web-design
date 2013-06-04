@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>AutoBean - Search</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
+		<link rel="stylesheet" href="icons.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="search-style.css">
+	</head>
+	<body>
+		<nav class="pure-menu pure-menu-open pure-menu-horizontal">
+			<ul>
+				<li><a href="index.html">Find Cars</a></li>
+				<li><a href="browse.html">Browse Cars</a></li>
+			</ul>
+		</nav>
+		<header>
+			<div id="title">
+				<h1><img src="logo.png" alt="AutoBean"></h1>
+				<p>Second hand car search engine.</p>
+			</div>
+
+			<div class="search-form">
+				<form action="search.html" class="pure-form pure-form-stacked search">
+					<fieldset>
+						<div>
+							<label for="what-input">What:</label>
+							<input type="text" id="what-input" placeholder="The car you are looking for." required>
+						</div>
+						<div>
+							<label for="where-input">Where:</label>
+							<input type="text" id="where-input" placeholder="Where?" required>
+						</div>
+						<button type="submit" class="pure-button">
+							<span class="icon-road"></span>
+						</button>
+					</fieldset>
+				</form>
+			</div>
+		</header>
+		<div id="main-columns">
+			<aside>
+				<h4>Refinements:</h4>
+				<ul>
+					<li><a href="#">BMW (remove)</a></li>
+				</ul>
+
+				<h4>Refine your search:</h4>
+				<ul>
+					<li><a href="#">Price</a></li>
+					<li><a href="#">Year</a></li>
+					<li><a href="#">Mileage</a></li>
+					<li><a href="#">Fuel</a></li>
+					<li><a href="#">Transmission</a></li>
+					<li><a href="#">Colour</a></li>
+					<li><a href="#">Make</a></li>
+					<li><a href="#">Body</a></li>
+					<li><a href="#">Seller</a></li>
+				</ul>
+			</aside>
+			<section class="main">
+				<ul id="order">
+					<li><a href="#">Relevance</a></li>
+					<li><a href="#">Price</a></li>
+					<li><a href="#">Mileage</a></li>
+					<li><a href="#">Year</a></li>
+					<li><a href="#">Posted</a></li>
+				</ul>
+				<p id="count">1 to 10 of 967 cars</p>
+
+				<ul id="results">
+					<li>
+						<a href="#">
+							<img src="http://stock.carsite.co.uk/bmw/3-series/13809/3155865/bmw_3-series_1_s.jpg" alt="Car">
+							<h3>2012 BMW 3 Series 320D SPORT 20</h3>
+						</a>
+						<p class="price">£22950</p>
+						<p class="first-line">BMW - 3 Series - <span class="location">Larne Antrim</span></p>
+						<p class="second-line">2012 Registration - 8600 miles - cc engine</p>
+						<p class="third-line">Manual - Diesel - Grey</p>
+						<p class="forth-line">From carsite.co.uk - listed 20130424 120913 - <a href="#">save</a> - <a href="#">email</a></p>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://stock.carsite.co.uk/bmw/1-series/8522/3163255/bmw_1-series_1_s.jpg" alt="Car">
+							<h3>2008 BMW 1 Series 120d SE 2dr</h3>
+						</a>
+						<p class="price">£9340</p>
+						<p class="first-line">BMW - 1 Series - <span class="location">Lancashire Greater Manchester</span></p>
+						<p class="second-line">2008 Registration - 80000 miles - 2000cc cc engine</p>
+						<p class="third-line">Manual - Diesel - BLUE</p>
+						<p class="forth-line">From carsite.co.uk - listed 20130424 121223 - <a href="#">save</a> - <a href="#">email</a></p>
+					</li>
+				</ul>
+			</section>
+		</div>
+		<footer>
+			<p>&copy; AutoBean 2013 - Cookies Use, Privacy and Terms - Style Designed by <a href="http://dvbris.no-ip.org">Dvbris Web Desgin</a></p>
+		</footer>
+	</body>
+</html>
