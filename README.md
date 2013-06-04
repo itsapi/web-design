@@ -172,6 +172,14 @@ M:
 >
 > Also do you have any update on the logo or background image?
 
+C:
+> Hello. We will be in purchasing a .co.uk domain, I think it will be
+> WWW.englisharmouredbrigade.co.UK, not too sure or EAB.co.UK, something along
+> those lines. Do you know how we would go about putting the website up? We
+> would like to keep the background image as is, would there be any copyright
+> problems with this? I will link you the logo when I finish it, we're just
+> using a basic logo designer so it wont be to fancy.
+
 * * *
 
 ###luckydrone
