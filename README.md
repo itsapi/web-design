@@ -192,6 +192,43 @@ M:
 >
 > Do you have any update on the font?
 
+C:
+> Hello, I have messaged wargaming regarding the use of their images and
+> hopefully they will get back to me soon. Would the host you recommended be
+> suitable for all the stuff we will need? I will let you pick the font, there
+> are far too many, Something bold and easy to read.
+>
+> Update to the layout Ideas, for the tabs at the top we would like home to
+> become welcome, photos to become gallery, downloads and contacts to be moved
+> to the end, with contacts right at the end, and info to become announcements
+> or news what ever looks better.
+>
+> so it will be, Welcome, about, news, gallery, forum, downloads, contact.
+>
+> How do we go about setting up admins once the site is finished? With the
+> gallery will we be able to set one up for videos? Embedding the youtube
+> player or something like that? I am working till 11 tonight so won't be bale
+> to get back to you till then, hopefully I will have been sent the welcome
+> page message by then and will be able to send it to you.
+
+M:
+> You could use any site to buy the domain, this is a good one:
+>
+> http://123reg.co.uk
+>
+> For hosting, this is a free uk host which does everything you need:
+>
+> http://www.getfreehosting.co.uk
+>
+> I've edited the navigation bar.
+>
+> For the admins, I'll create a basic admin page for editing the pages with a
+> password to get in (so to add a admin, you just give them the password), but
+> you can always come back and ask me if you want anything done.
+>
+> The gallery can do youtube, videos, anything... even other websites if you
+> really want!
+
 * * *
 
 ###luckydrone

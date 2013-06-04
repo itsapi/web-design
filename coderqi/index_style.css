@@ -1,0 +1,40 @@
+.main {
+	margin: 30px 0;
+}
+	.search {
+		position: relative;
+		text-align: center;
+		width: 100%;
+	}
+		.search div {
+			display: inline-block;
+			width: 200px;
+		}
+		.search button {
+			position: absolute;
+			bottom: 0;
+			margin: 10px;
+			width: 50px;
+		}
+	.main p {
+		text-align: center;
+		color: #999;
+		font-size: 0.7em;
+	}
+	.main p:first-of-type {
+		margin-top: 40px;
+	}
+	.main p:last-of-type {
+		margin-bottom: 40px;
+	}
+	
+@media all and (max-width: 600px) {
+	.search {
+		width: 200px;
+		margin: auto;
+	}
+	.search button {
+		position: relative;
+		display: inline;
+	}
+}
