@@ -60,6 +60,12 @@ body {
 			color: #bbb;
 			font-size: 0.7em;
 		}
+		footer a {
+			color: #bbb;
+		}
+		footer a:hover {
+			color: #999;
+		}
 
 @media all and (max-width: 600px) {
 	.search {

@@ -93,6 +93,12 @@ footer {
 footer p {
 	margin: 10px 0;
 }
+footer a {
+	color: #000;
+}
+footer a:hover {
+	color: #fff;
+}
 
 @media screen and (min-width: 801px) {
 	body {
