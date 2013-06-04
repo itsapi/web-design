@@ -180,6 +180,18 @@ C:
 > problems with this? I will link you the logo when I finish it, we're just
 > using a basic logo designer so it wont be to fancy.
 
+M:
+> To put the website up you will need a host, you can usually get free hosting
+> when you purchice a domain name, just make sure you find one with php and
+> mysql, ask me if you need help finding one.
+>
+> There would definatly be problems with using the world of tanks image, as it
+> is theirs. We could try to find a similar image but copyright free, you
+> could also try taking an ingame screenshot, I don't mind doing some light
+> editing to put some screenshots together.
+>
+> Do you have any update on the font?
+
 * * *
 
 ###luckydrone
