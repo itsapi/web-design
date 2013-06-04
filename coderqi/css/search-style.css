@@ -6,13 +6,14 @@ header {
 		padding: 10px;
 		text-align: center;
 		display: inline-block;
+		position: relative;
 	}
 		#title h1 {
 			margin: 0;
 			display: inline;
 		}
 		#title img {
-			width: 100%;
+			width: 90%;
 			max-width: 116px;
 		}
 		#title p {
@@ -29,7 +30,6 @@ header {
 		}
 			.search div {
 				display: inline-block;
-				width: 200px;
 			}
 			.search button {
 				display: inline-block;
@@ -52,7 +52,7 @@ header {
 	}
 		aside ul {
 			list-style: none;
-			padding-left: 15px;
+			padding-left: 20px;
 		}
 
 	.main {
@@ -63,6 +63,7 @@ header {
 	}
 		.main #order {
 			padding-left: 0;
+			display: inline;
 		}
 			.main #order li {
 				display: inline-block;
@@ -70,8 +71,8 @@ header {
 			}
 		#count {
 			position: absolute;
-			top: 10px;
 			right: 20px;
+			display: inline;
 			color: rgba(0, 0, 0, 0.6);
 			font-size: 0.8em;
 			line-height: 2em
@@ -83,6 +84,7 @@ header {
 			#results li {
 				min-height: 80px;
 				margin: 20px 0;
+				padding: 5px;
 			}
 			#results li:hover {
 				background-color: #f7f7f7;
@@ -130,11 +132,69 @@ footer {
 	margin-top: 50px;
 }
 
-@media all and (max-width: 600px) {
-	aside {
+@media all and (max-width: 768px) {
+	#title {
 		width: 100%;
 	}
-		aside li {
-			display: inline-block;
+		#title img {
+			max-width: 200px;
 		}
+		#title p {
+			font-size: 0.7em;
+		}
+	.search-form {
+		width: 100%;
+		position: relative;
+	}
+	.search {
+		padding: 0 20px;
+	}
+		.search div {
+			display: block;
+			width: 100%;
+			margin: 0;
+		}
+		.search div input {
+			width: 100%;
+		}
+		.search button {
+			position: relative;
+			display: inline-block;
+			margin: 10px 0;
+			width: 100%;
+		}
+	aside {
+		width: 100%;
+		position: relative;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+		aside > ul {
+		}
+			aside > ul li {
+				background-color: rgba(150, 150, 150, 0.5);
+				margin: 7px 0;
+				margin-right: 10px;
+				-webkit-border-radius: 2px;
+				-moz-border-radius: 2px;
+				border-radius: 2px;
+			}
+			aside > ul li:hover {
+				background-color: rgba(150, 150, 150, 0.2);
+			}
+				aside > ul a {
+					display: block;
+					padding: 7px;
+				}
+	.main {
+		border: none;
+		margin: 20px 20px 20px 0px;
+		padding: 10px;
+	}
+}
+@media (max-width: 440px) {
+	#count {
+		margin-top: 1.2em;
+	}
 }
