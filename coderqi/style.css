@@ -20,20 +20,22 @@ body {
 		}
 
 	.main {
-		width: 50%;
 		margin: 30px auto;
 	}
 		.search {
 			position: relative;
+			text-align: center;
+			width: 100%;
 		}
 			.search div {
 				display: inline-block;
-				text-align: center;
+				width: 200px;
 			}
 			.search button {
 				position: absolute;
 				bottom: 0;
 				margin: 10px;
+				width: 50px;
 			}
 		.main p {
 			text-align: center;
@@ -54,3 +56,14 @@ body {
 			color: #bbb;
 			font-size: 0.7em;
 		}
+
+@media all and (max-width: 600px) {
+	.search {
+		width: 200px;
+		margin: auto;
+	}
+	.search button {
+		position: relative;
+		display: inline;
+	}
+}
