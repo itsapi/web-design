@@ -8,9 +8,13 @@
 <?php
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
-	
+
 	$loggedIn = 0;
-	$message = '';
+	if (isset($_GET['msg'])) {
+		$message = $_GET['msg'];
+	} else {
+		$message = '';
+	}
 	$username = "admin";
 	$password = file_get_contents('passwd.md5');
 
@@ -22,7 +26,31 @@
 			$loggedIn = 1;
 			setcookie("loginEditor", 1);
 		} else {
-		$message .= "Username or password was incorrect.";
+		$message .= "Username or password was incorrect";
+		}
+	}
+	if (isset($_POST['logout'])) {
+		setcookie("loginEditor", '', time()-10);
+		$loggedIn = 0;
+		$message .= "Logged out successfully";
+	}
+	if (isset($_POST['changePass'])) {
+		if ($_POST['oldPass'] && $_POST['newPass'] && $_POST['verifyPass']) {
+			if (md5($_POST['oldPass']) == file_get_contents('passwd.md5')) {
+				if ($_POST['newPass'] == $_POST['verifyPass']) {
+					if (file_put_contents('passwd.md5', md5($_POST['newPass']))) {
+						$message .= 'Password changed successfully';
+					} else {
+						$message .= 'Password change failed';
+					}
+				} else {
+					$message .= 'Passwords do not match';
+				}
+			} else {
+				$message .= 'Old password does not match';
+			}
+		} else {
+			$message .= 'Fields cannot be left blank';
 		}
 	}
 	if (isset($_POST['newFile'])) {
@@ -52,11 +80,11 @@
 			$message .= 'Title and file contents cannot be empty';
 			$editFile = 1;
 		}
-		header('location:' . $_SERVER['PHP_SELF']);
+		header('location:' . $_SERVER['PHP_SELF'] . '?msg=' . $message);
 	}
 	if (isset($_POST['deleteFile'])) {
 		unlink($_POST['entry']);
-		header('location:' . $_SERVER['PHP_SELF']);
+		header('location:' . $_SERVER['PHP_SELF'] . '?msg=' . $message);
 	}
 	if (isset($_FILES['file']['name'])) {
 		if (!$_FILES['file']['error']) {
@@ -71,6 +99,17 @@
 ?>
 		<h1>Welcome to the wepage editor</h1>
 		<section>
+			<h3>Settings:</h3>
+			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+				<h4>Change password:</h4>
+				<label>Old password: <input type="password" name="oldPass"></label>
+				<label>New password: <input type="password" name="newPass"></label>
+				<label>Verify password: <input type="password" name="verifyPass"></label>
+				<input type="submit" name="changePass" value="Change password">
+				<input type="submit" name="logout" value="Logout">
+			</form>
+		</section>
+		<section>
 <?
 		if ($handle = opendir('../')) {
 ?>
@@ -82,7 +121,7 @@
 ?>
 			<li>
 				<a href="../<?=$entry?>" target="_blank"><?=$entry?></a>
-				<form method="post">
+				<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 					<input type="submit" value="Edit" name="editFile">
 					<input type="submit" value="Delete" name="deleteFile">
 					<input type="text" value="../<?=$entry?>" name="entry" hidden>
@@ -110,7 +149,7 @@
 ?>
 			<li>
 				<a href="../media/<?=$entry?>" target="_blank"><?=$entry?></a>
-				<form method="post">
+				<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 					<input type="submit" value="Delete" name="deleteFile">
 					<input type="text" value="../media/<?=$entry?>" name="entry" hidden>
 				</form>
@@ -124,11 +163,11 @@
 			closedir($handle);
 		}
 ?>
-			<form method="post" enctype="multipart/form-data">
+			<form action="<?=$_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
 				Upload media file: <input type="file" name="file">
 				<input type="submit" name="submit" value="Upload File">
 			</form>
-			<form method="post">
+			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 				<label>New file: <input type="text" name="entry"></label>
 				<input type="submit" name="newFile" value="Create file">
 			</form>
@@ -138,7 +177,7 @@
 ?>
 		<div>
 			<h3>Edit file:</h3>
-			<form method="post">
+			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 				<label>Page title<input type="text" name="title" value="<?=$html[1]?>"></label>
 				<textarea name="fileContents"><?=$html[3]?></textarea>
 				<input type="text" value="<?=$_POST['entry']?>" name="entry" hidden>
@@ -150,7 +189,7 @@
 		}
 	} else {
 ?>
-		<form method="post">
+		<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 			Username: <input type="text" name="username" /><br />
 			Password: <input type="password" name="password" />
 			<input type='submit' name='login' />
@@ -158,8 +197,7 @@
 <?php
 	}
 	echo $message;
+	$message = '';
 ?>
-
-	
 	</body>
 </html>
