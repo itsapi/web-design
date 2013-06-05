@@ -126,7 +126,22 @@ header {
 					#results .forth-line a {
 						
 					}
-
+		#pagenator {
+			list-style: none;
+			padding: 0;
+			display: inline-block;
+			text-align: center;
+			margin: 10px 0;
+			width: 100%;
+		}
+			#pagenator li {
+				padding: 5px 0;
+				display: inline-block;
+			}
+				#pagenator a {
+					padding: 5px 10px;
+				}
+		
 footer {
 	margin-top: 50px;
 }
