@@ -6,6 +6,9 @@
 </head>
 <body>
 <?php
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+	
 	$loggedIn = 0;
 	$editFile = 0;
 	$username = "admin";
@@ -53,23 +56,34 @@
 ?>
 	</div>
 <?
-		if (isset($_POST['edit'])) {
+		if (isset($_POST['entry'])) {
 			$fileContents = file_get_contents('../' . $_POST['entry']);
+			$contentSplit = explode('<!--content-->', $fileContents);
+			$titleSplit = explode('<title>', $fileContents);
+			$titleSplit = [$titleSplit[0], explode('</title>', $titleSplit[1])[0]];
+			$html = [$titleSplit[0], $titleSplit[1], explode('</title>', $contentSplit[0])[1], $contentSplit[1], $contentSplit[2]];
+		}
+		if (isset($_POST['save'])) {
+			if (isset($_POST['title']) && isset($_POST['fileContents'])) {
+				$contents = $html[0] . '<title>' . $_POST['title'] . '</title>' . $html[2] . '<!--content-->' . $_POST['fileContents'] . '<!--content-->' . $html[4];
+				if (file_put_contents('../' . $_POST['entry'], $contents)) {
+					echo 'File saved successfully';
+				} else {
+					echo 'File save failed';
+				}
+			} else {
+				echo 'Title and file contents cannot be empty';
+			}
+		}
+		if (isset($_POST['edit'])) {
 ?>
 	<div>
 		<h3>Edit file:</h3>
 		<form method="post">
-			<label>Page title<input type="text" name="title" value="<?
-			preg_match('/<title>(.*?)<\/title>/s', $fileContents, $matches);
-			echo $matches[1];
-?>"></label>
-			<textarea name="fileContents">
-<?
-			preg_match('/<div id="content">(.*?)<\/div>/s', $fileContents, $matches);
-			echo $matches[1];
-?>
-			</textarea>
-			<input type="submit" name="editFile" value="Save file">
+			<label>Page title<input type="text" name="title" value="<?=$html[1]?>"></label>
+			<textarea name="fileContents"><?=$html[3]?></textarea>
+			<input type="text" value="<?=$_POST['entry']?>" name="entry" hidden>
+			<input type="submit" name="save" value="Save file">
 		</form>
 	</div>
 <?
