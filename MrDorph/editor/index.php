@@ -56,9 +56,9 @@
 	if (isset($_POST['newFile'])) {
 		$editFile = 1;
 	}
-	if (isset($_POST['entry'])) {
-		if (file_exists($_POST['entry'])) {
-			$fileContents = file_get_contents($_POST['entry']);				
+	if (isset($_REQUEST['entry'])) {
+		if (file_exists($_REQUEST['entry'])) {
+			$fileContents = file_get_contents($_REQUEST['entry']);				
 		} else {
 			$fileContents = file_get_contents('template.html');
 		}
@@ -70,17 +70,15 @@
 	if (isset($_POST['save'])) {
 		if (($_POST['title']) && ($_POST['fileContents'])) {
 			$contents = $html[0] . '<title>' . $_POST['title'] . '</title>' . $html[2] . "<!--content-->\n" . $_POST['fileContents'] . '<!--content-->' . $html[4];
-			if (file_put_contents($_POST['entry'], $contents)) {
+			if (file_put_contents($_REQUEST['entry'], $contents)) {
 				$message .= 'File saved successfully';
 			} else {
 				$message .= 'File save failed';
-				$editFile = 1;
 			}
 		} else {
 			$message .= 'Title and file contents cannot be empty';
-			$editFile = 1;
 		}
-		header('location:' . $_SERVER['PHP_SELF'] . '?msg=' . $message);
+		header('location:' . $_SERVER['PHP_SELF'] . '?editFile&entry=' . $_REQUEST['entry'] . '&msg=' . $message);
 	}
 	if (isset($_POST['deleteFile'])) {
 		unlink($_POST['entry']);
@@ -173,7 +171,7 @@
 			</form>
 		</section>
 <?
-		if (isset($_POST['editFile']) || isset($editFile)) {
+		if (isset($_REQUEST['editFile'])) {
 ?>
 		<div>
 			<h3>Edit file:</h3>
@@ -182,7 +180,7 @@
 				<textarea name="fileContents"><?=$html[3]?></textarea>
 				<input type="text" value="<?=$_POST['entry']?>" name="entry" hidden>
 				<input type="submit" name="save" value="Save file">
-				<input type="submit" value="Cancel">
+				<input type="submit" value="Close">
 			</form>
 		</div>
 <?
