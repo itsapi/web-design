@@ -9,6 +9,13 @@ nav {
 
 }
 
+header {
+
+}
+	header a:hover {
+		text-decoration: none;
+	}
+
 a {
 	color: rgba(100, 100, 100, 1);
 	text-decoration: none;
@@ -21,16 +28,16 @@ a:hover {
 footer {
 	text-align: center;
 }
-footer p {
-	color: #bbb;
-	font-size: 0.7em;
-}
-footer a {
-	color: #bbb;
-}
-footer a:hover {
-	color: #999;
-}
+	footer p {
+		color: #bbb;
+		font-size: 0.7em;
+	}
+		footer a {
+			color: #bbb;
+		}
+		footer a:hover {
+			color: #999;
+		}
 
 @media all and (max-width: 270px) {
 	nav li{

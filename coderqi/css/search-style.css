@@ -126,7 +126,29 @@ header {
 					#results .forth-line a {
 						
 					}
-
+		#pagenator {
+			list-style: none;
+			padding: 0;
+			display: inline-block;
+			text-align: center;
+			margin: 10px 0;
+			width: 100%;
+		}
+			#pagenator li {
+				padding: 5px 0;
+				display: inline-block;
+			}
+				#pagenator a {
+					padding: 5px 10px;
+				}
+				#pagenator :first-child a:hover, #pagenator :last-child a:hover {
+					text-decoration: none;
+					background-color: rgba(100, 100, 100, 0.2);
+				}
+				#pagenator .current {
+					font-weight: 700;
+				}
+		
 footer {
 	margin-top: 50px;
 }
