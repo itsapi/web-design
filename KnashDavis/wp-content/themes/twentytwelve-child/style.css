@@ -1,0 +1,71 @@
+/*
+Theme Name:     MyGeekReview
+Description:    Child theme for the Twenty Twelve theme
+Author:         Dvbris Web Design
+Author URI:     http://dvbris.no-ip.org
+Template:       twentytwelve
+Version:        0.1.0
+*/
+
+@import url("../twentytwelve/style.css");
+
+body {
+	color: #fff;
+}
+	.site {
+		background-color: #333;
+	}
+		.site a {
+			color: #eee !important;
+		}
+		.site a:hover {
+			color: #fff !important;
+		}
+		.site-header h1 a,
+		.site-header h2 a {
+			color: #fff;
+		}
+		.site-header h1 a:hover,
+		.site-header h2 a:hover {
+			color: #ccc;
+		}
+		nav a {
+			color: #ddd !important;
+		}
+		nav a:hover {
+			color: #fff !important;
+		}
+		.widget-area .widget {
+			background-color: #3b3;
+			padding: 10px;
+			font-family: monospace;
+			color: #ded;
+			border: 3px solid #464;
+		}
+			.widget-area h3 {
+				color: #fff;
+			}
+			.widget-area .widget a {
+				color: #fff;
+			}
+			.widget-area .widget a:hover {
+				color: #bcb;
+			}
+		h1.entry-title a, h1.entry-title {
+			color: #eee !important;
+		}
+		h1.entry-title a:hover, h1.entry-title {
+			color: #fff !important;
+		}
+		article.post, article.page {
+			border-bottom: 4px double #777;
+		}
+			article.post footer, .comments-link {
+				color: #ccc;
+			}
+				article.post footer a, article.post .comments-link a {
+					color: #ddd;
+				}
+				article.post footer a:hover, article.post .comments-link a:hover {
+					color: #eee;
+				}
