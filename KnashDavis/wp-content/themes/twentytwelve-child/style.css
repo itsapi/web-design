@@ -36,11 +36,11 @@ body {
 			color: #fff !important;
 		}
 		.widget-area .widget {
-			background-color: #3b3;
+			background-color: #193;
 			padding: 10px;
 			font-family: monospace;
 			color: #ded;
-			border: 3px solid #464;
+			border: 3px solid #264;
 		}
 			.widget-area h3 {
 				color: #fff;
