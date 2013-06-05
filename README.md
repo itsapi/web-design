@@ -6,7 +6,7 @@ Repo for our web designs
 Websites
 --------
 
-### MrDorph:
+### MrDorph - IN PROGRESS
 #### http://dvbris.no-ip.org/webDesign/MrDorph
 
 C:
@@ -251,35 +251,10 @@ C:
 M:
 > Opps, didnt update the online version, navigation should be right now.
 
-* * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
-###luckydrone
-
-C:
-> I'm looking for a very simple one page site for Lucky Drone Honey Co. We're
-> just getting started, but I'd like to start getting word out and have a site
-> to expand on as we add products.
->
-> I put in a request for a logo a few days and got some great replies. I'd
-> like to apply some updates to the logo submitted here but if you'd rather
-> not do logo design, I can work on that and we can stick with what I've
-> gotten so far.
->
-> I build web applications (Rails) so I could use a photoshop mockup if that's
-> easiest for you. Let me know if you're interested. Thanks!
-
-M:
-> Hi, Sorry for not replying sooner, I missed your message in my inbox :S
->
-> I'm interested. What sort of style do you want? I'm happy to work from a
-> photoshop mockup if you like.
->
-> I'm not great at logos, you'd be a lot better off getting someone else to
-> work on that, I'd just butcher it :)
-
-* * *
-
-###coderqi
+### coderqi - IN PROGRESS
+#### http://olls.no-ip.org/webDesign/coderqi/index.html
 
 C:
 > Hi Olls96,
@@ -423,27 +398,41 @@ M:
 > what do you think of the style? Is it what you were going for or have I got
 > it wrong?
 
-* * *
-
-###IAmElectricReligion
+M:
+> I've done the browse and search pages now too:
+>
+> http://dvbris.no-ip.org/webDesign/coderqi/browse.html
+>
+> http://dvbris.no-ip.org/webDesign/coderqi/search.html
+>
+> What do you think? Anything I've missed/done wrong?
 
 C:
-> Greetings olls96,
+> Is your server down? I can't access any of your links. Pinging the address
+> doesn't work:
 >
-> Saw your post about building some websites to add to your portfolio. I'd
-> love to have your help in building a website for my guitar instruction
-> business. If possible, let me know what you're offering and I can give you
-> some details on what it is I'm looking for. Thank you for your time.
+> $ ping dvbris.no-ip.org/webDesign/coderqi/browse.html ping: cannot resolve
+> dvbris.no-ip.org/webDesign/coderqi/browse.html: Unknown host
+>
+> $ ping dvbris.no-ip.org/webDesign ping: cannot resolve
+> dvbris.no-ip.org/webDesign: Unknown host
 
 M:
-> Hello, I'll be happy to help you with your website design and any back-end
-> coding you may need, are you planning on selling things on the website or,
-> will it just be static pages? Thanks :)
+> oh dear, yes it looks like it is. Here try thease:
+>
+> http://olls.no-ip.org/webDesign/coderqi/index.html
+>
+> http://olls.no-ip.org/webDesign/coderqi/browse.html
+>
+> http://olls.no-ip.org/webDesign/coderqi/search.html
 
-* * *
+M:
+> Other server back up now too
 
-###Edge_Sharp
-####http://dvbris.no-ip.org/webDesign/Edge_Sharp/
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+### Edge_Sharp - IN PROGRESS
+#### http://dvbris.no-ip.org/webDesign/Edge_Sharp/
 
 C:
 > olls96, are you offering to help design a website? If so, I would really
@@ -524,34 +513,9 @@ M:
 > banner/slider, but you can decide. Tell me what you think of the fonts and 
 > anything you want changing. 
 
-* * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
-###KingMaxx
-
-C:
-> Hi! I saw your post about free website design, was wondering if the offer
-> was still on the table?
-
-M:
-> Yes it is, I've got a few requests I'm working on right now, but I'll add
-> yours in if you want? :)
-
-C:
-> For sure! If you want, you can let me know when you're finished with others
-> and we can talk about it then?
-
-* * *
-
-###ProcrastinatingEddie
-
-C:
-> Hello Olls96,
->
-> Do you have a portfolio of your work?
-
-* * *
-
-###KnashDavis
+### KnashDavis - IN PROGRESS
 
 C:
 > Can you do Wordpress design? My site is hosted using Wordpress software on
@@ -573,43 +537,9 @@ C:
 >
 > I can try and do a design brief if you want.
 
-* * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
-###pluralgarths
-
-C:
-> Hey, I need something basic built in PHP. If you feel comfortable with that
-> (really anything that runs on apache, ruby/python as well) please let me
-> know. Its going to be very basic; image (we have it) some text nicely lined
-> up below a youtube video. Maybe a contact us form that will just forward the
-> information to an email account. Let me know if this is do-able.
->
-> thanks, Garth
-
-M:
-> Yes, that should all be fine, can you give some more detail in what the php
-> will be doing
-
-* * *
-
-###numbers_1
-
-C:
-> Hi there, thank you for the offer. I hope it helps others and you as well to
-> expand your portfolio.
->
-> By any chance can you design a logo? Thanks
-
-M:
-> Unfortunately I'm really rubbish at logos, you could probabky do better than
-> me yourself! Why don't you try posting a request?
-
-C:
-> Alright then. Thanks very much :)
-
-* * *
-
-###Dim360
+### Dim360 - IN PROGRESS
 
 C:
 > We are planning on making a forum about League Of Legends. Would you be
@@ -643,9 +573,25 @@ C:
 > What do you want me exactly to draw? I don't really get you but if you want
 > you can try what you think it's the best. You're the boss!
 
-* * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
-###WizardInABox
+### KingMaxx - QUEUE 
+
+C:
+> Hi! I saw your post about free website design, was wondering if the offer
+> was still on the table?
+
+M:
+> Yes it is, I've got a few requests I'm working on right now, but I'll add
+> yours in if you want? :)
+
+C:
+> For sure! If you want, you can let me know when you're finished with others
+> and we can talk about it then?
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+### WizardInABox - QUEUE
 
 C:
 > My friend and I are starting a custom gaming computer company by the name
@@ -665,17 +611,9 @@ M:
 > If you want to start thinking about layouts etc.. that'll give me something
 > to work off.
 
-* * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
-###tehhnubz
-
-C:
-> Hey! Are you still looking to expand your portfolio? I'm looking for some
-> help with some design!
->
-> Have you got a current portfolio?
-
-###SimpleElegantWebPage
+### SimpleElegantWebPage - QUEUE
 
 C:
 > Hey there,
@@ -707,3 +645,101 @@ M:
 > We'll probably have time in two to three weeks, but it might be longer.
 >
 > Our email address is mail.itsapi@gmail.com
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+### luckydrone - INACTIVE
+
+C:
+> I'm looking for a very simple one page site for Lucky Drone Honey Co. We're
+> just getting started, but I'd like to start getting word out and have a site
+> to expand on as we add products.
+>
+> I put in a request for a logo a few days and got some great replies. I'd
+> like to apply some updates to the logo submitted here but if you'd rather
+> not do logo design, I can work on that and we can stick with what I've
+> gotten so far.
+>
+> I build web applications (Rails) so I could use a photoshop mockup if that's
+> easiest for you. Let me know if you're interested. Thanks!
+
+M:
+> Hi, Sorry for not replying sooner, I missed your message in my inbox :S
+>
+> I'm interested. What sort of style do you want? I'm happy to work from a
+> photoshop mockup if you like.
+>
+> I'm not great at logos, you'd be a lot better off getting someone else to
+> work on that, I'd just butcher it :)
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+### IAmElectricReligion - INACTIVE
+
+C:
+> Greetings olls96,
+>
+> Saw your post about building some websites to add to your portfolio. I'd
+> love to have your help in building a website for my guitar instruction
+> business. If possible, let me know what you're offering and I can give you
+> some details on what it is I'm looking for. Thank you for your time.
+
+M:
+> Hello, I'll be happy to help you with your website design and any back-end
+> coding you may need, are you planning on selling things on the website or,
+> will it just be static pages? Thanks :)
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+### pluralgarths - INACTIVE
+
+C:
+> Hey, I need something basic built in PHP. If you feel comfortable with that
+> (really anything that runs on apache, ruby/python as well) please let me
+> know. Its going to be very basic; image (we have it) some text nicely lined
+> up below a youtube video. Maybe a contact us form that will just forward the
+> information to an email account. Let me know if this is do-able.
+>
+> thanks, Garth
+
+M:
+> Yes, that should all be fine, can you give some more detail in what the php
+> will be doing
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+### ProcrastinatingEddie - NO WORK
+
+C:
+> Hello Olls96,
+>
+> Do you have a portfolio of your work?
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+### numbers_1 - NO WORK
+
+C:
+> Hi there, thank you for the offer. I hope it helps others and you as well to
+> expand your portfolio.
+>
+> By any chance can you design a logo? Thanks
+
+M:
+> Unfortunately I'm really rubbish at logos, you could probabky do better than
+> me yourself! Why don't you try posting a request?
+
+C:
+> Alright then. Thanks very much :)
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+### tehhnubz - NO WORK
+
+C:
+> Hey! Are you still looking to expand your portfolio? I'm looking for some
+> help with some design!
+>
+> Have you got a current portfolio?
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 

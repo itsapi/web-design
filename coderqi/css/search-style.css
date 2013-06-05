@@ -3,7 +3,6 @@ header {
 }
 	#title {
 		width: 150px;
-		padding: 10px;
 		text-align: center;
 		display: inline-block;
 		position: relative;
@@ -83,8 +82,8 @@ header {
 		}
 			#results li {
 				min-height: 80px;
-				margin: 20px 0;
-				padding: 5px;
+				margin: 10px 0;
+				padding: 10px;
 			}
 			#results li:hover {
 				background-color: #f7f7f7;
@@ -172,7 +171,7 @@ footer {
 	}
 		aside > ul {
 		}
-			aside > ul li {
+			aside > ul > li {
 				background-color: rgba(150, 150, 150, 0.5);
 				margin: 7px 0;
 				margin-right: 10px;
@@ -180,13 +179,19 @@ footer {
 				-moz-border-radius: 2px;
 				border-radius: 2px;
 			}
-			aside > ul li:hover {
+			aside > ul > li:hover {
 				background-color: rgba(150, 150, 150, 0.2);
 			}
-				aside > ul a {
+				aside > ul > li > a {
 					display: block;
 					padding: 7px;
 				}
+				aside ul ul {
+					margin: 0 0 10px 0;
+				}
+					aside .selected {
+						font-weight: 700;
+					}
 	.main {
 		border: none;
 		margin: 20px 20px 20px 0px;
