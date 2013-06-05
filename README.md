@@ -547,6 +547,13 @@ M:
 > layout, colour scheme, or any other websites look similar to what you want,
 > that will be enough to get going, then we can change things from there.
 
+C:
+> Well we're running a geek culture news website. Our color scheme is blue and
+> white currently. We're on Wordpress can you do that?
+
+C:
+> Oh whoops. I think you said you could. Sorry early morning here. xD
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### Dim360 - IN PROGRESS
