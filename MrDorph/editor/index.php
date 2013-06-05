@@ -10,6 +10,7 @@
 	ini_set('display_errors', 1);
 	
 	$loggedIn = 0;
+	$message = '';
 	$username = "admin";
 	$password = file_get_contents('passwd.md5');
 
@@ -21,9 +22,51 @@
 			$loggedIn = 1;
 			setcookie("loginEditor", 1);
 		} else {
-		echo "Username or password was incorrect.";
+		$message .= "Username or password was incorrect.";
 		}
 	}
+	if (isset($_POST['newFile'])) {
+		$editFile = 1;
+	}
+	if (isset($_POST['entry'])) {
+		if (file_exists($_POST['entry'])) {
+			$fileContents = file_get_contents($_POST['entry']);				
+		} else {
+			$fileContents = file_get_contents('template.html');
+		}
+		$contentSplit = explode('<!--content-->', $fileContents);
+		$titleSplit = explode('<title>', $fileContents);
+		$titleSplit = [$titleSplit[0], explode('</title>', $titleSplit[1])[0]];
+		$html = [$titleSplit[0], $titleSplit[1], explode('</title>', $contentSplit[0])[1], $contentSplit[1], $contentSplit[2]];
+	}
+	if (isset($_POST['save'])) {
+		if (($_POST['title']) && ($_POST['fileContents'])) {
+			$contents = $html[0] . '<title>' . $_POST['title'] . '</title>' . $html[2] . "<!--content-->\n" . $_POST['fileContents'] . '<!--content-->' . $html[4];
+			if (file_put_contents($_POST['entry'], $contents)) {
+				$message .= 'File saved successfully';
+			} else {
+				$message .= 'File save failed';
+				$editFile = 1;
+			}
+		} else {
+			$message .= 'Title and file contents cannot be empty';
+			$editFile = 1;
+		}
+		header('location:' . $_SERVER['PHP_SELF']);
+	}
+	if (isset($_POST['deleteFile'])) {
+		unlink($_POST['entry']);
+		header('location:' . $_SERVER['PHP_SELF']);
+	}
+	if (isset($_FILES['file']['name'])) {
+		if (!$_FILES['file']['error']) {
+			move_uploaded_file($_FILES['file']['tmp_name'], '../media/'.strtolower($_FILES['file']['name']));
+			$message .= 'File successfully uploaded';
+		} else {
+			$message .= 'Ooops!  Your upload triggered the following error:  '.$_FILES['file']['error'];
+		}
+	}
+
 	if ($loggedIn) {
 ?>
 		<h1>Welcome to the wepage editor</h1>
@@ -42,7 +85,7 @@
 				<form method="post">
 					<input type="submit" value="Edit" name="editFile">
 					<input type="submit" value="Delete" name="deleteFile">
-					<input type="text" value="<?=$entry?>" name="entry" hidden>
+					<input type="text" value="../<?=$entry?>" name="entry" hidden>
 				</form>
 			</li>
 <?
@@ -63,17 +106,17 @@
 			<ul>
 <?
 			while ($entry = readdir($handle)) {
-				// if (preg_match("/\.(html)$/", $entry)) {
+				if ($entry != '.' && $entry != '..') {
 ?>
 			<li>
-				<a href="../<?=$entry?>" target="_blank"><?=$entry?></a>
-				<!-- <form method="post">
-					<input type="submit" value="Edit" name="edit">
-					<input type="text" value="<?=$entry?>" name="entry" hidden>
-				</form> -->
+				<a href="../media/<?=$entry?>" target="_blank"><?=$entry?></a>
+				<form method="post">
+					<input type="submit" value="Delete" name="deleteFile">
+					<input type="text" value="../media/<?=$entry?>" name="entry" hidden>
+				</form>
 			</li>
 <?
-				// }
+				}
 			}
 ?>
 			</ul>
@@ -81,45 +124,16 @@
 			closedir($handle);
 		}
 ?>
+			<form method="post" enctype="multipart/form-data">
+				Upload media file: <input type="file" name="file">
+				<input type="submit" name="submit" value="Upload File">
+			</form>
 			<form method="post">
 				<label>New file: <input type="text" name="entry"></label>
 				<input type="submit" name="newFile" value="Create file">
 			</form>
 		</section>
 <?
-		if (isset($_POST['newFile'])) {
-			$editFile = 1;
-		}
-		if (isset($_POST['entry'])) {
-			if (file_exists('../' . $_POST['entry'])) {
-				$fileContents = file_get_contents('../' . $_POST['entry']);				
-			} else {
-				$fileContents = file_get_contents('template.html');
-			}
-			$contentSplit = explode('<!--content-->', $fileContents);
-			$titleSplit = explode('<title>', $fileContents);
-			$titleSplit = [$titleSplit[0], explode('</title>', $titleSplit[1])[0]];
-			$html = [$titleSplit[0], $titleSplit[1], explode('</title>', $contentSplit[0])[1], $contentSplit[1], $contentSplit[2]];
-		}
-		if (isset($_POST['save'])) {
-			if (($_POST['title']) && ($_POST['fileContents'])) {
-				$contents = $html[0] . '<title>' . $_POST['title'] . '</title>' . $html[2] . "<!--content-->\n" . $_POST['fileContents'] . '<!--content-->' . $html[4];
-				if (file_put_contents('../' . $_POST['entry'], $contents)) {
-					echo 'File saved successfully';
-				} else {
-					echo 'File save failed';
-					$editFile = 1;
-				}
-			} else {
-				echo 'Title and file contents cannot be empty';
-				$editFile = 1;
-			}
-			header('location:' . $_SERVER['PHP_SELF']);
-		}
-		if (isset($_POST['deleteFile'])) {
-			unlink('../' . $_POST['entry']);
-			header('location:' . $_SERVER['PHP_SELF']);
-		}
 		if (isset($_POST['editFile']) || isset($editFile)) {
 ?>
 		<div>
@@ -143,6 +157,7 @@
 		</form>
 <?php
 	}
+	echo $message;
 ?>
 
 	
