@@ -423,6 +423,34 @@ M:
 > what do you think of the style? Is it what you were going for or have I got
 > it wrong?
 
+M:
+> I've done the browse and search pages now too:
+>
+> http://dvbris.no-ip.org/webDesign/coderqi/browse.html
+>
+> http://dvbris.no-ip.org/webDesign/coderqi/search.html
+>
+> What do you think? Anything I've missed/done wrong?
+
+C:
+> Is your server down? I can't access any of your links. Pinging the address
+> doesn't work:
+>
+> $ ping dvbris.no-ip.org/webDesign/coderqi/browse.html ping: cannot resolve
+> dvbris.no-ip.org/webDesign/coderqi/browse.html: Unknown host
+>
+> $ ping dvbris.no-ip.org/webDesign ping: cannot resolve
+> dvbris.no-ip.org/webDesign: Unknown host
+
+M:
+> oh dear, yes it looks like it is. Here try thease:
+>
+> http://olls.no-ip.org/webDesign/coderqi/index.html
+>
+> http://olls.no-ip.org/webDesign/coderqi/browse.html
+>
+> http://olls.no-ip.org/webDesign/coderqi/search.html
+
 * * *
 
 ###IAmElectricReligion
