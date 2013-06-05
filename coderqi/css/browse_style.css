@@ -18,7 +18,7 @@
 	}
 
 header {
-	width: 100%;
+	width: 25%;
 	text-align: center;
 	margin: 0 auto;
 	margin-top: -25px;
@@ -29,12 +29,12 @@ header {
 	}
 	header img {
 		width: 100%;
-		max-width: 150px;
+		max-width: 232px;
 	}
 	header p {
 		margin: 0 auto;
 		width: 100%;
-		max-width: 150px;
+		max-width: 232px;
 		margin-top: -10px;
 		color: #888;
 		font-size: 0.7em;
@@ -49,5 +49,6 @@ header {
 @media all and (max-width: 660px) {
 	header {
 		margin-top: 0;
+		width: 50%;
 	}
 }
