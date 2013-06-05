@@ -537,6 +537,16 @@ C:
 >
 > I can try and do a design brief if you want.
 
+M:
+> Hello, sorry for taking a while to get back to you, I've been busy with
+> other reddit website requests!
+>
+> We have some time to do your website now.
+>
+> A design brief won't be necessary, if you just give us an idea of the
+> layout, colour scheme, or any other websites look similar to what you want,
+> that will be enough to get going, then we can change things from there.
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### Dim360 - IN PROGRESS
