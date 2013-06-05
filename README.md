@@ -426,6 +426,9 @@ M:
 >
 > http://olls.no-ip.org/webDesign/coderqi/search.html
 
+M:
+> Other server back up now too
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### Edge_Sharp - IN PROGRESS
