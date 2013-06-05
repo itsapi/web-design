@@ -628,6 +628,10 @@ M:
 > If you want to start thinking about layouts etc.. that'll give me something
 > to work off.
 
+C:
+> Okay, great. Thanks for the reply. I will start coming up with some layout
+> possibilities.
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### SimpleElegantWebPage - QUEUE
