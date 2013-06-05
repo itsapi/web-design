@@ -175,18 +175,6 @@
 ?>
 		<div>
 			<h3>Edit file:</h3>
-			<form name="">
-				<input type="submit" value="" name="">
-				<input type="submit" value="" name="">
-				<input type="submit" value="" name="">
-				<input type="submit" value="" name="">
-				<input type="submit" value="" name="">
-				<input type="submit" value="" name="">
-				<input type="submit" value="" name="">
-				<input type="submit" value="" name="">
-				<input type="submit" value="" name="">
-				<input type="submit" value="" name="">
-			</form>
 			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 				<label>Page title<input type="text" name="title" value="<?=$html[1]?>"></label>
 				<textarea name="fileContents"><?=$html[3]?></textarea>
