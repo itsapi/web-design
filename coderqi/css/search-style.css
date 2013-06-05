@@ -3,7 +3,6 @@ header {
 }
 	#title {
 		width: 150px;
-		padding: 10px;
 		text-align: center;
 		display: inline-block;
 		position: relative;
@@ -83,8 +82,8 @@ header {
 		}
 			#results li {
 				min-height: 80px;
-				margin: 20px 0;
-				padding: 5px;
+				margin: 10px 0;
+				padding: 10px;
 			}
 			#results li:hover {
 				background-color: #f7f7f7;
