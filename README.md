@@ -612,6 +612,17 @@ M:
 > banner/slider, but you can decide. Tell me what you think of the fonts and 
 > anything you want changing. 
 
+C:
+> This is great!! I have a few thoughts but I am currently away on a trip and
+> won't be back until Saturday. I will send you a more detailed message when I
+> return. That said, olls96, would you mind if I ask your real name? My name
+> is Michael.
+
+M:
+> Awesome! I'm glad you like it, I can wait a few days for your critique :)
+>
+> My name is Oliver, Hello Micheal!
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### KnashDavis - IN PROGRESS
