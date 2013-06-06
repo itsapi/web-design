@@ -73,6 +73,15 @@ nav a:hover {
 	-moz-box-shadow:    0 0 10px rgba(50, 50, 50, 1);
 	box-shadow:         0 0 10px rgba(50, 50, 50, 1);
 }
+a {
+	color: #777;
+	text-decoration: none;
+	border-bottom: 1px solid #777;
+}
+a:hover {
+	color: #fff;
+	border-bottom: 1px dotted #fff;
+}
 #content {
 	margin: 0 10px 100px 10px;
 }
@@ -156,12 +165,6 @@ footer {
 }
 footer p {
 	margin: 10px 0;
-}
-footer a {
-	color: #000;
-}
-footer a:hover {
-	color: #fff;
 }
 
 @media screen and (min-width: 801px) {
