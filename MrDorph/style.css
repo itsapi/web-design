@@ -83,6 +83,15 @@ nav a:hover {
 #content > section:first-child {
 	margin: 0;
 }
+#slider-holder {
+	height: 350px;
+}
+.anythingSlider {
+	padding: 0;
+}
+#content img {
+	max-width: 100%;
+}
 
 footer {
 	text-align: center;
