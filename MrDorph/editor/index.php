@@ -5,7 +5,7 @@
 		<title>Editor</title>
 	</head>
 	<body>
-<?php
+<?
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
 
@@ -62,10 +62,6 @@
 		} else {
 			$fileContents = file_get_contents('template.html');
 		}
-		// $contentSplit = explode('<!--content-->', $fileContents);
-		// $titleSplit = explode('<title>', $fileContents);
-		// $titleSplit = [$titleSplit[0], explode('</title>', $titleSplit[1])[0]];
-		// $html = [$titleSplit[0], $titleSplit[1], explode('</title>', $contentSplit[0])[1], $contentSplit[1], $contentSplit[2]];
 		$html = [
 				 explode('<title>', $fileContents)[0], // START ~~> <title>
 				 explode('</title>', explode('<title>', $fileContents)[1])[0], // title
@@ -184,12 +180,58 @@
 		<section>
 			<h3>Edit file:</h3>
 			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-				<label>Page title<input type="text" name="title" value="<?=$html[1]?>"></label>
+				<label>Page title: <input type="text" name="title" value="<?=$html[1]?>"></label>
 				<textarea name="fileContents" cols="60" rows="20"><?=$html[4]?></textarea>
 				<input type="text" value="<?=$_REQUEST['entry']?>" name="entry" hidden>
 				<input type="submit" name="save" value="Save file">
 				<input type="submit" value="Close">
 			</form>
+			<div id="snippets">
+				<h4>Image:</h4>
+				<pre class="code" title="Image">
+&lt;img src="Enter URL of image here" alt="Enter image description here"&gt;
+</pre>
+				<h4>Link:</h4>
+				<pre class="code" title="Link">
+&lt;a href="Enter link URL here"&gt;Enter text to be displayed here&lt;/a&gt;
+</pre>
+				<h4>Section:</h4>
+				<pre class="code" title="Section">
+&lt;section&gt;
+	Enter content of section here
+&lt;/section&gt;
+</pre>
+				<h4>Heading:</h4>
+				<pre class="code" title="Heading">
+&lt;h3&gt;Enter heading content here&lt;/h3&gt;
+</pre>
+				<h4>Secondary Heading:</h4>
+				<pre class="code" title="Secondary heading">
+&lt;h4&gt;Enter heading content here&lt;/h4&gt;
+</pre>
+				<h4>Paragraph:</h4>
+				<pre class="code" title="Paragraph">
+&lt;p&gt;Enter paragraph content here&lt;/p&gt;
+</pre>
+				<h4>Bold Text:</h4>
+				<pre class="code" title="Bold">
+&lt;b&gt;Enter text to be bold here&lt;/b&gt;
+</pre>
+				<h4>Ordered List:</h4>
+				<pre class="code" title="Ordered List">
+&lt;ol&gt;
+	&lt;li&gt;Enter list item here&lt;/li&gt;
+	&lt;li&gt;Enter list item here&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+				<h4>Unordered List:</h4>
+				<pre class="code" title="Unordered List">
+&lt;ul&gt;
+	&lt;li&gt;Enter list item here&lt;/li&gt;
+	&lt;li&gt;Enter list item here&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+			</div>
 		</section>
 <?
 		}
@@ -200,10 +242,9 @@
 			Password: <input type="password" name="password" />
 			<input type='submit' name='login' />
 		</form>
-<?php
+<?
 	}
 	echo $message;
-	$message = '';
 ?>
 	</body>
 </html>
