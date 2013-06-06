@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>title</title>
+
+		<link rel="stylesheet" href="anythingslider.css">
+		<link rel="stylesheet" href="typeplate-unminified.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquery.anythingslider.js"></script>
+		<script>
+			function resizeSlider() {
+				$('#slider-holder').css('height', ($('#slider-holder').width()*0.365)+'px')
+			}
+			$(document).ready(function() {
+				$(window).resize(resizeSlider);
+				resizeSlider();
+				$(function() {
+					$('#slider').anythingSlider({
+						expand: true,
+						hashTags: false,
+
+						autoPlay: true,
+						delay: 5000
+					});
+				});
+			});
+		</script>
+
+	</head>
+	<body>
+		<header>
+			<h1>ENGLISH ARMOURED BRIGADE</h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="index.html">Welcome</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="news.html">News</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+				<li><a href="#">Forum</a></li>
+				<li><a href="downloads.html">Downloads</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+		<div id="content">
+		<!--content-->
+<section id="slider-holder">
+	<ul id="slider">
+		<li><img src="http://placehold.it/960x350" alt="" /></li>
+		<li><img src="http://placebear.com/960/350" alt="" /></li>
+		<li><img src="http://lorempixel.com/960/350" alt="" /></li>
+		<li><iframe src="http://www.youtube.com/embed/dNJdJIwCF_Y" frameborder="0" allowfullscreen></iframe></li>
+	</ul>
+</section>
+		<!--content-->
+		</div>
+		<footer>
+			<p>Copyright &copy; 2013</p>
+			<p>Designed and built by <a href="dvbris.no-ip.org">Dvbris Web Design</a></p>
+		</footer>
+	</body>
+</html>
