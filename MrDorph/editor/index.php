@@ -77,7 +77,7 @@
 	}
 	if (isset($_REQUEST['save'])) {
 		if (($_REQUEST['title']) && ($_REQUEST['fileContents'])) {
-			$contents = $html[0] . '<title>' . $_REQUEST['title'] . '</title>' . $html[2] . "<!--content-->\n" . $_REQUEST['fileContents'] . '<!--content-->' . $html[4];
+			$contents = $html[0] . '<title>' . $_REQUEST['title'] . '</title>' . $html[2] . '<section><h2>' . $_REQUEST['title'] . "</h2></section><!--content-->\n" . $_REQUEST['fileContents'] . '<!--content-->' . $html[5];
 			if (file_put_contents($_REQUEST['entry'], $contents)) {
 				$message .= 'File saved successfully';
 			} else {
@@ -185,7 +185,7 @@
 			<h3>Edit file:</h3>
 			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 				<label>Page title<input type="text" name="title" value="<?=$html[1]?>"></label>
-				<textarea name="fileContents"><?=$html[3]?></textarea>
+				<textarea name="fileContents" cols="60" rows="20"><?=$html[4]?></textarea>
 				<input type="text" value="<?=$_REQUEST['entry']?>" name="entry" hidden>
 				<input type="submit" name="save" value="Save file">
 				<input type="submit" value="Close">
