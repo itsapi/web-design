@@ -21,24 +21,24 @@
 	if (isset($_COOKIE["loginEditor"])) {
 		$loggedIn = 1;
 	}
-	if (isset($_POST['login'])) {
-		 if($_POST['username'] == $username && md5($_POST['password']) == $password) {
+	if (isset($_REQUEST['login'])) {
+		 if($_REQUEST['username'] == $username && md5($_REQUEST['password']) == $password) {
 			$loggedIn = 1;
 			setcookie("loginEditor", 1);
 		} else {
 		$message .= "Username or password was incorrect";
 		}
 	}
-	if (isset($_POST['logout'])) {
+	if (isset($_REQUEST['logout'])) {
 		setcookie("loginEditor", '', time()-10);
 		$loggedIn = 0;
 		$message .= "Logged out successfully";
 	}
-	if (isset($_POST['changePass'])) {
-		if ($_POST['oldPass'] && $_POST['newPass'] && $_POST['verifyPass']) {
-			if (md5($_POST['oldPass']) == file_get_contents('passwd.md5')) {
-				if ($_POST['newPass'] == $_POST['verifyPass']) {
-					if (file_put_contents('passwd.md5', md5($_POST['newPass']))) {
+	if (isset($_REQUEST['changePass'])) {
+		if ($_REQUEST['oldPass'] && $_REQUEST['newPass'] && $_REQUEST['verifyPass']) {
+			if (md5($_REQUEST['oldPass']) == file_get_contents('passwd.md5')) {
+				if ($_REQUEST['newPass'] == $_REQUEST['verifyPass']) {
+					if (file_put_contents('passwd.md5', md5($_REQUEST['newPass']))) {
 						$message .= 'Password changed successfully';
 					} else {
 						$message .= 'Password change failed';
@@ -53,8 +53,8 @@
 			$message .= 'Fields cannot be left blank';
 		}
 	}
-	if (isset($_POST['newFile'])) {
-		$editFile = 1;
+	if (isset($_REQUEST['newFile'])) {
+		header('location:' . $_SERVER['PHP_SELF'] . '?editFile&entry=../' . $_REQUEST['entry'] . '&msg=' . $message);
 	}
 	if (isset($_REQUEST['entry'])) {
 		if (file_exists($_REQUEST['entry'])) {
@@ -75,9 +75,9 @@
 				 explode('<!--content-->', $fileContents)[2] // <!--content--> ~~> END
 		];
 	}
-	if (isset($_POST['save'])) {
-		if (($_POST['title']) && ($_POST['fileContents'])) {
-			$contents = $html[0] . '<title>' . $_POST['title'] . '</title>' . $html[2] . '<section><h2>' . $_POST['title'] . "</h2></section><!--content-->\n" . $_POST['fileContents'] . '<!--content-->' . $html[5];
+	if (isset($_REQUEST['save'])) {
+		if (($_REQUEST['title']) && ($_REQUEST['fileContents'])) {
+			$contents = $html[0] . '<title>' . $_REQUEST['title'] . '</title>' . $html[2] . "<!--content-->\n" . $_REQUEST['fileContents'] . '<!--content-->' . $html[4];
 			if (file_put_contents($_REQUEST['entry'], $contents)) {
 				$message .= 'File saved successfully';
 			} else {
@@ -88,8 +88,8 @@
 		}
 		header('location:' . $_SERVER['PHP_SELF'] . '?editFile&entry=' . $_REQUEST['entry'] . '&msg=' . $message);
 	}
-	if (isset($_POST['deleteFile'])) {
-		unlink($_POST['entry']);
+	if (isset($_REQUEST['deleteFile'])) {
+		unlink($_REQUEST['entry']);
 		header('location:' . $_SERVER['PHP_SELF'] . '?msg=' . $message);
 	}
 	if (isset($_FILES['file']['name'])) {
@@ -106,7 +106,7 @@
 		<h1>Welcome to the wepage editor</h1>
 		<section>
 			<h3>Settings:</h3>
-			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+			<form action="<?=$_SERVER['PHP_SELF']?>" method="REQUEST">
 				<h4>Change password:</h4>
 				<label>Old password: <input type="password" name="oldPass"></label>
 				<label>New password: <input type="password" name="newPass"></label>
@@ -185,8 +185,8 @@
 			<h3>Edit file:</h3>
 			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 				<label>Page title<input type="text" name="title" value="<?=$html[1]?>"></label>
-				<textarea name="fileContents" cols="60" rows="20"><?=$html[4]?></textarea>
-				<input type="text" value="<?=$_POST['entry']?>" name="entry" hidden>
+				<textarea name="fileContents"><?=$html[3]?></textarea>
+				<input type="text" value="<?=$_REQUEST['entry']?>" name="entry" hidden>
 				<input type="submit" name="save" value="Save file">
 				<input type="submit" value="Close">
 			</form>
