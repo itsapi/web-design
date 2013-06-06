@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -62,14 +62,22 @@
 		} else {
 			$fileContents = file_get_contents('template.html');
 		}
-		$contentSplit = explode('<!--content-->', $fileContents);
-		$titleSplit = explode('<title>', $fileContents);
-		$titleSplit = [$titleSplit[0], explode('</title>', $titleSplit[1])[0]];
-		$html = [$titleSplit[0], $titleSplit[1], explode('</title>', $contentSplit[0])[1], $contentSplit[1], $contentSplit[2]];
+		// $contentSplit = explode('<!--content-->', $fileContents);
+		// $titleSplit = explode('<title>', $fileContents);
+		// $titleSplit = [$titleSplit[0], explode('</title>', $titleSplit[1])[0]];
+		// $html = [$titleSplit[0], $titleSplit[1], explode('</title>', $contentSplit[0])[1], $contentSplit[1], $contentSplit[2]];
+		$html = [
+				 explode('<title>', $fileContents)[0], // START ~~> <title>
+				 explode('</title>', explode('<title>', $fileContents)[1])[0], // title
+				 explode('<section><h2>', explode('</title>', $fileContents)[1])[0], // </title> ~~> <section><h2>
+				 explode('</section></h2>', explode('<section><h2>', $fileContents)[1])[0], // heading
+				 explode('<!--content-->', $fileContents)[1], // content
+				 explode('<!--content-->', $fileContents)[2] // <!--content--> ~~> END
+		];
 	}
 	if (isset($_POST['save'])) {
 		if (($_POST['title']) && ($_POST['fileContents'])) {
-			$contents = $html[0] . '<title>' . $_POST['title'] . '</title>' . $html[2] . "<!--content-->\n" . $_POST['fileContents'] . '<!--content-->' . $html[4];
+			$contents = $html[0] . '<title>' . $_POST['title'] . '</title>' . $html[2] . '<section><h2>' . $_POST['title'] . "</h2></section><!--content-->\n" . $_POST['fileContents'] . '<!--content-->' . $html[5];
 			if (file_put_contents($_REQUEST['entry'], $contents)) {
 				$message .= 'File saved successfully';
 			} else {
@@ -177,7 +185,7 @@
 			<h3>Edit file:</h3>
 			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 				<label>Page title<input type="text" name="title" value="<?=$html[1]?>"></label>
-				<textarea name="fileContents"><?=$html[3]?></textarea>
+				<textarea name="fileContents" cols="60" rows="20"><?=$html[4]?></textarea>
 				<input type="text" value="<?=$_POST['entry']?>" name="entry" hidden>
 				<input type="submit" name="save" value="Save file">
 				<input type="submit" value="Close">
