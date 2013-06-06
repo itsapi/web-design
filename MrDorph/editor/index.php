@@ -3,6 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Editor</title>
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../typeplate-unminified.css">
 	</head>
 	<body>
 <?
@@ -137,10 +140,6 @@
 <?
 			closedir($handle);
 		}
-?>
-		</section>
-		<section>
-<?
 		if ($handle = opendir('../media')) {
 ?>
 			<h3>Media:</h3>
@@ -182,65 +181,87 @@
 			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 				<label>Page title: <input type="text" name="title" value="<?=$html[1]?>"></label>
 				<textarea name="fileContents" cols="60" rows="20"><?=$html[4]?></textarea>
-				<input type="text" value="<?=$_REQUEST['entry']?>" name="entry" hidden>
+				<input type="text" value="<?=$_REQUEST['entry']?>" name="entry" hidden><br>
 				<input type="submit" name="save" value="Save file">
 				<input type="submit" value="Close">
 			</form>
-			<div id="snippets">
-				<h4>Image:</h4>
-				<pre class="code" title="Image">
+		</section>
+		<section>
+			<h4>Image:</h4>
+			<pre class="code" title="Image">
 &lt;img src="Enter URL of image here" alt="Enter image description here"&gt;
 </pre>
-				<h4>Link:</h4>
-				<pre class="code" title="Link">
+			<h4>Link:</h4>
+			<pre class="code" title="Link">
 &lt;a href="Enter link URL here"&gt;Enter text to be displayed here&lt;/a&gt;
 </pre>
-				<h4>Section:</h4>
-				<pre class="code" title="Section">
+			<h4>Section:</h4>
+			<pre class="code" title="Section">
 &lt;section&gt;
 	Enter content of section here
 &lt;/section&gt;
 </pre>
-				<h4>Heading:</h4>
-				<pre class="code" title="Heading">
+			<h4>Heading:</h4>
+			<pre class="code" title="Heading">
 &lt;h3&gt;Enter heading content here&lt;/h3&gt;
 </pre>
-				<h4>Secondary Heading:</h4>
-				<pre class="code" title="Secondary heading">
+			<h4>Secondary Heading:</h4>
+			<pre class="code" title="Secondary heading">
 &lt;h4&gt;Enter heading content here&lt;/h4&gt;
 </pre>
-				<h4>Paragraph:</h4>
-				<pre class="code" title="Paragraph">
+			<h4>Paragraph:</h4>
+			<pre class="code" title="Paragraph">
 &lt;p&gt;Enter paragraph content here&lt;/p&gt;
 </pre>
-				<h4>Bold Text:</h4>
-				<pre class="code" title="Bold">
+			<h4>Bold Text:</h4>
+			<pre class="code" title="Bold">
 &lt;b&gt;Enter text to be bold here&lt;/b&gt;
 </pre>
-				<h4>Ordered List:</h4>
-				<pre class="code" title="Ordered List">
+			<h4>Ordered List:</h4>
+			<pre class="code" title="Ordered List">
 &lt;ol&gt;
 	&lt;li&gt;Enter list item here&lt;/li&gt;
 	&lt;li&gt;Enter list item here&lt;/li&gt;
 &lt;/ol&gt;
 </pre>
-				<h4>Unordered List:</h4>
-				<pre class="code" title="Unordered List">
+			<h4>Unordered List:</h4>
+			<pre class="code" title="Unordered List">
 &lt;ul&gt;
 	&lt;li&gt;Enter list item here&lt;/li&gt;
 	&lt;li&gt;Enter list item here&lt;/li&gt;
 &lt;/ul&gt;
 </pre>
+			<h4>Abbreviation:</h4>
+			<pre class="code" title="Abbreviation">
+&lt;abbr title="enter expanded phrase here"&gt;Enter abbreviation here&lt;/abbr&gt;
+</pre>
 			</div>
+			<h4>Blockquote:</h4>
+			<pre class="code" title="Blockquote">
+&lt;blockquote cite="Enter author's name here"&gt;
+	&lt;p&gt;&Prime;Enter quote here&Prime;&lt;/p&gt;
+	&lt;cite&gt;
+		&lt;small&gt;&lt;a href="Enter authour's URL here"&gt;Enter author's name here&lt;/a&gt;&lt;/small&gt;
+	&lt;/cite&gt;
+&lt;/blockquote&gt;
+</pre>
+			<h4>Pull Quote:</h4>
+			<pre class="code" title="Pull Quote">
+&lt;aside class="pull-quote"&gt;
+	&lt;blockquote&gt;
+		&lt;p&gt;Enter quote here&lt;/p&gt;
+	&lt;/blockquote&gt;
+&lt;/aside&gt;
+</pre>
 		</section>
 <?
 		}
 	} else {
 ?>
 		<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-			Username: <input type="text" name="username" /><br />
-			Password: <input type="password" name="password" />
-			<input type='submit' name='login' />
+			<label>Username: <input type="text" name="username"></label>
+			<label>Password: <input type="password" name="password"></label>
+			<input type="submit" name="login" value="Login">
 		</form>
 <?
 	}
