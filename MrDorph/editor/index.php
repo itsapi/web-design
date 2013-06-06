@@ -181,7 +181,7 @@
 <?
 		if (isset($_REQUEST['editFile'])) {
 ?>
-		<div>
+		<section>
 			<h3>Edit file:</h3>
 			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 				<label>Page title<input type="text" name="title" value="<?=$html[1]?>"></label>
@@ -190,7 +190,7 @@
 				<input type="submit" name="save" value="Save file">
 				<input type="submit" value="Close">
 			</form>
-		</div>
+		</section>
 <?
 		}
 	} else {
