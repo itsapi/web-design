@@ -251,7 +251,106 @@ C:
 M:
 > Opps, didnt update the online version, navigation should be right now.
 
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+C:
+> hello, bit of an update for you, still no logo i'm afraid but soon
+> hopefully.
+>
+> We would like the welcome page message to be this:-
+>
+> "This website is for EAB members to keep up with scheduled events, post
+> comments to other clan members and generally gain as much information as you
+> can.
+>
+> EAB is English speaking and over 16's only!
+>
+> the english armoured brigade is a clan, of which members are associated with
+> world of tanks. We are a community of players who share a common love of pc
+> games and tanks. we strive to gain success in matches and to make our named
+> noticed among the world of tanks community."
+>
+> With a link at the bottom, like a button thing, saying new recruits which
+> will the redirect them to a sign up page to create a log in and what not.
+>
+> Change the about page to Info and then to read this :-
+>
+> "TEAMSPEAK Firstly, our Teamspeak server has been created for the use of EAB
+> members, its for our clan to use for the use of improving platoon games and
+> for us all to gather in the lobby and talk about WOT and to get to know each
+> other. Those who shy away from teamspeak and dont get involved will have no
+> future. Teamspeak will be our key to tactics on the battlefield in clan
+> matches and clan wars, so please lets all get to know each other and use it
+> to our advantage when going out in platoon games and training! Talking to
+> each other is also key to learning from one another and discussing tanks and
+> tech tree routes, We all have different knowledge of tanks and tech tree
+> routes so lets share them.
+>
+> BATTLE TACTICS AND STRUCTURE Just let me explain our structure in our
+> proposed clan battles (tank companies), Having discussed this with our Field
+> commanders we have come up with a basic battle proposal. Every match will
+> consist of platoons. Every platoon will have a field commander made up with
+> a soldier and/or recruit. The field commander of every platoon will take
+> responsability of each platoon and make immediate decisions, however at the
+> beginning of every match every platoon will be assigned a general order and
+> task, this order will be issued by the acting commander in charge of that
+> match! All communication on teamspeak will take place between the acting
+> Commander and Field commanders to keep communication clearer and to a
+> minimum.
+>
+> EARLY BATTLES In these early stages of tank companies we have found that
+> only a certain number of tanks win matches on a regular basis. Firstly, the
+> only tier 6 heavy which dominates the match is the KV1S. The only tank which
+> is a valuable support tank is the Hellcat, and The fastest tier 4 scout is
+> the T50. Tier4 artillery is whichever a player wishes to use. These tanks
+> are the best line-up for winning tank companies, and we will have to apply a
+> system to suite when we go up to the next tank company level. So please can
+> all players keep those tanks in their garage for assisting the team in Tank
+> companies.
+>
+> TANKS So from what you can see you can get a good idea of what tanks you may
+> need to be looking at as we progress, however we do understand that others
+> will want to play with tank destroyers and light tanks here and there in
+> Platoon games, this is fine, at the end of the day nobody can stop you
+> heading for tanks for your own personal agenda, Platoon games are for fun
+> and to get used to playing with each other.
+>
+>TRAINING Before we organise a tank company battle, we will be heading into 
+> the training room for a quick recap on the system and get used to gathering
+> into our correct platoons, and also for receiving orders etc. Also training
+> matches will be organised everfy now and again to improve our game play
+>
+> CLAN WARS! A quick section about clan wars. We should consider entering clan
+> wars when we have at least 20 members (but more will be ideal) who have tier
+> 8 and above tanks (tier9 and 10 are really essential to winning battles). So
+> i would probably estimate that with the regular people we have gaming at the
+> moment, and knowing what tanks we have, i would put a date on October to
+> Christmas time before we have the men and tanks to attack a province on the
+> clan wars map! This might seem a long way away but we have to look at it
+> intelligently. Its the numbers of regular players with high tier tanks that
+> we need! So those of you with 5's and 6's you need to get cracking if you
+> want to be on the front line!
+>
+> PREMIUM ACCOUNT Just a short note to people who dont have premium account, i
+> know its 9 quid a month but if you can manage it every now and again i
+> highly recommend it, Its much quicker up the tech tree! But i do understand
+> if you cant manage it!
+>
+> PROMOTIONS Promotions will happen regularly to people who use teamspeak and
+> put 100 percent into platoon games. However, to become a field commander you
+> must show real skill and leadership in the game, being able to make the
+> right decisions for your platoon, and even being able to bark out orders.
+> Myself and the other commanders do check how people play and we are
+> constantly looking for the players who show these abilities! So if you think
+> you can become a field commander, then show us.
+>
+> INFO Information will posted on this website, either on the forum or in the
+> schedule battle section (calander) so please check regularly for updates.
+>
+> Thanks for reading and if you have any suggestions then please feel free to
+> email me or speak to me on Teamspeak, Regards, Rokossovsky."
+>
+> How is everything else going? the forum and gallery and what not?
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  
 
 ### coderqi - IN PROGRESS
 #### http://olls.no-ip.org/webDesign/coderqi/index.html
@@ -513,6 +612,17 @@ M:
 > banner/slider, but you can decide. Tell me what you think of the fonts and 
 > anything you want changing. 
 
+C:
+> This is great!! I have a few thoughts but I am currently away on a trip and
+> won't be back until Saturday. I will send you a more detailed message when I
+> return. That said, olls96, would you mind if I ask your real name? My name
+> is Michael.
+
+M:
+> Awesome! I'm glad you like it, I can wait a few days for your critique :)
+>
+> My name is Oliver, Hello Micheal!
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### KnashDavis - IN PROGRESS
@@ -627,6 +737,10 @@ M:
 >
 > If you want to start thinking about layouts etc.. that'll give me something
 > to work off.
+
+C:
+> Okay, great. Thanks for the reply. I will start coming up with some layout
+> possibilities.
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 

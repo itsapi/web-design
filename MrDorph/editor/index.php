@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -62,10 +62,18 @@
 		} else {
 			$fileContents = file_get_contents('template.html');
 		}
-		$contentSplit = explode('<!--content-->', $fileContents);
-		$titleSplit = explode('<title>', $fileContents);
-		$titleSplit = [$titleSplit[0], explode('</title>', $titleSplit[1])[0]];
-		$html = [$titleSplit[0], $titleSplit[1], explode('</title>', $contentSplit[0])[1], $contentSplit[1], $contentSplit[2]];
+		// $contentSplit = explode('<!--content-->', $fileContents);
+		// $titleSplit = explode('<title>', $fileContents);
+		// $titleSplit = [$titleSplit[0], explode('</title>', $titleSplit[1])[0]];
+		// $html = [$titleSplit[0], $titleSplit[1], explode('</title>', $contentSplit[0])[1], $contentSplit[1], $contentSplit[2]];
+		$html = [
+				 explode('<title>', $fileContents)[0], // START ~~> <title>
+				 explode('</title>', explode('<title>', $fileContents)[1])[0], // title
+				 explode('<section><h2>', explode('</title>', $fileContents)[1])[0], // </title> ~~> <section><h2>
+				 explode('</section></h2>', explode('<section><h2>', $fileContents)[1])[0], // heading
+				 explode('<!--content-->', $fileContents)[1], // content
+				 explode('<!--content-->', $fileContents)[2] // <!--content--> ~~> END
+		];
 	}
 	if (isset($_REQUEST['save'])) {
 		if (($_REQUEST['title']) && ($_REQUEST['fileContents'])) {
