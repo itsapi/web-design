@@ -1,0 +1,296 @@
+<!-- INCLUDE overall_header.html -->
+
+<table cellspacing="1" class="viewtopic">
+	<!-- IF S_FORUM_RULES -->
+	<tr>
+		<td colspan="2"><h2>{L_FORUM_RULES}</h2></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="forumrules">
+			<!-- IF U_FORUM_RULES -->
+				<a href="{U_FORUM_RULES}"><b>{L_FORUM_RULES_LINK}</b></a>
+			<!-- ELSE -->
+				{FORUM_RULES}
+			<!-- ENDIF -->
+		</td>
+	</tr>
+	<tr>
+		<td><div class="spacing"></div></td>
+	</tr>
+	<!-- ENDIF -->
+
+	<tr class="toplines"> 
+		<th>{L_AUTHOR}</th>
+		<th>{L_MESSAGE}</th>
+	</tr>	
+	<tr>
+		<td colspan="2"><h2><a href="{U_INDEX}">&lt;</a>&nbsp;&nbsp;<a href="{U_VIEW_FORUM}">{FORUM_NAME}</a>&nbsp;&nbsp;~&nbsp;&nbsp;{TOPIC_TITLE}</h2></td>
+	</tr>
+<!-- IF S_HAS_POLL -->
+	<tr>
+		<td class="row3 txtmiddle pad60" colspan="2">
+
+			<form method="post" action="{S_POLL_ACTION}">
+
+			<table cellspacing="0" cellpadding="4" border="0" align="center">
+			<tr>
+				<td><b>{POLL_QUESTION}</b><br />{L_POLL_LENGTH}<br /><br /></td>
+			</tr>
+			<tr>
+				<td>
+					<table cellspacing="0" cellpadding="2" border="0">
+				<!-- BEGIN poll_option -->
+					<tr>
+					<!-- IF S_CAN_VOTE -->
+						<td>
+							<!-- IF S_IS_MULTI_CHOICE -->
+								<input type="checkbox" class="radio" name="vote_id[]" value="{poll_option.POLL_OPTION_ID}"<!-- IF poll_option.POLL_OPTION_VOTED --> checked="checked"<!-- ENDIF --> />
+							<!-- ELSE -->
+								<input type="radio" class="radio" name="vote_id[]" value="{poll_option.POLL_OPTION_ID}"<!-- IF poll_option.POLL_OPTION_VOTED --> checked="checked"<!-- ENDIF --> />
+							<!-- ENDIF -->
+						</td>
+					<!-- ENDIF -->
+					</tr>
+					<tr>
+						<td class="txtcenter">{poll_option.POLL_OPTION_CAPTION}</td>
+					</tr>
+					<tr>
+						<!-- IF S_DISPLAY_RESULTS -->
+						<td class="txtcenter" dir="ltr">{POLL_LEFT_CAP_IMG}{poll_option.POLL_OPTION_IMG}{POLL_RIGHT_CAP_IMG}</td>
+					</tr>
+					<tr>
+						<td class="txtcenter pad4">[ {poll_option.POLL_OPTION_RESULT} ]&nbsp;{poll_option.POLL_OPTION_PERCENT}<!-- IF poll_option.POLL_OPTION_VOTED -->&nbsp;<b title="{L_POLL_VOTED_OPTION}">x</b></td>
+							<!-- ENDIF -->
+						<!-- ENDIF -->
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					</tr>
+				<!-- END poll_option -->
+					</table>
+				</td>
+			</tr>
+		<!-- IF S_CAN_VOTE -->
+			<tr>
+				<td class="txtcenter">{L_MAX_VOTES}<br /><br /><input type="submit" name="update" value="{L_SUBMIT_VOTE}" class="button" /></td>
+			</tr>
+		<!-- ENDIF -->
+		<!-- IF S_DISPLAY_RESULTS -->
+			<tr>
+				<td class="txtcenter" colspan="4"><br />{L_TOTAL_VOTES} : {TOTAL_VOTES}</td>
+			</tr>
+		<!-- ELSE -->
+			<tr>
+				<td class="txtcenter"><a href="{U_VIEW_RESULTS}">{L_VIEW_RESULTS}</a></td>
+			</tr>
+		<!-- ENDIF -->
+			</table>
+			{S_HIDDEN_FIELDS}
+			
+			{S_FORM_TOKEN}
+			</form>
+			
+		</td>
+	</tr>
+<!-- ENDIF -->
+<!-- BEGIN postrow -->
+	<!-- IF postrow.S_ROW_COUNT is even --><tr class="row1"><!-- ELSE --><tr class="row2"><!-- ENDIF -->
+
+	<!-- IF postrow.S_IGNORE_POST -->
+			<td colspan="2" height="25" align="center"><!-- IF postrow.S_FIRST_UNREAD --><a name="unread"></a><!-- ENDIF --><a name="p{postrow.POST_ID}"></a>{postrow.L_IGNORE_POST}</td>
+	<!-- ELSE -->
+
+			<td class="row3 one">
+				<!-- IF postrow.S_FIRST_UNREAD --><a name="unread"></a><!-- ENDIF --><a name="p{postrow.POST_ID}"></a>
+				<div class="postauthor"<!-- IF postrow.POST_AUTHOR_COLOUR --> style="color: {postrow.POST_AUTHOR_COLOUR}"<!-- ENDIF -->>{postrow.POST_AUTHOR}</div>
+			</td>
+			<td class="row3 two">
+				<table cellspacing="0">
+				<tr>
+				<!-- IF postrow.POST_ICON_IMG -->
+					<td><img src="{T_ICONS_PATH}{postrow.POST_ICON_IMG}" width="{postrow.POST_ICON_IMG_WIDTH}" height="{postrow.POST_ICON_IMG_HEIGHT}" alt="" title="" /></td>
+				<!-- ENDIF -->
+					<td><!-- IF S_IS_BOT -->{postrow.MINI_POST_IMG}<!-- ELSE --><a href="{postrow.U_MINI_POST}">{postrow.MINI_POST_IMG}</a><!-- ENDIF -->{L_POSTED}: {postrow.POST_DATE}</td>
+					<td class="txtright">
+					<!-- IF not S_IS_BOT -->
+						<!-- IF postrow.U_QUOTE --><a href="{postrow.U_QUOTE}">{QUOTE_IMG}</a> <!-- ENDIF -->
+						<!-- IF postrow.U_EDIT --><a href="{postrow.U_EDIT}">{EDIT_IMG}</a> <!-- ENDIF -->
+						<!-- IF postrow.U_DELETE --><a href="{postrow.U_DELETE}">{DELETE_IMG}</a> <!-- ENDIF -->
+						<!-- IF postrow.U_INFO --><a href="{postrow.U_INFO}">{INFO_IMG}</a> <!-- ENDIF -->
+						<!-- IF postrow.U_REPORT --><a href="{postrow.U_REPORT}">{REPORT_IMG}</a> <!-- ENDIF -->
+						<!-- IF postrow.U_WARN --><a href="{postrow.U_WARN}">{WARN_IMG}</a><!-- ENDIF -->
+					<!-- ENDIF -->
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<!-- IF postrow.S_ROW_COUNT is even --><td class="row1 three"><!-- ELSE --><td class="row2 three"><!-- ENDIF -->
+			<!-- IF postrow.POSTER_AVATAR --><span class="avatar">{postrow.POSTER_AVATAR}</span><!-- ENDIF -->
+			<!-- IF postrow.RANK_TITLE --><span class="block">{postrow.RANK_TITLE}</span><!-- ENDIF -->
+			<!-- IF postrow.RANK_IMG --><span class="block">{postrow.RANK_IMG}</span><!-- ENDIF -->
+			<!-- IF postrow.POSTER_POSTS != '' --><span class="block">{L_POSTS}: {postrow.POSTER_POSTS}</span><!-- ENDIF -->
+			<!-- IF postrow.POSTER_FROM --><span class="block">{L_LOCATION}: {postrow.POSTER_FROM}</span><!-- ENDIF -->
+			<!-- IF postrow.POSTER_JOINED --><span class="block">{L_JOINED}: {postrow.POSTER_JOINED}</span><!-- ENDIF -->
+			<!-- BEGIN custom_fields --><span class="block">{postrow.custom_fields.PROFILE_FIELD_NAME}:</b> {postrow.custom_fields.PROFILE_FIELD_VALUE}</span><!-- END custom_fields -->
+			</td>
+
+			<!-- IF postrow.S_ROW_COUNT is even -->
+			<td class="row1 four">
+			<!-- ELSE -->
+			<td class="row2 four">
+			<!-- ENDIF -->
+				<div style="padding-top: 2px; width: 560px;">
+					<!-- IF postrow.S_POST_UNAPPROVED or postrow.S_POST_REPORTED -->
+						<table width="100%" cellspacing="0">
+						<tr>
+							<td class="postreported"><!-- IF postrow.S_POST_UNAPPROVED -->{UNAPPROVED_IMG} <a href="{postrow.U_MCP_APPROVE}">{L_POST_UNAPPROVED}</a> <!-- ENDIF --> <!-- IF postrow.S_POST_REPORTED -->{REPORTED_IMG} <a href="{postrow.U_MCP_REPORT}">{L_POST_REPORTED}</a><!-- ENDIF --></td>
+						</tr>
+						</table><br />
+					<!-- ENDIF -->
+					{postrow.MESSAGE}
+					<!-- IF postrow.S_HAS_ATTACHMENTS -->
+					<div class="attachtitle">
+					<b>{L_ATTACHMENTS}:</b>
+					</div>
+					<div class="attachcontent">
+					<!-- BEGIN attachment -->
+						{postrow.attachment.DISPLAY_ATTACHMENT}
+					<!-- END attachment -->
+					</div>
+					<!-- ENDIF -->
+					<!-- IF postrow.S_DISPLAY_NOTICE -->
+					<div class="downloadnoticetitle"><b>Note:</b></div>
+					<div class="downloadnotice">{L_DOWNLOAD_NOTICE}</div>
+					<!-- ENDIF -->
+				</div>
+				<table cellspacing="0" cellpadding="0">
+				<!-- IF postrow.SIGNATURE -->
+				<tr>
+					<td class="txtbottom"><br />_________________<br />{postrow.SIGNATURE}</td>
+				</tr>
+				<!-- ENDIF -->
+				<!-- IF postrow.EDITED_MESSAGE or postrow.EDIT_REASON -->
+					<!-- IF postrow.EDIT_REASON -->
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td class="postedited">
+						<table class="viewtopic" width="100%" cellspacing="0">
+						<tr>
+							<td class="row3 pad4">{postrow.EDITED_MESSAGE}</td>
+						</tr>
+						<tr>
+							<td class="row2 pad4">{postrow.EDIT_REASON}</td>
+						</tr>
+						</table>
+						</td>
+					</tr>
+					<!-- ELSE -->
+						<br /><br />
+						{postrow.EDITED_MESSAGE}
+					<!-- ENDIF -->
+				<!-- ENDIF -->
+
+					<!-- IF postrow.BUMPED_MESSAGE -->
+					<!-- IF postrow.EDITED_MESSAGE or postrow.EDIT_REASON -->
+					<tr><td>&nbsp;</td></tr>
+					<!-- ENDIF -->
+					<tr>
+						<td class="postedited">
+						<table class="viewtopic" width="100%" cellspacing="0">
+						<tr>
+							<td class="row3 pad4">{postrow.BUMPED_MESSAGE}</td>
+						</tr>
+						</table>
+						</td>
+					</tr>
+					<!-- ENDIF -->
+
+					<!-- IF not postrow.S_HAS_ATTACHMENTS --><br /><br /><!-- ENDIF -->
+				</table>
+			</td>
+		</tr>
+		<tr> 
+			<!-- IF postrow.S_ROW_COUNT is even -->
+			<td class="row1 five blacklink">
+			<!-- ELSE -->
+			<td class="row2 five blacklink">
+			<!-- ENDIF -->
+			<a href="#top">{L_BACK_TO_TOP}</a>
+			</td>
+			<!-- IF postrow.S_ROW_COUNT is even -->
+			<td class="row1 six">
+			<!-- ELSE -->
+			<td class="row2 six">
+			<!-- ENDIF -->
+			<!-- IF not S_IS_BOT -->
+			<!-- IF postrow.ONLINE_IMG -->{postrow.ONLINE_IMG} <!-- ENDIF --><!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}">{PROFILE_IMG}</a> <!-- ENDIF --><!-- IF postrow.U_PM --><a href="{postrow.U_PM}">{PM_IMG}</a> <!-- ENDIF --> <!-- IF postrow.U_EMAIL --><a href="{postrow.U_EMAIL}">{EMAIL_IMG}</a> <!-- ENDIF --><!-- IF postrow.U_WWW --><a href="{postrow.U_WWW}" title="{L_VISIT_WEBSITE}: {postrow.U_WWW}">{WWW_IMG}</a> <!-- ENDIF --><!-- IF postrow.U_MSN --><a href="{postrow.U_MSN}" onclick="popup(this.href, 550, 320); return false;" title="{L_MSNM}">{MSN_IMG}</a> <!-- ELSEIF USER_MSN -->{USER_MSN} <!-- ENDIF --><!-- IF postrow.U_ICQ --><a href="{postrow.U_ICQ}" onclick="popup(this.href, 550, 320); return false;" title="{L_ICQ}">{ICQ_IMG}</a> <!-- ELSEIF USER_ICQ -->{USER_ICQ} <!-- ENDIF --><!-- IF postrow.U_YIM --><a href="{postrow.U_YIM}" onclick="popup(this.href, 780, 550); return false;" title="{L_YIM}">{YIM_IMG}</a> <!-- ELSEIF USER_YIM -->{USER_YIM}<!-- ENDIF --><!-- IF postrow.U_AIM --><a href="{postrow.U_AIM}" onclick="popup(this.href, 550, 320); return false;" title="{L_AIM}">{AIM_IMG}</a> <!-- ELSEIF USER_AIM -->{USER_AIM} <!-- ENDIF --><!-- IF postrow.U_JABBER --><a href="{postrow.U_JABBER}" onclick="popup(this.href, 550, 320); return false;" title="{L_JABBER}">{JABBER_IMG}</a><!-- ELSEIF USER_JABBER -->{USER_JABBER_IMG}<!-- ENDIF -->
+		<!-- ENDIF -->
+			</td>
+		</tr>
+	<!-- ENDIF -->
+<!-- END postrow -->
+<!-- IF not S_IS_BOT -->
+		<tr> 
+			<td class="row3 pad4 txtright" colspan="2">
+				<form name="viewtopic" method="post" action="{S_POST_ACTION}">
+					<p>{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}&nbsp;{L_SORT_BY}: {S_SELECT_SORT_KEY} {S_SELECT_SORT_DIR}
+						<input type="submit" value="{L_GO}" class="button" name="sort" /></p>
+				</form>
+			</td>
+		</tr>
+</table>
+<!-- ENDIF -->
+
+<!-- IF S_QUICK_REPLY -->
+<!-- INCLUDE quickreply_editor.html -->
+<!-- ENDIF -->
+
+<!-- IF not S_IS_BOT -->
+<div class="timezone left"><!-- IF U_WATCH_TOPIC --><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}">{L_WATCH_TOPIC}</a>&nbsp;&nbsp;<!-- IF U_PRINT_TOPIC or U_EMAIL_TOPIC or U_BUMP_TOPIC or U_BOOKMARK_TOPIC --><!-- ENDIF --><!-- ENDIF --><!-- IF U_BOOKMARK_TOPIC --><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}">{L_BOOKMARK_TOPIC}</a>&nbsp;&nbsp;<!-- IF U_PRINT_TOPIC or U_EMAIL_TOPIC or U_BUMP_TOPIC --><!-- ENDIF --><!-- ENDIF --><!-- IF U_PRINT_TOPIC --><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}">{L_PRINT_TOPIC}</a>&nbsp;&nbsp;<!-- IF U_EMAIL_TOPIC or U_BUMP_TOPIC --><!-- ENDIF --><!-- ENDIF --><!-- IF U_EMAIL_TOPIC --><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}">{L_EMAIL_TOPIC}</a>&nbsp;&nbsp;<!-- IF U_BUMP_TOPIC --><!-- ENDIF --><!-- ENDIF --><!-- IF U_BUMP_TOPIC --><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a><!-- ENDIF --></div>
+<!-- ENDIF -->
+<div class="timezone right">{S_TIMEZONE}</div>
+<div class="spacing"></div>
+
+<table cellspacing="0">
+	<tr class="lines_3">
+		<th>
+		<div class="left">
+			<a href="{U_VIEW_OLDER_TOPIC}">{L_VIEW_PREVIOUS_TOPIC}</a>&nbsp;|&nbsp;<a href="{U_VIEW_NEWER_TOPIC}">{L_VIEW_NEXT_TOPIC}</a><br />
+			<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a><br /><!-- ELSE -->&nbsp;<br /><!-- ENDIF -->
+			<span class="nav"><a href="{U_INDEX}">{L_INDEX}</a>&nbsp;&nbsp;~&nbsp;&nbsp;<a href="{U_VIEW_FORUM}">{FORUM_NAME}</a></span>
+		</div>
+		<div class="right">
+			{PAGE_NUMBER}<br />
+			<!-- IF TOTAL_POSTS -->
+			{TOTAL_POSTS}<br />
+			<!-- ENDIF -->
+			<!-- INCLUDE pagination.html -->
+		</div>
+		<div class="clear"></div>
+		</th>
+	</tr>
+</table>
+
+<div class="spacing"></div>
+<div class="left"><!-- IF S_DISPLAY_ONLINE_LIST -->{LOGGED_IN_USER_LIST}<!-- ENDIF --></div>
+<div class="right"><!-- IF S_DISPLAY_SEARCHBOX --><!-- INCLUDE searchbox.html --><!-- ENDIF --></div>
+<div class="spacing"></div>
+<!-- IF not S_IS_BOT -->
+<div class="left"><!-- IF S_DISPLAY_POST_INFO --><a href="{U_POST_NEW_TOPIC}" alt="{L_POST_NEW_TOPIC}">{POST_IMG}</a>&nbsp;&nbsp;<!-- ENDIF --><!-- IF S_DISPLAY_REPLY_INFO --><a href="{U_POST_REPLY_TOPIC}">{REPLY_IMG}</a><!-- ENDIF --></div>
+<div class="right"><!-- INCLUDE jumpbox.html --></div>
+<div class="spacing"></div>
+<!-- ENDIF -->
+
+<table>
+<tr>
+	<td class="txttop"><!-- IF S_TOPIC_MOD --><form method="post" action="{S_MOD_ACTION}">{L_QUICK_MOD}: {S_TOPIC_MOD} <input class="button" type="submit" value="{L_GO}" /></form><!-- ENDIF --></div></td>
+	<td class="txtright"><!-- BEGIN rules -->{rules.RULE}<br /><!-- END rules --></td>
+</tr>
+</table>
+
+<!-- INCLUDE overall_footer.html -->

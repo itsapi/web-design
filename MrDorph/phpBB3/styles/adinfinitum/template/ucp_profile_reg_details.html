@@ -1,0 +1,53 @@
+<!-- INCLUDE ucp_header.html -->
+
+<table class="viewforum" width="100%" cellspacing="1">
+<tr>
+	<th colspan="2" valign="middle"><h2>{L_TITLE}</h2></th>
+</tr>
+<!-- IF S_FORCE_PASSWORD -->
+	<tr>
+		<td class="row3 pad4 txtcenter" colspan="2">{L_FORCE_PASSWORD_EXPLAIN}</td>
+	</tr>
+<!-- ENDIF -->
+<!-- IF ERROR -->
+	<tr>
+		<td class="row1 txtmiddle pad60" colspan="2">{ERROR}</td>
+	</tr>
+<!-- ENDIF -->
+<tr>
+	<td class="row1 pad4" width="35%"><b>{L_USERNAME}: </b><br />{L_USERNAME_EXPLAIN}</td>
+	<td class="row2 pad4"><!-- IF S_CHANGE_USERNAME --><input type="text" class="post" name="username" size="30" value="{USERNAME}" /><!-- ELSE --><b>{USERNAME}</b><!-- ENDIF --></td>
+</tr>
+<tr>
+	<td class="row1 pad4" width="35%"><b>{L_EMAIL_ADDRESS}: </b></td>
+	<td class="row2 pad4"><!-- IF S_CHANGE_EMAIL --><input type="text" class="post" name="email" size="30" maxlength="100" value="{EMAIL}" /><!-- ELSE --><b>{EMAIL}</b><!-- ENDIF --></td>
+</tr>
+<!-- IF S_CHANGE_EMAIL -->
+	<tr>
+		<td class="row1 pad4" width="35%"><b>{L_CONFIRM_EMAIL}: </b><br />{L_CONFIRM_EMAIL_EXPLAIN}</td>
+		<td class="row2 pad4"><input type="text" class="post" name="email_confirm" size="30" maxlength="100" value="{CONFIRM_EMAIL}" /></td>
+	</tr>
+<!-- ENDIF -->
+<!-- IF S_CHANGE_PASSWORD -->
+	<tr>
+		<td class="row1 pad4" width="35%"><b>{L_NEW_PASSWORD}: </b><br />{L_CHANGE_PASSWORD_EXPLAIN}</td>
+		<td class="row2 pad4"><input type="password" class="post" name="new_password" size="30" maxlength="255" value="{NEW_PASSWORD}" /></td>
+	</tr>
+	<tr>
+		<td class="row1 pad4" width="35%"><b>{L_CONFIRM_PASSWORD}: </b><br />{L_CONFIRM_PASSWORD_EXPLAIN}</td>
+		<td class="row2 pad4"><input type="password" class="post" name="password_confirm" size="30" maxlength="255" value="{PASSWORD_CONFIRM}" /></td>
+	</tr>
+<!-- ENDIF -->
+<tr>
+	<th colspan="2"><h2>{L_CONFIRM_CHANGES}</h2></th>
+</tr>
+<tr>
+	<td class="row1 pad4" width="35%"><b>{L_CURRENT_PASSWORD}: </b><br /><!-- IF S_CHANGE_PASSWORD -->{L_CURRENT_CHANGE_PASSWORD_EXPLAIN}<!-- ELSE -->{L_CURRENT_PASSWORD_EXPLAIN}<!-- ENDIF --></td>
+	<td class="row2 pad4"><input type="password" class="post" name="cur_password" size="30" maxlength="255" value="{CUR_PASSWORD}" /></td>
+</tr>
+<tr>
+	<td class="row3 pad4 txtcenter" colspan="2">{S_HIDDEN_FIELDS}<input class="button" type="submit" name="submit" value="{L_SUBMIT}" />&nbsp;&nbsp;<input class="button" type="reset" value="{L_RESET}" name="reset" /></td>
+</tr>
+</table>
+
+<!-- INCLUDE ucp_footer.html -->

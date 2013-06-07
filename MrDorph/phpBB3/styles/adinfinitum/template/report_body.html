@@ -1,0 +1,39 @@
+<!-- INCLUDE overall_header.html -->
+
+<form method="post" id="report" action="{S_REPORT_ACTION}">
+
+<table class="viewforum" width="100%" cellspacing="1">
+<tr class="toplines">
+	<th colspan="2"><h2><!-- IF S_REPORT_POST -->{L_REPORT_POST}<!-- ELSE -->{L_REPORT_MESSAGE}<!-- ENDIF --></h2></th>
+</tr>
+<tr>
+	<td class="row3 pad4" colspan="2"><!-- IF S_REPORT_POST -->{L_REPORT_POST_EXPLAIN}<!-- ELSE -->{L_REPORT_MESSAGE_EXPLAIN}<!-- ENDIF --></td>
+</tr>
+<tr>
+	<td class="row1 pad4" width="22%">{L_REASON}:</td>
+	<td class="row2 pad4" width="78%"><select name="reason_id">
+		<!-- BEGIN reason --><option value="{reason.ID}"<!-- IF reason.S_SELECTED --> selected="selected"<!-- ENDIF -->>{reason.TITLE} &raquo; {reason.DESCRIPTION}</option><!-- END reason -->
+	</select></td>
+</tr>
+<!-- IF S_CAN_NOTIFY -->
+	<tr>
+		<td class="row1 pad4">{L_REPORT_NOTIFY}:<br />{L_REPORT_NOTIFY_EXPLAIN}</td>
+		<td class="row2 pad4"><input type="radio" class="radio" name="notify" value="1"<!-- IF S_NOTIFY --> checked="checked"<!-- ENDIF --> />&nbsp; {L_YES} &nbsp;<input type="radio" class="radio" name="notify" value="0"<!-- IF not S_NOTIFY --> checked="checked"<!-- ENDIF --> />&nbsp; {L_NO}</td>
+	</tr>
+<!-- ENDIF -->
+<tr>
+	<td class="row1 pad4" valign="top">{L_MORE_INFO}:<br />{L_CAN_LEAVE_BLANK}</td>
+	<td class="row2 pad4"><textarea class="post" name="report_text" rows="10" cols="50">{REPORT_TEXT}</textarea></td>
+</tr>
+<tr>
+	<td class="row3 pad4 txtcenter" colspan="2"><input type="submit" name="submit" class="button" value="{L_SUBMIT}" />&nbsp;<input type="submit" name="cancel" class="button" value="{L_CANCEL}" /></td>
+</tr>
+</table>
+{S_FORM_TOKEN}
+</form>
+
+<!-- INCLUDE breadcrumbs.html -->
+
+<div class="right"><!-- INCLUDE jumpbox.html --></div>
+
+<!-- INCLUDE overall_footer.html -->

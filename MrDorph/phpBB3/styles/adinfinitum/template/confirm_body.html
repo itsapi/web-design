@@ -1,0 +1,25 @@
+<!-- INCLUDE overall_header.html -->
+
+<form name="confirm" action="{S_CONFIRM_ACTION}" method="post">
+
+<table width="100%" cellspacing="1">
+<tr class="toplines">
+	<th>{MESSAGE_TITLE}</th>
+</tr>
+<tr>
+	<td><h2>{MESSAGE_TITLE}</h2></td>
+</tr>
+	<tr>
+	<td class="row1 txtmiddle pad60"><br /><p>{MESSAGE_TEXT}</p><br />{S_HIDDEN_FIELDS}<input type="submit" name="confirm" value="{YES_VALUE}" class="button" />&nbsp;&nbsp;<input type="submit" name="cancel" value="{L_NO}" class="button" /></td>
+</tr>
+</table>
+
+</form>
+
+<div class="spacing"></div>
+
+<!-- INCLUDE breadcrumbs.html -->
+
+<div class="right"><!-- INCLUDE jumpbox.html --></div>
+
+<!-- INCLUDE overall_footer.html -->

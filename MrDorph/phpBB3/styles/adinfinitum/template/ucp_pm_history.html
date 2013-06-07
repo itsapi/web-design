@@ -1,0 +1,69 @@
+<script type="text/javascript">
+// <![CDATA[
+	bbcodeEnabled = {S_BBCODE_ALLOWED};
+// ]]>
+</script>
+
+<table class="viewforum" width="100%" cellspacing="1">
+<tr>
+	<th><h2>{L_MESSAGE_HISTORY}</h2></th>
+</tr>
+<tr>
+	<td><div style="overflow: auto; width: 100%; height: 300px;">
+
+		<table class="viewforum" width="100%" cellspacing="1">
+		<tr class="toplines">
+			<th width="22%">{L_AUTHOR}</th>
+			<th>{L_MESSAGE}</th>
+		</tr>
+	<!-- BEGIN history_row -->
+		<tr>
+			<td class="row3 pad4" align="{S_CONTENT_FLOW_BEGIN}" valign="middle"><a name="{history_row.MSG_ID}"></a>
+				<table width="150" cellspacing="0">
+				<tr>
+					<td class="five blacklink" colspan="2">{history_row.MESSAGE_AUTHOR_FULL}</td>
+				</tr>
+				</table>
+			</td>
+			<td width="100%" class="row3 pad4"<!-- IF history_row.S_CURRENT_MSG --> style="border:1px solid #Ca2023;"<!-- ENDIF -->>
+				<div style="float: {S_CONTENT_FLOW_BEGIN};"><b>{L_PM_SUBJECT}:</b>&nbsp;{history_row.SUBJECT}</div><div style="float: {S_CONTENT_FLOW_END};"><b>{L_FOLDER}:</b>&nbsp;{history_row.FOLDER}</div>
+			</td>
+		</tr>
+
+		<!-- IF history_row.S_ROW_COUNT is even --><tr class="row1"><!-- ELSE --><tr class="row2"><!-- ENDIF -->
+			<td class="pad4" align="{S_CONTENT_FLOW_BEGIN}" valign="top">&nbsp;</td>
+			<td valign="top">
+				<table width="100%" cellspacing="0">
+				<tr>
+					<td class="pad4" valign="top">
+						<table width="100%" cellspacing="0" cellpadding="2">
+						<tr>
+							<td><div>{history_row.MESSAGE}</div><div id="message_{history_row.MSG_ID}" style="display: none;">{history_row.DECODED_MESSAGE}<div></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="pad4">
+						<table width="100%" cellspacing="0">
+						<tr valign="middle">
+							<td width="100%">&nbsp;</td>
+							<td width="10" nowrap="nowrap">{history_row.MINI_POST_IMG}</td>
+							<td nowrap="nowrap"><b>{L_SENT_AT}:</b> {history_row.SENT_DATE}</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+
+		<!-- IF history_row.S_ROW_COUNT is even --><tr class="row1"><!-- ELSE --><tr class="row2"><!-- ENDIF -->
+			<td class="five blacklink pad4"><a href="{history_row.U_VIEW_MESSAGE}">{L_VIEW_PM}</a></td>
+			<td class="pad4"><div style="float: {S_CONTENT_FLOW_BEGIN};">&nbsp;<!-- IF history_row.U_PROFILE --><a href="{history_row.U_PROFILE}">{PROFILE_IMG}</a> <!-- ENDIF --> <!-- IF history_row.U_EMAIL --><a href="{history_row.U_EMAIL}">{EMAIL_IMG}</a> <!-- ENDIF -->&nbsp;</div> <div style="float: {S_CONTENT_FLOW_END};"><!-- IF history_row.U_QUOTE or history_row.MESSAGE_AUTHOR_QUOTE --><a <!-- IF history_row.U_QUOTE -->href="{history_row.U_QUOTE}"<!-- ELSE -->href="#" onclick="addquote({history_row.MSG_ID}, '{history_row.MESSAGE_AUTHOR_QUOTE}', '{LA_WROTE}'); return false;"<!-- ENDIF -->>{QUOTE_IMG}</a> <!-- ENDIF -->&nbsp;</div></td>
+		</tr>
+	<!-- END history_row -->
+		</table>
+	</div></td>
+</tr>
+</table>

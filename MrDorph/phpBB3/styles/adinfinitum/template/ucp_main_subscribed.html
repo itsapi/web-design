@@ -1,0 +1,81 @@
+<!-- INCLUDE ucp_header.html -->
+
+<table class="viewforum" width="100%" cellspacing="1">
+<tr>
+	<th colspan="4"><h2>{L_TITLE}</h2></th>
+</tr>
+<tr>
+	<td class="row1 two txcenter" colspan="4">{L_WATCHED_EXPLAIN}</td>
+</tr>
+<!-- IF S_FORUM_NOTIFY -->
+	<tr>
+		<th colspan="4"><h2>{L_WATCHED_FORUMS}</h2></th>
+	</tr>
+	<!-- BEGIN forumrow -->
+
+		<!-- IF forumrow.S_ROW_COUNT is even --><tr class="row1"><!-- ELSE --><tr class="row2"><!-- ENDIF -->
+			<td class="pad4 txtmiddle" width="20">{forumrow.FORUM_FOLDER_IMG}</td>
+			<td class="pad4" width="100%"><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a></td>
+			<td class="pad4 txtmiddle" nowrap="nowrap"><!-- IF forumrow.LAST_POST_TIME -->{forumrow.LAST_POST_TIME}<br />{forumrow.LAST_POST_AUTHOR_FULL} <a href="{forumrow.U_LAST_POST}">{LAST_POST_IMG}</a><!-- ELSE -->{L_NO_POSTS}<!-- ENDIF --></td>
+			<td class="pad4 txtmiddle"> <input type="checkbox" class="radio" name="f[{forumrow.FORUM_ID}]" /> </td>
+		</tr>
+	<!-- BEGINELSE -->
+		<tr>
+			<td class="row1 txtcenter pad25" colspan="4">{L_NO_WATCHED_FORUMS}</td>
+		</tr>
+	<!-- END forumrow -->
+<!-- ENDIF -->
+<!-- IF S_TOPIC_NOTIFY -->
+	<tr>
+		<th colspan="4"><h2>{L_WATCHED_TOPICS}</h2></th>
+	</tr>
+	<!-- IF TOTAL_TOPICS -->
+		<tr>
+			<td class="row3" colspan="4">
+				<table width="100%" cellspacing="1">
+				<tr>
+					<td class="txtmiddle" nowrap="nowrap">&nbsp;{PAGE_NUMBER}<br /></td>
+					<td nowrap="nowrap">&nbsp;[ {TOTAL_TOPICS} ]&nbsp;</td>
+					<td width="100%" align="{S_CONTENT_FLOW_END}" nowrap="nowrap"><!-- INCLUDE pagination.html --></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+	<!-- ENDIF -->
+
+	<!-- BEGIN topicrow -->
+
+		<!-- IF topicrow.S_ROW_COUNT is even --><tr class="row1"><!-- ELSE --><tr class="row2"><!-- ENDIF -->
+			<td class="pad4 txtmiddle" width="20">{topicrow.TOPIC_FOLDER_IMG}</td>
+			<td class="pad4" width="100%" valign="top">
+				<p><!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF -->{topicrow.ATTACH_ICON_IMG} <a href="{topicrow.U_VIEW_TOPIC}">{topicrow.TOPIC_TITLE}</a></p>
+				<!-- IF topicrow.S_GLOBAL_TOPIC -->{L_GLOBAL_ANNOUNCEMENT}<!-- ELSE --><b>{L_FORUM}: </b><a href="{topicrow.U_VIEW_FORUM}">{topicrow.FORUM_NAME}</a><!-- ENDIF -->
+				<!-- IF topicrow.PAGINATION -->
+					<p> [ {GOTO_PAGE_IMG}{L_GOTO_PAGE}: {topicrow.PAGINATION} ] </p>
+				<!-- ENDIF -->
+			</td>
+			<td class="pad4 txtmiddle" nowrap="nowrap" valign="top">
+				<p>{topicrow.LAST_POST_TIME}</p>
+				<p>{topicrow.LAST_POST_AUTHOR_FULL}
+					<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a>
+				</p>
+			</td>
+			<td class="pad4 txtmiddle"> <input type="checkbox" class="radio" name="t[{topicrow.TOPIC_ID}]" /> </td>
+		</tr>
+	<!-- BEGINELSE -->
+		<tr>
+			<td class="row1 txtcenter pad25" colspan="4">{L_NO_WATCHED_TOPICS}</td>
+		</tr>
+	<!-- END topicrow -->
+<!-- ENDIF -->
+<!-- IF .topicrow or .forumrow -->
+<tr>
+	<td class="row3 pad4 txtright" colspan="4" align="{S_CONTENT_FLOW_END}"><input class="button" type="submit" name="unwatch" value="{L_UNWATCH_MARKED}" />&nbsp;</td>
+</tr>
+<!-- ENDIF -->
+</table>
+<!-- IF .topicrow or .forumrow -->
+<div style="float: {S_CONTENT_FLOW_END}; padding-top: 2px;"><b><a href="#" onclick="marklist('ucp', 't', true); marklist('ucp', 'f', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('ucp', 't', false); marklist('ucp', 'f', false); return false;">{L_UNMARK_ALL}</a></b></div>
+<!-- ENDIF -->
+
+<!-- INCLUDE ucp_footer.html -->

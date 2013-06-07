@@ -1,0 +1,110 @@
+<!-- INCLUDE ucp_header.html -->
+
+<!-- DEFINE $S_SIGNATURE = 1 -->
+<table class="viewforum" width="100%" cellspacing="1">
+<tr>
+	<th colspan="2"><h2>{L_TITLE}</h2></th>
+</tr>
+<tr>
+	<td colspan="2" class="row1 pad4">{L_SIGNATURE_EXPLAIN}</td>
+</tr>
+
+<!-- IF ERROR -->
+	<tr>
+		<td class="row1 pad60 txtmiddle" colspan="2">{ERROR}</td>
+	</tr>
+<!-- ENDIF -->
+
+<tr>
+	<td colspan="2" class="row2 two">
+		<script type="text/javascript">
+		// <![CDATA[
+			var form_name = 'ucp';
+			var text_name = 'signature';
+		// ]]>
+		</script>
+		
+		<table cellspacing="0" cellpadding="2" border="0" width="99%">
+		<!-- INCLUDE posting_buttons.html -->
+		<tr>
+			<td colspan="2"><textarea class="post" name="signature" rows="10" cols="76" style="width: 99%;" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" onfocus="initInsertions();">{SIGNATURE}</textarea></td>
+		</tr>
+		<!-- IF S_BBCODE_ALLOWED -->
+		<tr>
+			<td colspan="2">
+				<table cellspacing="0" cellpadding="0" border="0" width="100%">
+				<tr>
+					<td align="{S_CONTENT_FLOW_BEGIN}">
+						<script type="text/javascript">
+						// <![CDATA[
+							colorPalette('h', 6, 5)
+						// ]]>
+						</script>
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<!-- ENDIF -->
+		</table>
+	</td>
+</tr>
+<tr>
+	<td class="row1 pad4" valign="top"><b>{L_OPTIONS}</b><br />
+		<table cellspacing="2" cellpadding="0" border="0">
+		<tr>
+			<td>{BBCODE_STATUS}</td>
+		</tr>
+		<tr>
+			<td>{IMG_STATUS}</td>
+		</tr>
+		<tr>
+			<td>{FLASH_STATUS}</td>
+		</tr>
+		<tr>
+			<td>{URL_STATUS}</td>
+		</tr>
+		<tr>
+			<td>{SMILIES_STATUS}</td>
+		</tr>
+		</table>
+	</td>
+	<td class="row2 pad4" valign="top">
+		<table cellspacing="0" cellpadding="1" border="0">
+		<!-- IF S_BBCODE_ALLOWED -->
+			<tr>
+				<td><input type="checkbox" class="radio" name="disable_bbcode"{S_BBCODE_CHECKED} /></td>
+				<td class="gen">{L_DISABLE_BBCODE}</td>
+			</tr>
+		<!-- ENDIF -->
+		<!-- IF S_SMILIES_ALLOWED -->
+			<tr>
+				<td><input type="checkbox" class="radio" name="disable_smilies"{S_SMILIES_CHECKED} /></td>
+				<td class="gen">{L_DISABLE_SMILIES}</td>
+			</tr>
+		<!-- ENDIF -->
+		<!-- IF S_LINKS_ALLOWED -->
+			<tr>
+				<td><input type="checkbox" class="radio" name="disable_magic_url"{S_MAGIC_URL_CHECKED} /></td>
+				<td class="gen">{L_DISABLE_MAGIC_URL}</td>
+			</tr>
+		<!-- ENDIF -->
+		</table>
+	</td>
+</tr>
+
+<!-- IF SIGNATURE_PREVIEW != '' -->
+	<tr>
+		<th colspan="2" valign="middle"><h2>{L_SIGNATURE_PREVIEW}</h2></th>
+	</tr>
+	<tr> 
+		<td class="row1" colspan="2"><div class="postbody" style="padding: 6px;">{SIGNATURE_PREVIEW}</div></td>
+	</tr>
+<!-- ENDIF -->
+
+<tr>
+	<td class="row3 txtmiddle pad4" colspan="2">{S_HIDDEN_FIELDS}<input class="button" type="submit" name="preview" value="{L_PREVIEW}" />&nbsp;&nbsp;<input class="button" type="submit" name="submit" value="{L_SUBMIT}" />&nbsp;&nbsp;<input class="button" type="reset" value="{L_RESET}" name="reset" /></td>
+</tr>
+</table>
+
+<!-- INCLUDE ucp_footer.html -->

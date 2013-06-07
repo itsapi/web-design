@@ -1,0 +1,73 @@
+<!-- INCLUDE ucp_header.html -->
+
+<table class="viewforum" width="100%" cellspacing="1">
+<tr>
+	<th colspan="2" valign="middle"><h2>{L_TITLE}</h2></th>
+</tr>
+<!-- IF ERROR -->
+	<tr>
+		<td class="row1 txtmiddle pad60" colspan="2">{ERROR}</td>
+	</tr>
+<!-- ENDIF -->
+<tr> 
+	<td class="row1 two" colspan="2">{L_PROFILE_INFO_NOTICE}</td>
+</tr>
+<tr> 
+	<td class="row1 pad4" width="35%">{L_UCP_ICQ}: </td>
+	<td class="row2 pad4"><input class="post" type="text" name="icq" size="30" maxlength="15" value="{ICQ}" /></td>
+</tr>
+<tr> 
+	<td class="row1 pad4" width="35%">{L_UCP_AIM}: </td>
+	<td class="row2 pad4"><input class="post" type="text" name="aim" size="30" maxlength="255" value="{AIM}" /></td>
+</tr>
+<tr> 
+	<td class="row1 pad4" width="35%">{L_UCP_MSNM}: </td>
+	<td class="row2 pad4"><input class="post" type="text" name="msn" size="30" maxlength="255" value="{MSN}" /></td>
+</tr>
+<tr> 
+	<td class="row1 pad4" width="35%">{L_UCP_YIM}: </td>
+	<td class="row2 pad4"><input class="post" type="text" name="yim" size="30" maxlength="255" value="{YIM}" /></td>
+</tr>
+<tr> 
+	<td class="row1 pad4" width="35%">{L_UCP_JABBER}: </td>
+	<td class="row2 pad4"><input class="post" type="text" name="jabber" size="30" maxlength="255" value="{JABBER}" /></td>
+</tr>
+<tr> 
+	<td class="row1 pad4" width="35%">{L_WEBSITE}: </td>
+	<td class="row2 pad4"><input class="post" type="text" name="website" size="30" maxlength="255" value="{WEBSITE}" /></td>
+</tr>
+<tr> 
+	<td class="row1 pad4" width="35%">{L_LOCATION}: </td>
+	<td class="row2 pad4"><input class="post" type="text" name="location" size="30" maxlength="100" value="{LOCATION}" /></td>
+</tr>
+<tr> 
+	<td class="row1 pad4" width="35%">{L_OCCUPATION}: </td>
+	<td class="row2 pad4"><textarea class="post" name="occupation" rows="3" cols="30">{OCCUPATION}</textarea></td>
+</tr>
+<tr> 
+	<td class="row1 pad4" width="35%">{L_INTERESTS}: </td>
+	<td class="row2 pad4"><textarea class="post" name="interests" rows="3" cols="30">{INTERESTS}</textarea></td>
+</tr>
+<!-- IF S_BIRTHDAYS_ENABLED -->
+	<tr> 
+		<td class="row1 pad4" width="35%">{L_BIRTHDAY}: <br />{L_BIRTHDAY_EXPLAIN}</td>
+		<td class="row2 pad4">{L_DAY}: <select name="bday_day">{S_BIRTHDAY_DAY_OPTIONS}</select> {L_MONTH}: <select name="bday_month">{S_BIRTHDAY_MONTH_OPTIONS}</select> {L_YEAR}: <select name="bday_year">{S_BIRTHDAY_YEAR_OPTIONS}</select></td>
+	</tr>
+<!-- ENDIF -->
+<!-- BEGIN profile_fields -->
+	<tr> 
+		<td class="row1 pad4" width="35%">
+			{profile_fields.LANG_NAME}: 
+			<!-- IF profile_fields.S_REQUIRED --><b>*</b><!-- ENDIF -->
+			<!-- IF profile_fields.LANG_EXPLAIN --><br />{profile_fields.LANG_EXPLAIN}<!-- ENDIF -->
+		</td>
+		<td class="row2 pad4">{profile_fields.FIELD}<!-- IF profile_fields.ERROR --><br />{profile_fields.ERROR}<!-- ENDIF --></td>
+	</tr>
+<!-- END profile_fields -->
+
+<tr>
+	<td class="row3 pad4 txtcenter" colspan="2" align="center">{S_HIDDEN_FIELDS}<input class="button" type="submit" name="submit" value="{L_SUBMIT}" />&nbsp;&nbsp;<input class="button" type="reset" value="{L_RESET}" name="reset" /></td>
+</tr>
+</table>
+
+<!-- INCLUDE ucp_footer.html -->

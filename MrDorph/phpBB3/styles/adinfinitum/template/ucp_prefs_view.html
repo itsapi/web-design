@@ -1,0 +1,73 @@
+<!-- INCLUDE ucp_header.html -->
+
+<table class="viewforum" width="100%" cellspacing="1">
+<tr>
+	<th colspan="2" valign="middle"><h2>{L_TITLE}</h2></th>
+</tr>
+<!-- IF ERROR -->
+	<tr>
+		<td class="row1 txtmiddle pad60 colspan="2">{ERROR}</td>
+	</tr>
+<!-- ENDIF -->
+<tr>
+	<td class="row1 pad4" width="50%"><b>{L_VIEW_IMAGES}:</b></td>
+	<td class="row2 pad4"><input type="radio" class="radio" name="images" value="1"<!-- IF S_IMAGES --> checked="checked"<!-- ENDIF --> />{L_YES}&nbsp; &nbsp;<input type="radio" class="radio" name="images" value="0"<!-- IF not S_IMAGES --> checked="checked"<!-- ENDIF --> />{L_NO}</td>
+</tr>
+<tr>
+	<td class="row1 pad4" width="50%"><b>{L_VIEW_FLASH}:</b></td>
+	<td class="row2 pad4"><input type="radio" class="radio" name="flash" value="1"<!-- IF S_FLASH --> checked="checked"<!-- ENDIF --> />{L_YES}&nbsp; &nbsp;<input type="radio" class="radio" name="flash" value="0"<!-- IF not S_FLASH --> checked="checked"<!-- ENDIF --> />{L_NO}</td>
+</tr>
+<tr>
+	<td class="row1 pad4" width="50%"><b>{L_VIEW_SMILIES}:</b></td>
+	<td class="row2 pad4"><input type="radio" class="radio" name="smilies" value="1"<!-- IF S_SMILIES --> checked="checked"<!-- ENDIF --> />{L_YES}&nbsp; &nbsp;<input type="radio" class="radio" name="smilies" value="0"<!-- IF not S_SMILIES --> checked="checked"<!-- ENDIF --> />{L_NO}</td>
+</tr>
+<tr>
+	<td class="row1 pad4" width="50%"><b>{L_VIEW_SIGS}:</b></td>
+	<td class="row2 pad4"><input type="radio" class="radio" name="sigs" value="1"<!-- IF S_SIGS --> checked="checked"<!-- ENDIF --> />{L_YES}&nbsp; &nbsp;<input type="radio" class="radio" name="sigs" value="0"<!-- IF not S_SIGS --> checked="checked"<!-- ENDIF --> />{L_NO}</td>
+</tr>
+<tr>
+	<td class="row1 pad4" width="50%"><b>{L_VIEW_AVATARS}:</b></td>
+	<td class="row2 pad4"><input type="radio" class="radio" name="avatars" value="1"<!-- IF S_AVATARS --> checked="checked"<!-- ENDIF --> />{L_YES}&nbsp; &nbsp;<input type="radio" class="radio" name="avatars" value="0"<!-- IF not S_AVATARS --> checked="checked"<!-- ENDIF --> />{L_NO}</td>
+</tr>
+<!-- IF S_CHANGE_CENSORS -->
+	<tr>
+		<td class="row1 pad4" width="50%"><b>{L_DISABLE_CENSORS}:</b></td>
+		<td class="row2 pad4"><input type="radio" class="radio" name="wordcensor" value="1"<!-- IF S_DISABLE_CENSORS --> checked="checked"<!-- ENDIF --> />{L_YES}&nbsp; &nbsp;<input type="radio" class="radio" name="wordcensor" value="0"<!-- IF not S_DISABLE_CENSORS --> checked="checked"<!-- ENDIF --> />{L_NO}</td>
+	</tr>
+<!-- ENDIF -->
+<tr>
+	<td colspan="2"><div class="spacing"></div></td>
+</tr>
+<tr>
+	<td class="row1 pad4" width="50%"><b>{L_VIEW_TOPICS_DAYS}:</b></td>
+	<td class="row2 pad4">{S_TOPIC_SORT_DAYS}</td>
+</tr>
+<tr>
+	<td class="row1 pad4" width="50%"><b>{L_VIEW_TOPICS_KEY}:</b></td>
+	<td class="row2 pad4">{S_TOPIC_SORT_KEY}</td>
+</tr>
+<tr>
+	<td class="row1 pad4" width="50%"><b>{L_VIEW_TOPICS_DIR}:</b></td>
+	<td class="row2 pad4">{S_TOPIC_SORT_DIR}</td>
+</tr>
+<tr>
+	<td colspan="2"><div class="spacing"></div></td>
+</tr>
+<tr>
+	<td class="row1 pad4" width="50%"><b>{L_VIEW_POSTS_DAYS}:</b></td>
+	<td class="row2 pad4">{S_POST_SORT_DAYS}</td>
+</tr>
+<tr>
+	<td class="row1 pad4" width="50%"><b>{L_VIEW_POSTS_KEY}:</b></td>
+	<td class="row2 pad4">{S_POST_SORT_KEY}</td>
+</tr>
+<tr>
+	<td class="row1 pad4" width="50%"><b>{L_VIEW_POSTS_DIR}:</b></td>
+	<td class="row2 pad4">{S_POST_SORT_DIR}</td>
+</tr>
+<tr>
+	<td class="row3 txtcenter pad4" colspan="2">{S_HIDDEN_FIELDS}<input class="button" type="submit" name="submit" value="{L_SUBMIT}" />&nbsp;&nbsp;<input class="button" type="reset" value="{L_RESET}" name="reset" /></td>
+</tr>
+</table>
+
+<!-- INCLUDE ucp_footer.html -->

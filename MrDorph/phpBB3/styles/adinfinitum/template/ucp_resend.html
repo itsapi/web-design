@@ -1,0 +1,29 @@
+<!-- INCLUDE overall_header.html -->
+
+<div align="center">
+
+<form action="{S_PROFILE_ACTION}" method="post">
+
+<table class="tablebg" width="50%" cellspacing="1" cellpadding="4" border="0">
+<tr>
+	<th colspan="2"><h2>{L_UCP_RESEND}</h2></th>
+</tr>
+<tr>
+	<td class="row1 pad4" width="38%"><b>{L_USERNAME}: </b></td>
+	<td class="row2 pad4"><input type="text" class="post" name="username" size="25" value="{USERNAME}" /></td>
+</tr>
+<tr>
+	<td class="row1 pad4"><b>{L_EMAIL_ADDRESS}: </b><br />{L_EMAIL_REMIND}</td>
+	<td class="row2 pad4"><input type="text" class="post" name="email" size="25" maxlength="100" value="{EMAIL}" /></td>
+</tr>
+<tr>
+	<td class="row3 pad4 txtcenter" colspan="2">{S_HIDDEN_FIELDS}<input class="button" type="submit" name="submit" id="submit" value="{L_SUBMIT}" />&nbsp;&nbsp;<input class="button" type="reset" value="{L_RESET}" name="reset" /></td>
+</tr>
+</table>
+{S_FORM_TOKEN}
+
+</form>
+
+</div>
+
+<!-- INCLUDE overall_footer.html -->

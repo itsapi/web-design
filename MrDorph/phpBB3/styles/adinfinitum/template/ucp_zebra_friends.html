@@ -1,0 +1,28 @@
+<!-- INCLUDE ucp_header.html -->
+
+<table class="viewforum" width="100%" cellspacing="1">
+<tr>
+	<th colspan="2" valign="middle"><h2>{L_TITLE}</h2></th>
+</tr>
+<tr>
+	<td class="row3 pad4" colspan="2">{L_FRIENDS_EXPLAIN}</td>
+</tr>
+<!-- IF ERROR -->
+	<tr>
+		<td class="row3 pad60 txtmiddle" colspan="2">{ERROR}</td>
+	</tr>
+<!-- ENDIF -->
+<tr>
+	<td class="row1 pad4" width="40%"><b>{L_YOUR_FRIENDS}:</b><br />{L_YOUR_FRIENDS_EXPLAIN}</td>
+	<td class="row2 pad4 txtcenter"><!-- IF S_USERNAME_OPTIONS --><select name="usernames[]" multiple="multiple" size="5">{S_USERNAME_OPTIONS}</select><!-- ELSE --><b>{L_NO_FRIENDS}</b><!-- ENDIF --></td>
+</tr>
+<tr>
+	<td class="row1 pad4"><b>{L_ADD_FRIENDS}:</b><br />{L_ADD_FRIENDS_EXPLAIN} [ <a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a> ]</td>
+	<td class="row2 pad4 txtcenter"><textarea class="post" name="add" rows="5" cols="30">{USERNAMES}</textarea><br /></td>
+</tr>
+<tr>
+	<td class="row3 txtcenter pad4" colspan="2">{S_HIDDEN_FIELDS}<input class="button" type="submit" name="submit" value="{L_SUBMIT}" />&nbsp;&nbsp;<input class="button" type="reset" value="{L_RESET}" name="reset" /></td>
+</tr>
+</table>
+
+<!-- INCLUDE ucp_footer.html -->

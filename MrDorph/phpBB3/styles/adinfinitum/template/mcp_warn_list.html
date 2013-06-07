@@ -1,0 +1,43 @@
+<!-- INCLUDE mcp_header.html -->
+
+<form method="post" name="mcp" action="{U_POST_ACTION}">
+
+<table class="modcp" width="100%" cellspacing="1">
+<tr>
+	<td colspan="4"><h2>{L_WARNED_USERS}</h2></td>
+</tr>
+<tr class="toplines">
+	<th>&nbsp;{L_USERNAME}&nbsp;</th>
+	<th>&nbsp;{L_WARNINGS}&nbsp;</th>
+	<th>&nbsp;{L_LATEST_WARNING_TIME}&nbsp;</th>
+	<th>&nbsp;</th>
+</tr>
+<!-- BEGIN user -->
+	<tr>
+		<td class="row1 pad4" width="15%" valign="top">{user.USERNAME_FULL}</td>
+		<td class="row2 pad4" width="15%" valign="top">{user.WARNINGS}</td>
+		<td class="row1 pad4" width="15%" valign="top">{user.WARNING_TIME}</td>
+		<td class="row2 pad4" width="15%" valign="top"><a href="{user.U_NOTES}">{L_VIEW_NOTES}</a></td>
+	</tr>
+<!-- BEGINELSE -->
+	<tr>
+		<td class="row1 pad4" colspan="4" align="center">{L_WARNINGS_ZERO_TOTAL}</td>
+	</tr>
+<!-- END user -->
+<tr align="center">
+	<td class="row3 pad4" colspan="4">{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}&nbsp;{L_SORT_BY} {S_SELECT_SORT_KEY} {S_SELECT_SORT_DIR}&nbsp;<input class="button" type="submit" value="{L_GO}" name="sort" /></td>
+</tr>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr>
+	<td class="pagination">{PAGE_NUMBER} [ {TOTAL_USERS} ]</td>
+	<td align="{S_CONTENT_FLOW_END}"><span class="pagination"><!-- INCLUDE pagination.html --></td>
+</tr>
+</table>
+{S_FORM_TOKEN}
+</form>
+
+<div class="spacing"></div>
+
+<!-- INCLUDE mcp_footer.html -->

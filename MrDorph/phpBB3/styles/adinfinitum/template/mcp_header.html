@@ -1,0 +1,81 @@
+<!-- INCLUDE overall_header.html -->
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tr class="toplines">
+		<th>{L_MCP}</th>
+	</tr>
+</table>
+<div id="pageheader">
+	<!-- IF U_MCP -->
+	<div class="right mainmenu">
+			<a href="{U_MCP}">{L_MCP}</a><!-- IF U_MCP_FORUM --> | <a href="{U_MCP_FORUM}">{L_MODERATE_FORUM}</a><!-- ENDIF -->
+			<!-- IF U_MCP_TOPIC --> | <a href="{U_MCP_TOPIC}">{L_MODERATE_TOPIC}</a><!-- ENDIF -->
+			<!-- IF U_MCP_POST --> | <a href="{U_MCP_POST}">{L_MODERATE_POST}</a><!-- ENDIF -->
+	</div><br />
+	<!-- ENDIF -->
+	<!-- IF TOPIC_TITLE or FORUM_NAME -->
+	<h2><!-- IF TOPIC_TITLE --><a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a><!-- ELSE --><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a><!-- ENDIF --></h2>
+	<!-- ENDIF -->
+</div>
+
+
+<div id="pagecontent">
+
+	<table width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td width="20%" valign="top">
+
+			<table class="viewforum" width="100%" cellspacing="1">
+			<tr>
+				<td><h2>{L_OPTIONS}</h2></th>
+			</tr>
+			<!-- BEGIN l_block1 -->
+				<tr>
+				<!-- IF l_block1.S_SELECTED -->
+					<td class="row1 two"><b>{l_block1.L_TITLE}</b>
+
+					<ul style="margin: 0; padding: 0; list-style-type: none; line-height: 175%;">
+					<!-- BEGIN l_block2 -->
+						<li class="row2" style="padding: 1px 0;">&#187; <!-- IF l_block1.l_block2.S_SELECTED -->{l_block1.l_block2.L_TITLE}<!-- ELSE --><a href="{l_block1.l_block2.U_TITLE}">{l_block1.l_block2.L_TITLE}</a><!-- ENDIF --></li>
+					<!-- END l_block2 -->
+					</ul>
+				<!-- ELSE -->
+					<td class="row2 two" nowrap="nowrap" onmouseover="this.className='row1 two'" onmouseout="this.className='row2 two'" onclick="location.href=this.firstChild.href;"><a href="{l_block1.U_TITLE}">{l_block1.L_TITLE}</a>
+				<!-- ENDIF -->
+					</td>
+				</tr>
+			<!-- END l_block1 -->
+			</table>
+
+		</td>
+		<td>&nbsp;</td>
+		<td width="80%" valign="top">
+
+		<!-- IF MESSAGE -->
+			<table class="modcp" width="100%" cellspacing="1">
+			<tr>
+				<th><h2>{L_MESSAGE}</h2></th>
+			</tr>
+			<tr>
+				<td class="row1" align="center"><br />{MESSAGE}<br /><br /><!-- BEGIN return_links -->{return_links.MESSAGE_LINK}<br /><br /><!-- END return_links --></td>
+			</tr>
+			</table>
+
+			<br />
+		<!-- ENDIF -->
+
+		<!-- IF CONFIRM_MESSAGE -->
+			<form name="confirm" method="post" action="{S_CONFIRM_ACTION}">
+
+			<table class="modcp" width="100%" cellspacing="1">
+			<tr>
+				<th><h2>{L_PLEASE_CONFIRM}</h2></th>
+			</tr>
+			<tr>
+				<td class="row1" align="center"><br />{CONFIRM_MESSAGE}<br /><br />{S_HIDDEN_FIELDS}<input class="button" type="submit" name="confirm" value="{L_YES}" />&nbsp;&nbsp;<input class="button" type="submit" name="cancel" value="{L_NO}" /><br /><br /></td>
+			</tr>
+			</table>
+
+			</form>
+
+			<br />
+		<!-- ENDIF -->
