@@ -1,0 +1,10 @@
+form input {
+	margin: 5px;
+}
+form input:not([hidden]):not([type="submit"]) {
+	display: block;
+}
+section {
+	float: left;
+	margin: 20px;
+}
