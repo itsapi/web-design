@@ -51,7 +51,8 @@ nav a {
 	min-width: 80px;
 	margin: 5px;
 	padding: 10px;
-	background: rgba(240, 90, 20, 1);
+	/*background: rgba(240, 90, 20, 1);*/
+	background: rgba(220, 0, 40, 1);
 	border-radius: 3px;
 	border: none;
 	text-decoration: none;
@@ -67,7 +68,8 @@ nav a {
 }
 nav a:hover {
 	padding: 15px;
-	background: rgba(260, 110, 40, 1);
+	/*background: rgba(260, 110, 40, 1);*/
+	background: rgba(240, 20, 60, 1);
 	margin: 0;
 	border-radius: 6px;
 	-webkit-box-shadow: 0 0 10px rgba(50, 50, 50, 1);
@@ -88,7 +90,8 @@ nav a:hover {
 }
 #content > section {
 	padding: 10px;
-	border: 1px solid rgba(240, 90, 20, 0.7);
+	/*border: 1px solid rgba(240, 90, 20, 0.7);*/
+	border: 1px solid rgba(220, 0, 40, 0.7);
 	border-radius: 2px;
 	background-color: rgba(256, 256, 256, 0.17);
 }
@@ -126,7 +129,8 @@ nav a:hover {
 	margin-top: 2em;
 }
 .button {
-	background: rgb(240, 90, 20);
+	/*background: rgb(240, 90, 20);*/
+	background: rgb(220, 0, 40);
 	color: white;
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 	text-decoration: none;
@@ -170,8 +174,10 @@ footer p {
 
 @media screen and (min-width: 801px) {
 	body {
-		border-left: 1px solid rgba(240, 90, 20, 1);
-		border-right: 1px solid rgba(240, 90, 20, 1);
+		/*border-left: 1px solid rgba(240, 90, 20, 1);*/
+		border-left: 1px solid rgba(220, 0, 40, 1);
+		/*border-right: 1px solid rgba(240, 90, 20, 1);*/
+		border-right: 1px solid rgba(220, 0, 40, 1);
 		border-top: 1px solid transparent;
 		width: 90%;
 		margin: 0 auto;
