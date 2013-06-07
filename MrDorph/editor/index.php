@@ -60,7 +60,7 @@
 		if (file_exists($_REQUEST['entry'])) {
 			$fileContents = file_get_contents($_REQUEST['entry']);				
 		} else {
-			$fileContents = file_get_contents('template.html');
+			$fileContents = file_get_contents('template.php');
 		}
 		$html = [
 				 explode('<title>', $fileContents)[0], // START ~~> <title>
