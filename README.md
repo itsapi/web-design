@@ -397,7 +397,7 @@ C:
 > Like I said looks great. Still haven't heard back from wargaming, my ticket
 > is still in the queue.
 
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### coderqi - IN PROGRESS
 #### http://olls.no-ip.org/webDesign/coderqi/index.html
