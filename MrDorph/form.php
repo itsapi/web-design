@@ -1,17 +1,25 @@
 <?php
 	include('login/config.php');
 	session_start();
-	$user_check = $_SESSION['login_user'];
 
-	$ses_sql = mysql_query("SELECT username FROM admin WHERE username='$user_check'");
+	$notLoggedIn = false;
+	if (isset($_SESSION['login_user'])) {
+		$user_check = $_SESSION['login_user'];
 
-	$row = mysql_fetch_array($ses_sql);
+		$ses_sql = mysql_query("SELECT username FROM admin WHERE username='$user_check'");
 
-	$login_session = $row['username'];
+		$row = mysql_fetch_array($ses_sql);
 
-	if (isset($login_session)) {
-		header('Location: ' . htmlspecialchars($_SERVER['HTTP_REFERER']));
+		$login_session = $row['username'];
+		if (isset($login_session)) {
+			header('Location: ' . htmlspecialchars($_SERVER['HTTP_REFERER']));
+		} else {
+			$notLoggedIn = true;
+		}
 	} else {
+		$notLoggedIn = true;
+	}
+	if ($notLoggedIn) {
 ?>
 <!DOCTYPE html>
 

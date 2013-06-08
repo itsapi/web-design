@@ -15,7 +15,7 @@
 		<nav>
 			<ul>
 				<li><a href="index.php">Welcome</a></li>
-				<li><a href="info.php">About</a></li>
+				<li><a href="info.php">Info</a></li>
 				<li><a href="news.php">News</a></li>
 				<li><a href="gallery.php">Gallery</a></li>
 				<li><a href="forum.php">Forum</a></li>
