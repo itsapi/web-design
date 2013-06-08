@@ -371,7 +371,9 @@ M:
 > it's done.
 
 C:
-> Change it back to orange, it doesn't look good, other than that its great. With the login for it we'd like it to send us an email to verify the user before they can use it, would this be possible?
+> Change it back to orange, it doesn't look good, other than that its great.
+> With the login for it we'd like it to send us an email to verify the user
+> before they can use it, would this be possible?
 
 M:
 > Yes I thought the orange looked better too, will do.
@@ -381,6 +383,19 @@ M:
 > registers. I'll start getting this sorted tomorrow.
 >
 > Did you manage to get into the forum, is this what you wanted?
+
+C:
+> No didn't look at the forum, didn't realise it was set up ready to be used,
+> I'll create an account tomorrow and have a look. Does it sort the posts by
+> date? The one we currently have has the older posts first then the newer
+> ones, this is fine for comments but for the actual posts seems a bit daft.
+>
+> For some reason some people want a guest book as well, not sure why but
+> would you be able to do this? Via a link under the log in one saying leave a
+> comment, then a page with comments.
+>
+> Like I said looks great. Still haven't heard back from wargaming, my ticket
+> is still in the queue.
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  
 
