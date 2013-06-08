@@ -397,6 +397,18 @@ C:
 > Like I said looks great. Still haven't heard back from wargaming, my ticket
 > is still in the queue.
 
+C:
+> Just checked out the forums page, it's not loading correctly and I don't
+> have permission to register for the forum? Registered for the website part
+> fine though.
+
+M:
+> Sorry, I mucked up. Forgot to push it to the server :|
+>
+> Should all be good now, I cleared the database, so if you recreate your
+> account, then login to the website, go to the forum, login with the same
+> details and it should be good. Tell me if you get any more problems.
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### coderqi - IN PROGRESS
