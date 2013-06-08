@@ -25,11 +25,11 @@
 		$loggedIn = 1;
 	}
 	if (isset($_REQUEST['login'])) {
-		 if($_REQUEST['username'] == $username && md5($_REQUEST['password']) == $password) {
+		if($_REQUEST['username'] == $username && md5($_REQUEST['password']) == $password) {
 			$loggedIn = 1;
 			setcookie("loginEditor", 1);
 		} else {
-		$message .= "Username or password was incorrect";
+			$message .= "Username or password was incorrect";
 		}
 	}
 	if (isset($_REQUEST['logout'])) {
@@ -61,14 +61,16 @@
 	}
 	if (isset($_REQUEST['entry'])) {
 		if (file_exists($_REQUEST['entry'])) {
-			$fileContents = file_get_contents($_REQUEST['entry']);				
+			$fileContents = file_get_contents($_REQUEST['entry']);
 		} else {
 			$fileContents = file_get_contents('template.php');
 		}
 		$html = [
 				 explode('<title>', $fileContents)[0], // START ~~> <title>
 				 explode('</title>', explode('<title>', $fileContents)[1])[0], // title
-				 explode('<section><h2>', explode('</title>', $fileContents)[1])[0], // </title> ~~> <section><h2>
+				 explode('<!--login-->', explode('</title>', $fileContents)[1])[0], // </title> ~~> <!--login-->
+				 explode('<!--login-->', $fileContents)[1], // login
+				 '<!--login--><section><h2>', // <!--login--> ~~> <section><h2>
 				 explode('</section></h2>', explode('<section><h2>', $fileContents)[1])[0], // heading
 				 explode('<!--content-->', $fileContents)[1], // content
 				 explode('<!--content-->', $fileContents)[2] // <!--content--> ~~> END
@@ -76,7 +78,28 @@
 	}
 	if (isset($_REQUEST['save'])) {
 		if (($_REQUEST['title']) && ($_REQUEST['fileContents'])) {
-			$contents = $html[0] . '<title>' . $_REQUEST['title'] . '</title>' . $html[2] . '<section><h2>' . $_REQUEST['title'] . "</h2></section><!--content-->\n" . $_REQUEST['fileContents'] . '<!--content-->' . $html[5];
+			if ($_REQUEST['needLogin'] == 'on') {
+				$passInc = '<?php include(\'login/lock.php\'); ?>';
+			} else {
+				if ($html[3] == '<?php include(\'login/lock.php\'); ?>') {
+					$passInc = '<?php include(\'login/unlock.php\'); ?>';
+				} else {
+					$passInc = $html[3];
+				}
+			}
+			$contents = $html[0] . 
+						'<title>' . 
+						$_REQUEST['title'] . 
+						'</title>' . 
+						$html[2] . 
+						'<!--login-->' . 
+						$passInc . 
+						$html[4] . 
+						$_REQUEST['title'] . 
+						"</h2></section><!--content-->\n" . 
+						$_REQUEST['fileContents'] . 
+						'<!--content-->' . 
+						$html[6];
 			if (file_put_contents($_REQUEST['entry'], $contents)) {
 				$message .= 'File saved successfully';
 			} else {
@@ -180,7 +203,8 @@
 			<h3>Edit file:</h3>
 			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 				<label>Page title: <input type="text" name="title" value="<?=$html[1]?>"></label>
-				<textarea name="fileContents" cols="60" rows="20"><?=$html[4]?></textarea>
+				<label>Require Login: <input type="checkbox" name="needLogin" <?php if ($html[3] == '<?php include(\'login/lock.php\'); ?>') { echo 'checked'; } ?>></label>
+				<textarea name="fileContents" cols="60" rows="20"><?=$html[6]?></textarea>
 				<input type="text" value="<?=$_REQUEST['entry']?>" name="entry" hidden><br>
 				<input type="submit" name="save" value="Save file">
 				<input type="submit" value="Close">

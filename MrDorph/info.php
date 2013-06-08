@@ -24,7 +24,7 @@
 			</ul>
 		</nav>
 		<div id="content">
-<?php include('login/lock.php'); ?>
+<!--login--><?php include('login/lock.php'); ?><!--login-->
 <section><h2>Info</h2></section>
 <!--content-->
 <section>

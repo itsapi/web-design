@@ -409,6 +409,15 @@ M:
 > account, then login to the website, go to the forum, login with the same
 > details and it should be good. Tell me if you get any more problems.
 
+C:
+> yep alls good, don't know how to create a thread though, also is it possible
+> to change the time to GMT? Looks good.
+
+M:
+> I can set you up as an admin on the forum, so you can create forums where
+> people can post to. I'll change the time too , haven't been through many of
+> the settings yet, there's a lot of them.
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### coderqi - IN PROGRESS

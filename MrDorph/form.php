@@ -47,9 +47,7 @@
 				<li><a href="contact.php">Contact</a></li>
 			</ul>
 		</nav>
-		<div id="content">
-<section><h2>Login</h2></section>
-<!--content-->
+		<div id="content"><!--login--><!--login--><section><h2>Login</h2></section><!--content-->
 <section>
 	<p><b>Sign in</b> to our website to access the forum and other member restricted pages. <a href="signup.php">Become a member</a>.</p>
 	<form action="login/login.php" method="post" class="pure-form pure-form-aligned">
@@ -62,13 +60,14 @@
 	</form>
 </section>
 <!--content-->
-		</div>
-		<footer>
-			<p>Copyright &copy; 2013</p>
-			<p>Designed and built by <a href="dvbris.no-ip.org">Dvbris Web Design</a></p>
-		</footer>
-	</body>
-</html>
-<?php
-	}
-?>
+<section>
+	<p><b>Sign in</b> to our website to access the forum and other member restricted pages. <a href="signup.php">Become a member</a>.</p>
+	<form action="login/login.php" method="post" class="pure-form pure-form-aligned">
+		<input type="hidden" value="<?php echo $_GET['page']; ?>" name="page">
+		<fieldset>
+			<div class="pure-control-group"><label for="username">Username</label><input type="text" required focus id="username" name="username"></div>
+			<div class="pure-control-group"><label for="password">Password</label><input type="password" required id="password" name="password"></div>
+			<div class="pure-controls"><button class="pure-button" type="submit">Sign In</button></div>
+		</fieldset>
+	</form>
+</section>
