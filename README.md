@@ -313,7 +313,7 @@ C:
 > heading for tanks for your own personal agenda, Platoon games are for fun
 > and to get used to playing with each other.
 >
->TRAINING Before we organise a tank company battle, we will be heading into 
+> TRAINING Before we organise a tank company battle, we will be heading into 
 > the training room for a quick recap on the system and get used to gathering
 > into our correct platoons, and also for receiving orders etc. Also training
 > matches will be organised everfy now and again to improve our game play
@@ -349,6 +349,38 @@ C:
 > email me or speak to me on Teamspeak, Regards, Rokossovsky."
 >
 > How is everything else going? the forum and gallery and what not?
+
+C:
+> hello, website looks good, can we move the over 16 and english speaking
+> under the second paragraph above the new recruits button. Like the way it
+> stands out. I've also been asked to ask you if you can change the orange to
+> a shade of red, apparently its too dutch, I'll make the final decision, I
+> like the orange and red doesn't look good with the image in my head. Looking
+> forward to seeing the final product, really impressed.
+
+M:
+> Changed to red, not sure, it might need some tweaking.
+>
+> I've built the login system, and installed the forum. I've password
+> protected the info page (just as a test) and the forum. You have to make a
+> separate forum account once you are logged in to your website account. Is
+> there anything you want different, is this what you had in mind?
+>
+> The CMS (content management system) is nearly ready, which you can use to
+> modify any of the pages on the website. I'll show you haw to use that once
+> it's done.
+
+C:
+> Change it back to orange, it doesn't look good, other than that its great. With the login for it we'd like it to send us an email to verify the user before they can use it, would this be possible?
+
+M:
+> Yes I thought the orange looked better too, will do.
+>
+> Email verification can be done, I'll make a simple admin page which shows
+> users and allows you to verify them, and it'll email you when someone
+> registers. I'll start getting this sorted tomorrow.
+>
+> Did you manage to get into the forum, is this what you wanted?
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  
 
