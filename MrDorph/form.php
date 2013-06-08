@@ -21,8 +21,8 @@
 		<title>Login</title>
 
 		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
-		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="typeplate-unminified.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/typeplate-unminified.css">
 	</head>
 	<body>
 		<header>
