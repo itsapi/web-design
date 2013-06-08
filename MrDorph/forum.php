@@ -3,7 +3,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>title</title>
+		<title>Forum</title>
 
 		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
 		<link rel="stylesheet" href="css/style.css">
