@@ -31,7 +31,7 @@
 	<p>
 		<b>Sign up</b> to our website to access the forum and other member restricted pages.
 	</p>
-	<form action="login/register.php" method="post" class="pure-form pure-form-aligned">
+	<form action="phpBB3/register.php" method="post" class="pure-form pure-form-aligned">
 		<fieldset>
 			<div class="pure-control-group"><label for="username">Username</label><input type="text" required focus id="username" name="username"></div>
 			<div class="pure-control-group"><label for="username">Email</label><input type="email" required id="email" name="email"></div>
