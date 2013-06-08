@@ -122,7 +122,7 @@
 			<ul>
 <?
 			while ($entry = readdir($handle)) {
-				if (preg_match("/\.(html)$/", $entry)) {
+				if (preg_match("/\.(php)$/", $entry)) {
 ?>
 			<li>
 				<a href="../<?=$entry?>" target="_blank"><?=$entry?></a>
