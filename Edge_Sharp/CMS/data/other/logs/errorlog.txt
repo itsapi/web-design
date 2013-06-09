@@ -1,4 +1,0 @@
-[09-Jun-2013 21:28:18 Europe/London] PHP Warning:  chmod(): Operation not permitted in /home/olls/Programming/webDesign/Edge_Sharp/GetSimpleCMS/admin/install.php on line 42
-[09-Jun-2013 21:28:18 Europe/London] PHP Warning:  chmod(): Operation not permitted in /home/olls/Programming/webDesign/Edge_Sharp/GetSimpleCMS/admin/install.php on line 42
-[09-Jun-2013 21:28:18 Europe/London] PHP Warning:  chmod(): Operation not permitted in /home/olls/Programming/webDesign/Edge_Sharp/GetSimpleCMS/admin/install.php on line 42
-[09-Jun-2013 21:28:18 Europe/London] PHP Warning:  chmod(): Operation not permitted in /home/olls/Programming/webDesign/Edge_Sharp/GetSimpleCMS/admin/install.php on line 42
