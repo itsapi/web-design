@@ -418,6 +418,21 @@ M:
 > people can post to. I'll change the time too , haven't been through many of
 > the settings yet, there's a lot of them.
 
+C:
+> "Hello Commander,
+> Thank you for contacting us with your issue. My name is Hernando Cortés and
+> I will be more than happy to help you on the matter.
+> I would like to confirm you that it is alright to use our images in your
+> website, as long as you don´t use them for monetization. Also you will have
+> to state and show a link on your website that clearly specifies that those
+> images are copyrights of WG.
+> I hope that I clarified the matter to you. If you have any other problem,
+> please don´t hesitate to come back to us.
+> Good luck in your future battles! :)
+> Best regards,
+> Hernando Cortés, World of Tanks EU Support Service"
+> This is the reply from wargaming.net regarding the images.
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### coderqi - IN PROGRESS
@@ -690,6 +705,27 @@ M:
 > Awesome! I'm glad you like it, I can wait a few days for your critique :)
 >
 > My name is Oliver, Hello Micheal!
+
+C:
+> Oliver, thanks for your patience... I was out on a trip visiting some family
+> down south. Looking at the website, you really have done a great job with
+> the foundation. I think the only 2 notes I have is:
+> (1) See if you can get the name "Secure Banking Transaction Solutions" on
+> two lines with "Secure Banking" on the first line, and "Transaction
+> Solutions" on the second, just a bit off set. Aside from that, I think this
+> will work.
+> (2) Can you make "Home", "Product", "Blog", "Contact" a little larger (2
+> sizes perhaps) and spread them equal-distance across the top of the page?
+> Kind of like http://www.esourcemarketing.com/
+> Also, how would I update the blog portion of the website? I have a lot of
+> articles that I would like to start getting out there.. hopefully to start
+> driving traffic to the website. And if at all possible, I would like to
+> start getting the blogging going as soon as possible.
+> Finally, I just wanted to say thanks for your help with this. Would you mind
+> sharing a little more about your self? Are you still in school? Are you just
+> getting into web development? What are you looking to do in the future? Are
+> you in the US?
+> Thanks again, Michael
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
