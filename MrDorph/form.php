@@ -1,10 +1,8 @@
 <?php
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
-
 	include('login/config.php');
 	session_start();
 
+	$notLoggedIn = false;
 	if (isset($_SESSION['login_user'])) {
 		$user_check = $_SESSION['login_user'];
 
@@ -14,9 +12,18 @@
 
 		$login_session = $row['username'];
 		if (isset($login_session)) {
-			header('Location: index.php');
+			if (isset($_SERVER['HTTP_REFERER'])) {
+				header('Location: ' . htmlspecialchars($_SERVER['HTTP_REFERER']));
+			} else {
+				header('Location: index.php');
+			}
+		} else {
+			$notLoggedIn = true;
 		}
+	} else {
+		$notLoggedIn = true;
 	}
+	if ($notLoggedIn) {
 ?>
 <!DOCTYPE html>
 
