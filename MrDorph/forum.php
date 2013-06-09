@@ -34,4 +34,10 @@
 <!--login--><?php include('login/lock.php'); ?><!--login--><section><h2>Forum</h2></section><!--content-->
 <iframe src="phpBB3" id="Iframe" frameborder="0" style="width:100%; overflow-y: hidden"></iframe>
 <!--content-->
-<iframe src="phpBB3" id="Iframe" frameborder="0" style="width:100%; overflow-y: hidden"></iframe>
+		</div>
+		<footer>
+			<p>Copyright &copy; 2013</p>
+			<p>Designed and built by <a href="dvbris.no-ip.org">Dvbris Web Design</a></p>
+		</footer>
+	</body>
+</html>

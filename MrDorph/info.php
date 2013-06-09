@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>title</title>
+		<title>Info</title>
 
 		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
 		<link rel="stylesheet" href="css/style.css">
@@ -24,9 +24,7 @@
 			</ul>
 		</nav>
 		<div id="content">
-<!--login--><?php include('login/lock.php'); ?><!--login-->
-<section><h2>Info</h2></section>
-<!--content-->
+<!--login--><?php include('login/lock.php'); ?><!--login--><section><h2>Info</h2></section><!--content-->
 <section>
 	<h3>Teamspeak</h3>
 	<p>

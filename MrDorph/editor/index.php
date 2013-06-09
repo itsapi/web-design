@@ -70,8 +70,6 @@
 				 explode('</title>', explode('<title>', $fileContents)[1])[0], // title
 				 explode('<!--login-->', explode('</title>', $fileContents)[1])[0], // </title> ~~> <!--login-->
 				 explode('<!--login-->', $fileContents)[1], // login
-				 '<!--login--><section><h2>', // <!--login--> ~~> <section><h2>
-				 explode('</section></h2>', explode('<section><h2>', $fileContents)[1])[0], // heading
 				 explode('<!--content-->', $fileContents)[1], // content
 				 explode('<!--content-->', $fileContents)[2] // <!--content--> ~~> END
 		];
@@ -94,12 +92,12 @@
 						$html[2] . 
 						'<!--login-->' . 
 						$passInc . 
-						$html[4] . 
+						'<!--login--><section><h2>' . 
 						$_REQUEST['title'] . 
 						"</h2></section><!--content-->\n" . 
 						$_REQUEST['fileContents'] . 
 						'<!--content-->' . 
-						$html[6];
+						$html[5];
 			if (file_put_contents($_REQUEST['entry'], $contents)) {
 				$message .= 'File saved successfully';
 			} else {
@@ -204,7 +202,7 @@
 			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 				<label>Page title: <input type="text" name="title" value="<?=$html[1]?>"></label>
 				<label>Require Login: <input type="checkbox" name="needLogin" <?php if ($html[3] == '<?php include(\'login/lock.php\'); ?>') { echo 'checked'; } ?>></label>
-				<textarea name="fileContents" cols="60" rows="20"><?=$html[6]?></textarea>
+				<textarea name="fileContents" cols="60" rows="20"><?=$html[4]?></textarea>
 				<input type="text" value="<?=$_REQUEST['entry']?>" name="entry" hidden><br>
 				<input type="submit" name="save" value="Save file">
 				<input type="submit" value="Close">
