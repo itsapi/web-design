@@ -1,8 +1,10 @@
 <?php
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+
 	include('login/config.php');
 	session_start();
 
-	$notLoggedIn = false;
 	if (isset($_SESSION['login_user'])) {
 		$user_check = $_SESSION['login_user'];
 
@@ -12,14 +14,9 @@
 
 		$login_session = $row['username'];
 		if (isset($login_session)) {
-			header('Location: ' . htmlspecialchars($_SERVER['HTTP_REFERER']));
-		} else {
-			$notLoggedIn = true;
+			header('Location: index.php');
 		}
-	} else {
-		$notLoggedIn = true;
 	}
-	if ($notLoggedIn) {
 ?>
 <!DOCTYPE html>
 
@@ -33,25 +30,12 @@
 		<link rel="stylesheet" href="css/typeplate-unminified.css">
 	</head>
 	<body>
-		<header>
-			<h1>ENGLISH ARMOURED BRIGADE</h1>
-		</header>
-		<nav>
-			<ul>
-				<li><a href="index.php">Welcome</a></li>
-				<li><a href="info.php">Info</a></li>
-				<li><a href="news.php">News</a></li>
-				<li><a href="gallery.php">Gallery</a></li>
-				<li><a href="forum.php">Forum</a></li>
-				<li><a href="downloads.php">Downloads</a></li>
-				<li><a href="contact.php">Contact</a></li>
-			</ul>
-		</nav>
+		<?php include('site_parts/header.php'); ?>
 		<div id="content"><!--login--><!--login--><section><h2>Login</h2></section><!--content-->
 <section>
 	<p><b>Sign in</b> to our website to access the forum and other member restricted pages. <a href="signup.php">Become a member</a>.</p>
 	<form action="login/login.php" method="post" class="pure-form pure-form-aligned">
-		<input type="hidden" value="<?php echo $_GET['page']; ?>" name="page">
+		<input type="hidden" value="<?=$_GET['page']?>" name="page">
 		<fieldset>
 			<div class="pure-control-group"><label for="username">Username</label><input type="text" required focus id="username" name="username"></div>
 			<div class="pure-control-group"><label for="password">Password</label><input type="password" required id="password" name="password"></div>
@@ -61,9 +45,6 @@
 </section>
 <!--content-->
 		</div>
-		<footer>
-			<p>Copyright &copy; 2013</p>
-			<p>Designed and built by <a href="dvbris.no-ip.org">Dvbris Web Design</a></p>
-		</footer>
+		<?php include('site_parts/footer.php'); ?>
 	</body>
 </html>
