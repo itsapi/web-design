@@ -12,14 +12,17 @@
 
 		$login_session = $row['username'];
 		if (isset($login_session)) {
-			header('Location: ' . htmlspecialchars($_SERVER['HTTP_REFERER']));
+			if (isset($_SERVER['HTTP_REFERER'])) {
+				header('Location: ' . htmlspecialchars($_SERVER['HTTP_REFERER']));
+			} else {
+				header('Location: index.php');
+			}
 		} else {
 			$notLoggedIn = true;
 		}
 	} else {
 		$notLoggedIn = true;
 	}
-	if ($notLoggedIn) {
 ?>
 <!DOCTYPE html>
 
