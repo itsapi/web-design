@@ -1,0 +1,63 @@
+form {
+	overflow: hidden;
+	position: relative;
+	font-family: sans-serif;
+	color: #fff;
+	width: 500px;
+	padding: 20px;
+	margin: auto;
+	background:#232323;
+	border:#000 1px solid;
+	border-radius:7px;
+	-webkit-border-radius:7px;
+	-moz-border-radius:7px;
+	box-shadow:rgba(0,0,0,0.4) 0px 2px 5px, inset rgba(255,255,255,0.9) 0px 1px 1px -1px;
+	-webkit-box-shadow:rgba(0,0,0,0.4) 0px 2px 5px, inset rgba(255,255,255,0.9) 0px 1px 1px -1px;
+	-moz-box-shadow:rgba(0,0,0,0.4) 0px 2px 5px, inset rgba(255,255,255,0.9) 0px 1px 1px -1px;
+	background-image:-moz-linear-gradient(top, #333333, #1f1f1f);
+		background-image:-webkit-linear-gradient(top, #333333, #1f1f1f);
+			background-image:linear-gradient(top, #333333, #1f1f1f);
+}
+input {
+	width: 48%;
+	width: 48%;
+	height: 30px;
+	display: block;
+	margin: 5px 0;
+	color:#c0c0c0;
+	border:#000 1px solid;
+	border-radius:7px;
+	-webkit-border-radius:7px;
+	-moz-border-radius:7px;
+	box-shadow:inset rgba(0,0,0,1) 0px 1px 4px, inset rgba(225,225,225,0.3) 0px -2px 4px -2px;
+	-webkit-box-shadow:inset rgba(0,0,0,1) 0px 1px 4px, inset rgba(225,225,225,0.3) 0px -2px 4px -2px;
+	-moz-box-shadow:inset rgba(0,0,0,1) 0px 1px 4px, inset rgba(225,225,225,0.3) 0px -2px 4px -2px;
+	background-image: -moz-linear-gradient(top, #3e3e3e 0%, #303030 100%);
+		background-image: -webkit-linear-gradient(top, #3e3e3e 0%, #303030 100%);
+			background-image: linear-gradient(top, #3e3e3e 0%, #303030 100%);
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+#description {
+	top: 0;
+	right: 0;
+	float: right;
+	width: 48%;
+	min-height: 200px;
+	padding: 5px;
+	border:#000 1px solid;
+	border-radius:7px;
+	-webkit-border-radius:7px;
+	-moz-border-radius:7px;
+	box-shadow:inset rgba(0,0,0,1) 0px 1px 4px, inset rgba(225,225,225,0.3) 0px -2px 4px -2px;
+	-webkit-box-shadow:inset rgba(0,0,0,1) 0px 1px 4px, inset rgba(225,225,225,0.3) 0px -2px 4px -2px;
+	-moz-box-shadow:inset rgba(0,0,0,1) 0px 1px 4px, inset rgba(225,225,225,0.3) 0px -2px 4px -2px;
+	background-image: -moz-linear-gradient(top, #3e3e3e 0%, #303030 100%);
+		background-image: -webkit-linear-gradient(top, #3e3e3e 0%, #303030 100%);
+			background-image: linear-gradient(top, #3e3e3e 0%, #303030 100%);
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+}
