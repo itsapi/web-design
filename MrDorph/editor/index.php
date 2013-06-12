@@ -192,6 +192,7 @@
 			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 				<label>New file: <input type="text" name="entry"></label>
 				<input type="submit" name="newFile" value="Create file">
+				<p>Files should end in .php (eg: 'index.php')</p>
 			</form>
 		</section>
 <?
