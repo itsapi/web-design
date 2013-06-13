@@ -27,11 +27,13 @@ header {
 			display: inline-block;
 			width: 200px;
 		}
+			.search div input {
+				width: 100%;
+			}
 		.search button {
 			position: absolute;
 			bottom: 0;
 			margin: 10px;
-			width: 50px;
 		}
 	.main p {
 		text-align: center;

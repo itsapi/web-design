@@ -29,13 +29,14 @@ header {
 		}
 			.search div {
 				display: inline-block;
+				width: 200px;
 			}
+				.search div input {
+					width: 100%;
+				}
 			.search button {
 				display: inline-block;
-				position: absolute;
-				bottom: 0;
-				margin: 10px;
-				width: 50px;
+				margin: 0 10px;
 			}
 
 #main-columns {
