@@ -1,29 +1,3 @@
-#search_container {
-	width: 400px;
-	text-align: center;
-	margin: 5% auto;
-}
-#search_container img {
-	width: 150px;
-	float: left;
-}
-.search {
-	width: 200px;
-	float: right;
-}
-	.search input {
-		width: 200px;
-	}
-	.search div {
-		display: inline-block;
-		width: 200px;
-	}
-	.search button {
-		position: relative;
-		bottom: 0;
-		margin: 10px;
-		display: inline;
-	}
 #results {
 	list-style: none;
 	padding-left: 0;

@@ -7,6 +7,14 @@ html, body {
 	margin: 0;
 	padding: 10px;
 }
+	a {
+		color: rgba(100, 100, 100, 1);
+		text-decoration: none;
+	}
+	a:hover {
+		color: rgba(0, 0, 0, 1);
+		text-decoration: underline;
+	}
 	#container {
 		font-family: verdana, helvetica, sans-serif;
 		width: 100%;
@@ -51,6 +59,9 @@ html, body {
 			width: 200px;
 			border-right: 2px solid #ddd;
 		}
+			#left img {
+				width: 150px;
+			}
 		#right {
 			overflow: hidden;
 			margin: 10px;
