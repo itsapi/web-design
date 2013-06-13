@@ -32,10 +32,7 @@ header {
 			}
 			.search button {
 				display: inline-block;
-				position: absolute;
-				bottom: 0;
-				margin: 10px;
-				width: 50px;
+				margin: 0 10px;
 			}
 
 #main-columns {
