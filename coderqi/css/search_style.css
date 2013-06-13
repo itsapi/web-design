@@ -29,7 +29,11 @@ header {
 		}
 			.search div {
 				display: inline-block;
+				width: 200px;
 			}
+				.search div input {
+					width: 100%;
+				}
 			.search button {
 				display: inline-block;
 				margin: 0 10px;
