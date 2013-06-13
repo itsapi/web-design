@@ -433,6 +433,24 @@ C:
 > Hernando Cortés, World of Tanks EU Support Service"
 > This is the reply from wargaming.net regarding the images.
 
+M:
+> Cool, I'll add the link in the footer, and we're all good for the background
+> image.
+
+C:
+> Hello, been busy so haven't been able to get in touch. Hows everything
+> coming along? Do you need any input from me at this time?
+
+M:
+> Hello, sorry I lost internet for a few days then sent a message to the wrong
+> person without noticing, but here is the message I meant to send you:
+>
+> Hello, I'm back sorry about the communication loss, my internet has been
+> down for the last two days, but now I'm back. I am still working on it, I've
+> been smoothing out the login, forum and admin page. Then we'll need the
+> logo, and I'll set up the gallery, have I forgotten anything?
+> Again sorry, Oliver
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### coderqi - IN PROGRESS
@@ -611,6 +629,40 @@ M:
 M:
 > Other server back up now too
 
+C:
+> Hi,
+> Just wondering how it's going? Are you still working on the site, or have
+> you stopped completely?
+> Cheers,
+
+M:
+> Hello, I'm back sorry about the communication loss, my internet has been
+> down for the last two days, but now I'm back.
+> I am still working on it, I've been smoothing out the login, forum and admin
+> page. Then we'll need the logo, and I'll set up the gallery, have I
+> forgotten anything?
+> Again sorry, Oliver
+
+M:
+> Woops!
+>
+> Sorry, I compleatly miss-read your username last night!
+>
+> But I am still working on it, have you seen it at
+> http://dvbris.no-ip.org/webDesign/coderqi ?
+>
+> Do you have any feedback or things you want me to change?
+
+C:
+> If you're still working on it, i'll let you polish it up before providing
+> feedback. There's no point me providing feedback now for things you're
+> probably going to change. Let me know when you've finished.
+> Cheers,
+
+M:
+> Hello, I can take some feedback now, It's mostly done, it just needs some
+> refinement, so your feedback would be very useful at this stage!
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### Edge_Sharp - IN PROGRESS
@@ -726,6 +778,101 @@ C:
 > getting into web development? What are you looking to do in the future? Are
 > you in the US?
 > Thanks again, Michael
+
+M:
+> Michael,
+>
+> I'll try and move the heading around a bit, and move even out the navigation
+> bar. Thank you for your compliments!
+>
+> I will install a CMS tomorrow which will allow you to edit and make new
+> pages, I imagine this can be used in a bloging format too. If not, I'll try
+> something else.
+>
+> I'm from the UK, nearing the end of my first year of collage, 17 years old.
+> I have a feeling collage is a different age group in the US, is that right
+> or am I mistaken?
+>
+> I've been building websites, just mucking around for a few years, but this
+> is the first time I'm building a website for someone else. I am quite
+> interested in continuing web design in to a job, otherwise I also program,
+> and I'll do that too.
+>
+> How about you?
+>
+> Oliver.
+
+C:
+> Oliver, Thanks for taking my suggestions, I am really excited to start
+> updating the site with content. So what language are you building the site
+> in? (HTML, HTML5, Wordpress etc...) So you are only 17? That is even more
+> impressive, and you also know programming? What languages do you know? I
+> also was not aware that you start college in the UK at 17, so what are you
+> going to school for?
+> To give you a little more info about myself, I am 31 and live in Wisconsin.
+> I work for a Telecom company and a manager of consumer product development.
+> I used to be in the insurance industry, but ended up in telecom through a
+> contact of mine. Aside from that, I am just trying to manage my family,
+> work, and start this new business.
+> So you are looking for a web design job? How is the job market over in the
+> UK?
+> Michael,
+
+M:
+> Hello Michael,
+>
+> The site so far has been built with HTML5, CSS3, with Skeleton.css as a
+> base. I'm planning on using [GetSimple](http://get-simple.info/) for the
+> CMS, as it's nice and easy to integrate into my HTML. I've been programming
+> for a while, I started in PHP, which is what got me into  programming, I've
+> been doing python for about a year. I'm starting to learn Javascript now and
+> I'm trying to decide weather to learn Java. I'm studying computing,
+> electronics, maths and physics in collage.
+>
+> I Think I'll just keep web designing independently for now, see if I can
+> earn any money at all :D I don't think the job market is too bad over here
+> at the moment. What sort of things is your product this website is for
+> doing?
+>
+> I lost my internet over the last two days, but now I'm back and I'll get
+> started on sorting out the CMS. Are there any other features you were
+> planning on putting on the website? Do you want me to keep the slider, or
+> just put it on the home page or something. Lastly, have you started
+> thinking about hosting or domains yet, to put this up on?
+>
+> Oliver
+
+C:
+> Oliver, You have a very impressive programming skill set, especially for
+> someone your age. Most of the programmers that I work with are very
+> specialized... and have been for years. With regards to your website
+> development, there is a lot of money to be made there if you can create the
+> portfolio and reputation, I know at my company we pay anywhere from 60K US
+> to over 120K US for a web development position.
+> With regards to your questions, I think for now, there wont be any
+> additional features. I have several future development ideas I would like to
+> come back to... but I would rather implement them if and when I start
+> signing up clients on a regular basis. Now you mentioned something about a
+> "slider", what are you referring to? Are you referring to the big picture
+> rotation at the top of the page? Finally, as for hosting, a friend of mine
+> has offered to host the site for me using one of his accounts at
+> http://open-sights.com/BME/ I have the account info so when you are ready, i
+> will send you the admin info.
+> Cheers, Michael
+> p.s.: While I do check reddit multiple times a day, if you would like to get
+> a hold of me directly, my email is michaelersland @ gmail . com (ignore the
+> spaces)
+
+M:
+> Thanks, I don't think I could just stick to one language for that long, I
+> would get board with it!
+>
+> Yes by slider I meant the gallery at the top, I was wandering whether you
+> wanted it at all, and if so, on every page or just the home.
+>
+> OK, I'll finish up the CMS then it should be nearly there.
+>
+> Oliver
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
