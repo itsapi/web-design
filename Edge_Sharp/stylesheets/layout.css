@@ -26,7 +26,7 @@
 		/*word-wrap: normal;*/
 	}
 	header {
-		height: 125px;
+		height: 175px;
 		position: relative;
 		margin: 10px 0;
 		text-align: right;
@@ -50,16 +50,25 @@
 
 	nav {
 		position: relative;
+		width: 100%;
 		z-index: 20;
 		border-bottom: 1px solid rgba(0, 100, 200, 0.1);
 		margin-bottom: 15px;
+		text-align: center;
 	}
 		nav ul {
-			display: inline-block;
+			display: block;
+			margin-bottom: 20px;
 		}
 		nav li {
 			display: inline-block;
-			margin: 15px 5px;
+			margin: 0;
+			margin-bottom: 5px;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 10px;
+			width: 20%;
 		}
 		nav a {
 			color: #444;
@@ -69,9 +78,13 @@
 			font-size: 11px;
 			font-weight: bold;
 			text-decoration: none;
-			margin-bottom: 20px;
+			margin: 0;
 			line-height: normal;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
 			padding: 14px 10px;
+			width: 100%;
 			font-family: Helvetica, Arial, sans-serif;
 		}
 		nav a:hover {
@@ -148,6 +161,10 @@
 		#slider-holder {
 			height: 280px;
 		}
+		nav li {
+			padding: 5px;
+			width: 24%;
+		}
 	}
 
 	/* Tablet Portrait size to standard 960 (devices and browsers) */
@@ -162,6 +179,9 @@
 		#slider-holder {
 			height: 153px;
 		}
+		header {
+			height: 125px;
+		}
 		header img {
 			height: 125px;
 		}
@@ -169,17 +189,15 @@
 			margin: 0 125px 0 0;
 			font-size: 3em;
 		}
+		nav {
+			padding: 0;
+		}
 	}
 
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 	@media only screen and (min-width: 480px) and (max-width: 767px) {
 		#slider-holder {
 			height: 153px;
-		}
-		nav a {
-			margin-left: 12px;
-			margin-right: 12px;
-			padding: 15px;
 		}
 	}
 
