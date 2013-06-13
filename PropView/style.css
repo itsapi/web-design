@@ -1,0 +1,60 @@
+body {
+	font-family: verdana, helvetica, sans serif;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 20px;
+	border: 20px solid #1A1EB2;
+	-moz-box-shadow: inset 0 0 10px #000;
+	-webkit-box-shadow: inset 0 0 10px #000;
+	box-shadow: inset 0 0 10px #000;
+	border-radius: 25px;
+}
+nav ul {
+	width: 98%;
+	margin: 10px auto;
+	border-top: 2px solid #ddd;
+	border-bottom: 2px solid #ddd;
+	text-align: center;
+	list-style: none;
+	padding: 0;
+}
+nav li {
+	display: inline;
+}
+nav a {
+	text-decoration: none;
+	color: #777;
+	display: inline-block;
+	width: 150px;
+	padding: 10px;
+	margin: 0;
+}
+nav a:hover {
+	color: #444;
+	background: #ddd;
+}
+#left {
+	overflow: hidden;
+	float: left;
+	margin: 10px;
+	width: 25%;
+	height: 75%;
+	border: 1px solid #000;
+}
+#right {
+	overflow: hidden;
+	float: right;
+	margin: 10px;
+	width: 70%;
+	height: 75%;
+	border: 1px solid #000;
+}
+footer {
+	width: 100%;
+	height: 50px;
+	border: 1px solid #000;
+	margin: 10px;
+}

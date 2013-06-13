@@ -1,0 +1,10 @@
+PropView
+--------
+
+Definition:
+
+ - The users of my system are individuals who have an account with PropView. The customers will post information about their properties to the website and I am told that the customers are generally not tech-savvy so the interface must be simple and easy to use. The person I am making the site for, Joe Van Auken, will also be a user as he will set up the accounts for the customers.
+
+ - The company I am making the website for is called PropView. 
+
+ - A website which allows companies to buy an account and then post properties for people to see. They can post 
