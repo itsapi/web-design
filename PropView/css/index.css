@@ -1,0 +1,25 @@
+#right {
+	padding: 5%;
+}
+#login_container {
+	width: 400px;
+	text-align: center;
+	margin: auto;
+}
+.login {
+	width: 200px;
+	float: right;
+}
+	.login input {
+		width: 200px;
+	}
+	.login div {
+		display: inline-block;
+		width: 200px;
+	}
+	.login button {
+		position: relative;
+		bottom: 0;
+		margin: 10px;
+		display: inline;
+	}
