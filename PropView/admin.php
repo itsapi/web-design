@@ -8,7 +8,7 @@
 	<head>
 		<title>PropView</title>
 		<? include 'include/head.html' ?>
-		<link rel="stylesheet" href="css/user.css">
+		<link rel="stylesheet" href="css/admin.css">
 	</head>
 	<body>
 		<div id="container">
@@ -26,7 +26,7 @@
 				</ul>
 			</section>
 			<section id="right">
-				
+
 			</section>
 			<? include 'include/footer.html' ?>
 		</div>

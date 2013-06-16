@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Editor</title>
-
-		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="../typeplate-unminified.css">
-	</head>
-	<body>
 <?
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
-
 	$loggedIn = 0;
 	if (isset($_GET['msg'])) {
 		$message = $_GET['msg'];
@@ -120,7 +107,19 @@
 			$message .= 'Ooops!  Your upload triggered the following error:  '.$_FILES['file']['error'];
 		}
 	}
+?>
 
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Editor</title>
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../typeplate-unminified.css">
+	</head>
+	<body>
+<?
 	if ($loggedIn) {
 ?>
 		<h1>Welcome to the wepage editor</h1>
