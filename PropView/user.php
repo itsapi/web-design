@@ -1,4 +1,6 @@
 <?
+	$msg = '';
+	include 'include/config.php';
 	if (isset($_COOKIE['user'])){
 ?>
 

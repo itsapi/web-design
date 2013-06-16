@@ -1,4 +1,6 @@
 <?
+	$msg = '';
+	include 'include/config.php';
 	if (isset($_COOKIE['user'])){
 ?>
 
@@ -23,6 +25,17 @@
 					<li><a href="#">Edit account</a></li>
 					<li><a href="index.php?logout">Logout</a></li>
 				</ul>
+				<form class="pure-form pure-form-stacked">
+    				<fieldset>
+						<label for="user">User:</label>
+						<select id="user">
+							<option>user1</option>
+							<option>user2</option>
+							<option>user3</option>
+						</select>
+						<button type="submit" class="pure-button">View user</button>
+					</fieldset>
+				</form>
 			</section>
 			<section id="right">
 

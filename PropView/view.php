@@ -1,3 +1,8 @@
+<?
+	$msg = '';
+	include 'include/config.php';
+?>
+
 <!DOCTYPE html>
 
 <html>
