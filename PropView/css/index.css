@@ -6,6 +6,9 @@
 	text-align: center;
 	margin: auto;
 }
+	#login_container figure {
+		float: left;
+	}
 .login {
 	width: 200px;
 	float: right;

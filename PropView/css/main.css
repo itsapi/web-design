@@ -9,7 +9,6 @@ html, body {
 }
 	figure {
 		width: 150px;
-		float: left;
 		text-align: center;
 	}
 	#logo {
