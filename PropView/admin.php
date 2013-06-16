@@ -21,7 +21,6 @@
 				<h4>My Account:</h4>
 				<ul>
 					<li><a href="#">Edit account</a></li>
-					<li><a href="#">Add property</a></li>
 					<li><a href="index.php?logout">Logout</a></li>
 				</ul>
 			</section>
