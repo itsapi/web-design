@@ -7,16 +7,32 @@ html, body {
 	margin: 0;
 	padding: 10px;
 }
+	figure {
+		width: 150px;
+		text-align: center;
+	}
+	#logo {
+		width: 150px;
+	}
+	a {
+		color: rgba(100, 100, 100, 1);
+		text-decoration: none;
+	}
+	a:hover {
+		color: rgba(0, 0, 0, 1);
+		text-decoration: underline;
+	}
 	#container {
+		background: #eee;
 		font-family: verdana, helvetica, sans-serif;
 		width: 100%;
 		max-width: 1260px;
 		margin: auto;
 		padding: 10px;
-		border: 20px solid #1A1EB2;
-		-moz-box-shadow: inset 0 0 10px #000;
-		-webkit-box-shadow: inset 0 0 10px #000;
-		box-shadow: inset 0 0 10px #000;
+		border: 20px solid #2f75c3;
+		-moz-box-shadow: inset 0 0 10px #000, 0 0 10px #000;
+		-webkit-box-shadow: inset 0 0 10px #000, 0 0 10px #000;
+		box-shadow: inset 0 0 10px #000, 0 0 10px #000;
 		border-radius: 25px;
 	}
 		nav ul {
@@ -50,6 +66,9 @@ html, body {
 			padding: 5px;
 			width: 200px;
 			border-right: 2px solid #ddd;
+		}
+		#left form * {
+			margin: 5px;
 		}
 		#right {
 			overflow: hidden;
