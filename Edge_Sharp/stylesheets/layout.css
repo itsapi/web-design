@@ -68,7 +68,8 @@
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
 			padding: 10px;
-			width: 20%;
+			width: 17%;
+			min-width: 5em;
 		}
 		nav a {
 			color: #444;
@@ -163,7 +164,6 @@
 		}
 		nav li {
 			padding: 5px;
-			width: 24%;
 		}
 	}
 

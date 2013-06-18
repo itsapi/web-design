@@ -451,6 +451,21 @@ M:
 > logo, and I'll set up the gallery, have I forgotten anything?
 > Again sorry, Oliver
 
+C:
+> Hello,
+Been on the site and keep getting this error when clicking off the home page
+> (Parse error: syntax error, unexpected end of file in
+> /var/www/webDesign/MrDorph/form.php on line 57). Hows everything coming
+> along? Cheers.
+
+M:
+> Yes, I know about that, I've nearly got it sorted out just a bit more
+> tweaking, then it should be nearly done, unless I've forgotten anything?
+
+C:
+> No I don't think so. On the gallery page can you put 2 buttons like the new
+> recruits one, one for videos and one for images.
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### coderqi - IN PROGRESS
