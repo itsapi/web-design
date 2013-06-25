@@ -43,34 +43,34 @@
 						<div class="pure-g-r">
 							<div class="pure-u-1-3">
 								<label for="username">Username:</label>
-								<input type="text" id="username" required>
+								<input type="text" id="username" name="username" required>
 								<label for="email">Email address:</label>
-								<input type="email" id="email" required>
+								<input type="email" id="email" name="email" required>
 								<label for="password">Password:</label>
-								<input type="password" id="password" required>
+								<input type="password" id="password" name="password">
 								<label for="passwordc">Confirm password:</label>
-								<input type="password" id="passwordc" required>
+								<input type="password" id="passwordc" name="passwordc">
 							</div>
 							<div class="pure-u-1-3">
 								<label for="firstname">First name:</label>
-								<input type="text" id="firstname" required>
-								<label for="lastname">Last name:</label>
-								<input type="text" id="lastname" required>
+								<input type="text" id="firstname" name="firstname" required>
+								<label for="surname">Surname:</label>
+								<input type="text" id="surname" name="surname" required>
 								<label for="address">Business address:</label>
-								<textarea id="address" required></textarea>
+								<textarea id="address" name="address" required></textarea>
 								<label for="addressb">Billing address:</label>
-								<textarea id="addressb" required></textarea>
+								<textarea id="addressb" name="addressb" required></textarea>
 							</div>
 							<div class="pure-u-1-3">
 								<label for="subscription">Subscription:</label>
-								<select id="subscription">
+								<select id="subscription" name="subscription">
 									<option value="1">Premium PLUS: 2 weeks/300+ photos</option>
 									<option value="2">Premium: 4 weeks/200 photos</option>
 									<option value="3">Executive: 6 weeks/150 photos</option>
 									<option value="4">Basic: 12 weeks/100 photos</option>
 								</select>
 								<label for="payment">Payment:</label>
-								<select id="payment">
+								<select id="payment" name="payment">
 									<option value="1">Invoice</option>
 									<option value="2">Cash</option>
 									<option value="3">Credit</option>

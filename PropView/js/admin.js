@@ -20,7 +20,7 @@ $(document).ready(function(){
 			$('#username').val(data['username']);
 			$('#email').val(data['email']);
 			$('#firstname').val(data['firstname']);
-			$('#lastname').val(data['surname']);
+			$('#surname').val(data['surname']);
 			$('#address').val(data['address']);
 			$('#addressb').val(data['addressb']);
 			$('#subscription').val(data['subscription']);
@@ -29,16 +29,21 @@ $(document).ready(function(){
 		return false;
 	});
 	$('.editUser').submit(function() {
+		console.log($(this).serializeArray());
 		if ($('#password').val() == $('#passwordc').val()){
-			$.getJSON('include/admin_ajax.php', {
-				func: 'editUser',
-				formData: $('.editUser').serialize()
-			}).done(function(data) {
-				console.log(data);
+			formItems = $(this).serializeArray();
+			$.ajax({
+				url: 'include/admin_ajax.php',
+				data: {
+					func: 'editUser',
+					user: $('#username').val(),
+					formData: JSON.stringify(formItems)
+				}
+			}).done(function() {
 				$('.editUser').trigger('reset');
 				alert('Successfully saved user');
-			}).fail(function(){
-				alert('Failed to save user');
+			}).fail(function(jqXHR, textStatus){
+				alert('Failed to save user: ' + textStatus);
 			}).always(function(){
 				getUsers();
 			});
