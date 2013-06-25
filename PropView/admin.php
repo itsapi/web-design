@@ -24,7 +24,7 @@
 				<h4>My Account:</h4>
 				<ul>
 					<li><a href="#">Edit account</a></li>
-					<li><a href="#">Add user</a></li>
+					<li><a href="javascript: $('.editUser').trigger('reset');">Add user</a></li>
 					<li><a href="index.php?logout">Logout</a></li>
 				</ul>
 				<form class="pure-form pure-form-stacked viewUser">
@@ -32,7 +32,8 @@
 						<label for="user">User:</label>
 						<select id="user">
 						</select>
-						<button type="submit" class="pure-button">View user</button>
+						<button type="submit" class="pure-button viewButton">View user</button>
+						<button type="submit" class="pure-button deleteButton">Delete user</button>
 					</fieldset>
 				</form>
 			</section>

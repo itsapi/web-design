@@ -7,6 +7,13 @@
 			$result = query_DB("SELECT * FROM users WHERE username='{$username}'");
 			echo json_encode(mysqli_fetch_assoc($result));
 			break;
+		case 'deleteUser':
+			$username = addslashes($_GET['user']);
+			$result = query_DB("DELETE FROM users WHERE username='{$username}'");
+			if ($result){
+				echo 'success';
+			}
+			break;
 		case 'editUser':
 			$query = "INSERT INTO users ({cols}) VALUES ({vals}) ON DUPLICATE KEY UPDATE {updateString}";
 			$cols = '';
