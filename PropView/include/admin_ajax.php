@@ -21,28 +21,28 @@
 			$updateString = '';
 			$formData = json_decode($_GET['formData']);
 			foreach ($formData as $item){
-				if ($item->name != 'passwordc' && $item->value != ''){
+				if ($item->value != ''){
 					$name = addslashes($item->name);
-					if ($item->name == 'password'){
-						$value = hash('sha512',addslashes($_GET['user']).hash('sha512',addslashes($item->value)));
-					} else {
-						$value = addslashes($item->value);
-					}
+					$value = addslashes($item->value);
 					$cols .= "{$name},";
 					$vals .= "'{$value}',";
 					$updateString .= "{$name}=values({$name}),";
 				}
 			}
+			$cols .= 'password';
+			$password = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"),0,8);
+			$vals .= "'".hash('sha512',addslashes($_GET['user']).hash('sha512',addslashes($password)))."'";
 			$query = str_replace(
 				['{cols}','{vals}','{updateString}'],
-				[substr($cols, 0, -1),
-				substr($vals, 0, -1),
+				[$cols,
+				$vals,
 				substr($updateString, 0, -1)],
 				$query
 			);
 			$result = query_DB($query);
 			if ($result){
 				echo 'success';
+				echo $password;
 			}
 			break;
 		case 'getUsers':

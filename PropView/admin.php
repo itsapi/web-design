@@ -47,16 +47,12 @@
 								<input type="text" id="username" name="username" required>
 								<label for="email">Email address:</label>
 								<input type="email" id="email" name="email" required>
-								<label for="password">Password:</label>
-								<input type="password" id="password" name="password">
-								<label for="passwordc">Confirm password:</label>
-								<input type="password" id="passwordc" name="passwordc">
-							</div>
-							<div class="pure-u-1-3">
 								<label for="firstname">First name:</label>
 								<input type="text" id="firstname" name="firstname" required>
 								<label for="surname">Surname:</label>
 								<input type="text" id="surname" name="surname" required>
+							</div>
+							<div class="pure-u-1-3">
 								<label for="address">Business address:</label>
 								<textarea id="address" name="address" required></textarea>
 								<label for="addressb">Billing address:</label>

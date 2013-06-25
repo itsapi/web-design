@@ -56,26 +56,22 @@ $(document).ready(function(){
 	});
 	$('.editUser').submit(function() {
 		console.log($(this).serializeArray());
-		if ($('#password').val() == $('#passwordc').val()){
-			formItems = $(this).serializeArray();
-			$.ajax({
-				url: 'include/admin_ajax.php',
-				data: {
-					func: 'editUser',
-					user: $('#username').val(),
-					formData: JSON.stringify(formItems)
-				}
-			}).done(function() {
-				$('.editUser').trigger('reset');
-				alert('Successfully saved user');
-			}).fail(function(jqXHR, textStatus){
-				alert('Failed to save user: ' + textStatus);
-			}).always(function(){
-				getUsers();
-			});
-		} else {
-			alert('Passwords must be the same');
-		}
+		formItems = $(this).serializeArray();
+		$.ajax({
+			url: 'include/admin_ajax.php',
+			data: {
+				func: 'editUser',
+				user: $('#username').val(),
+				formData: JSON.stringify(formItems)
+			}
+		}).done(function() {
+			$('.editUser').trigger('reset');
+			alert('Successfully saved user');
+		}).fail(function(jqXHR, textStatus){
+			alert('Failed to save user: ' + textStatus);
+		}).always(function(){
+			getUsers();
+		});
 		return false;
 	});
 });
