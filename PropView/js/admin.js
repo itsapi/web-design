@@ -15,17 +15,14 @@ $(document).ready(function(){
 	var button;
 	getUsers();
 	$('#addUser').click(function(){
-		if ($('.editUser').is(':hidden')){
-			$('.editAccount').hide();
-			$('.editUser').show();
-		}
+		$('.editAccount').hide();
+		$('.editUser').show();
+		$('.editUser #username, .editUser label[for="username"]').show();
 		$('.editUser').trigger('reset');
 	});
 	$('#editAccount').click(function(){
-		if ($('.editAccount').is(':hidden')){
-			$('.editUser').hide();
-			$('.editAccount').show();
-		}
+		$('.editUser').hide();
+		$('.editAccount').show();
 		$.getJSON('include/admin_ajax.php', {
 			func: 'getAccount'
 		}).done(function(data) {
@@ -44,10 +41,9 @@ $(document).ready(function(){
 	});
 	$('.viewUser').submit(function() {
 		if (button == 'viewButton'){
-			if ($('.editUser').is(':hidden')){
-				$('.editAccount').hide();
-				$('.editUser').show();
-			}
+			$('.editAccount').hide();
+			$('.editUser').show();
+			$('.editUser #username, .editUser label[for="username"]').hide();
 			$.getJSON('include/admin_ajax.php', {
 				func: 'getInfo',
 				user: $('.viewUser #user').val()
@@ -91,9 +87,13 @@ $(document).ready(function(){
 				user: $('.editUser #username').val(),
 				formData: JSON.stringify(formItems)
 			}
-		}).done(function() {
+		}).done(function(data) {
 			$('.editUser').trigger('reset');
-			alert('Successfully saved user');
+			if (data.split(':').length == 2){
+				alert('Successfully updated user: '+data.split(':')[0]);
+			} else {
+				alert('Successfully created user: '+data.split(':')[0]+' with password: '+data.split(':')[1]);
+			}
 		}).fail(function(jqXHR, textStatus){
 			alert('Failed to save user: ' + textStatus);
 		}).always(function(){

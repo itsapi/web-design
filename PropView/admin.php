@@ -43,7 +43,8 @@
 						<legend>Edit user:</legend>
 						<div class="pure-g-r">
 							<div class="pure-u-1-3">
-								<input type="text" id="username" name="username" required style="display:none">
+								<label for="username">Username:</label>
+								<input type="text" id="username" name="username" required>
 								<label for="email">Email address:</label>
 								<input type="email" id="email" name="email" required>
 								<label for="firstname">First name:</label>
