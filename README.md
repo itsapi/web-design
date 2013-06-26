@@ -1,6 +1,6 @@
 Web Design
 ==========
-
+ 
 Repo for our web designs
 
 Websites
@@ -466,6 +466,83 @@ C:
 > No I don't think so. On the gallery page can you put 2 buttons like the new
 > recruits one, one for videos and one for images.
 
+M:
+> Hello, sorry for taking a while to get back to you.
+> I think the site is basically ready to be moved over to your server, where I
+> can get the last few things set up and show you how to use the content
+> editor.
+> If you could let me know when you are ready and give me your server details?
+> Olls
+
+C:
+> No worries, I'll purchase the domain name today, then I wouldn't know where
+> to go from there.
+
+M:
+> You are getting hosting as well as just the domain?
+> I can help you find the information you'll need to give me, if you tell me
+> when you've got it.
+
+C:
+> we've got nothing at the minute, how does the hosting work? Is that
+> something you'll be able to recommend to us?
+
+M:
+> You'll need to buy a domain from somewhere like godaddy.co.uk. You can buy
+> hosting from them too if you want, or I can find a free host for you which
+> won't be quite as fast or reliable, but it would still be fine. Yo can
+> decide if you want to pay for the hosting, you should only need the basic
+> hosting package, but just check with me before you pay for it so I can check
+> it has the right features.
+
+C:
+> Ok, so I've bought a domain name from 123reg (www.eab-wot.co.uk), I think
+> we'll try one of the free hosts to begin with, if no problems arise, if
+> there is problems with it the one I would probably use is the basic 123reg
+> hosting, £2 plus a month.
+
+M:
+> Awesome!
+>
+> If you now sign up to http://www.getfreehosting.co.uk/ 's free hosting plan,
+> then we can start transferring the domain.
+
+C:
+> yep got it sorted.
+
+M:
+> To transfer your domain to getfreehosting you need to add their nameservers
+> to your 123-reg account, follow these instructions: 
+>
+> http://www.123-reg.co.uk/support/answers/Domain-Transfers/Transfers-Out/transferring-a-uk-domain-away-from-123-reg-co-uk-2023/
+>
+> with nameservers:
+>
+> ns1.getfreehosting.co.uk
+>
+> and
+>
+> ns2.getfreehosting.co.uk
+
+C:
+> ok, done that I believe.
+
+M:
+> We'll now have to wait 24h to find out if it's worked...
+> Then we can do the final stage.
+
+C:
+> it said up to 72, how will i know if its worked?
+
+M:
+> When you visit the domain, it should switch from 123-reg to get free
+> hosting. It you keep checking every so often, and message me when it
+> switches. If it takes longer than 1-2 days, it's probably not working, then
+> I'll help you some more.
+
+C:
+> no worries will let you know.
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### coderqi - IN PROGRESS
@@ -678,6 +755,23 @@ M:
 > Hello, I can take some feedback now, It's mostly done, it just needs some
 > refinement, so your feedback would be very useful at this stage!
 
+C:
+> Hi,
+> It looks very similar to my site, but on the whole the color scheme is fine.
+> As you said, it needs refinement, but I look forward to integrating it into
+> my site!
+> If you could let me know what you're planned timeline for this is, that
+> would be great!
+> Cheers,
+
+M:
+> Sorry for not getting back to you sooner.
+> I've done a bit more on the site, and as far as I'm concerned I think the
+> site is pretty much there, unless I've missed anything, or there's anything
+> else you want me to do. Please let me know if there's anything you want
+> changing.
+> Olls
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### Edge_Sharp - IN PROGRESS
@@ -886,6 +980,81 @@ M:
 > wanted it at all, and if so, on every page or just the home.
 >
 > OK, I'll finish up the CMS then it should be nearly there.
+>
+> Oliver
+
+M:
+> Hello,
+> I've fixed up the navigation and shuffled the header around a bit, is this
+> more like what you wanted, or do you want me to make them bigger?
+> Oliver
+
+C:
+> Oliver, this is perfect! I did have a conversation with one of the banks
+> that I am pitching this idea to, they suggested we add a 'FAQs" tab at the
+> top. Would you be able to drop that in? Aside from that one point, I think
+> this will work.
+> Michael
+
+C:
+> Oliver, Sorry for not getting back to you sooner, I smashed my phone and was
+> dealing with in-laws all weekend. The site looks amazing, I really don't
+> know what to say. I really don't have any other suggestions, only one small
+> note from an associate of mine, would it be possible to add a FAQ link
+> between "Product" and "Blog". Other than that, seriously, this is perfect.
+
+C:
+> Oliver, It has been awhile since your last message, so i thought I would
+> follow up with you to see how things are going. Also, if you are getting too
+> busy to continue work on this project, I would be more than happy to take
+> what you have already created. I think you did an amazing job.
+> Let me know, Michael
+
+M:
+> Hello, I'm very sorry for not getting back to you, I had some stuff to get
+> done, but I'm ready to get back to work on your site now. At this point is
+> there anything else you want me to implement other than the CMS?
+> Oliver
+
+C:
+> No problem, I figured you got pretty tied up with your other projects/
+> school. Aside from adding the FAQs tab, I don't have any other notes. So as
+> you said, that just leaves the CMS. A question for you, going forward, would
+> you like to stay involved with our little company? Or do you need to get
+> back to your other projects?
+> Thanks again for all of your help.
+
+M:
+> Hello,
+> Ok, I've nearly got the CMS sorted, I'm using GetSimple CMS with an add on
+> so I can add the columns. I can't remember if you said you wanted the image
+> slider? Do you want it on all pages, just the home page or not at all?
+> I would be happy to stay involved if you want me, do you mean continuing to
+> build upon your website? If so I would be happy to have something to
+> continue working on.
+> Oliver
+
+C:
+> Oliver, The image slider is great for the home page, but I dont think it is
+> necessary for the other pages. I am not too familiar with GetSimple CMS, but
+> I am sure I can figure it out. With regards to staying involved in the
+> project, I would appreciate any help you would be willing to offer. But in
+> the interest of being open and honest, I dont have any budget for paid web
+> development currently. Right now, all of my time, effort, and capital is
+> focused on getting the product trial launched this week (or next) and
+> setting up the banking and payment systems. I guess that is a long way of
+> saying, if you are still willing to help "pro-bono", than welcome to the
+> team. But if you would like to be paid.... it will most likely be months
+> before we have the resources available to pay someone to administer the
+> website.
+
+M:
+> I'm just finishing setting up the CMS and the blog, then I'll push that all
+> to the server, for you to start playing with. After that I think it will be
+> ready to go live on your site, if you're ready.
+>
+> I am happy to help for free as long as you need me, I don't expect to be
+> paid as I was offering a free service.
 >
 > Oliver
 
