@@ -55,3 +55,6 @@
 		<?php include('site_parts/footer.php'); ?>
 	</body>
 </html>
+<?php
+	}
+?>
