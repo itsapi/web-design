@@ -495,6 +495,42 @@ M:
 > hosting package, but just check with me before you pay for it so I can check
 > it has the right features.
 
+C:
+> Ok, so I've bought a domain name from 123reg (www.eab-wot.co.uk), I think
+> we'll try one of the free hosts to begin with, if no problems arise, if
+> there is problems with it the one I would probably use is the basic 123reg
+> hosting, £2 plus a month.
+
+M:
+> Awesome!
+>
+> If you now sign up to http://www.getfreehosting.co.uk/ 's free hosting plan,
+> then we can start transferring the domain.
+
+C:
+> yep got it sorted.
+
+M:
+> To transfer your domain to getfreehosting you need to add their nameservers
+> to your 123-reg account, follow these instructions: 
+>
+> http://www.123-reg.co.uk/support/answers/Domain-Transfers/Transfers-Out/transferring-a-uk-domain-away-from-123-reg-co-uk-2023/
+>
+> with nameservers:
+>
+> ns1.getfreehosting.co.uk
+>
+> and
+>
+> ns2.getfreehosting.co.uk
+
+C:
+> ok, done that I believe.
+
+M:
+> We'll now have to wait 24h to find out if it's worked...
+> Then we can do the final stage.
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### coderqi - IN PROGRESS
