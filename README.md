@@ -483,6 +483,18 @@ M:
 > I can help you find the information you'll need to give me, if you tell me
 > when you've got it.
 
+C:
+> we've got nothing at the minute, how does the hosting work? Is that
+> something you'll be able to recommend to us?
+
+M:
+> You'll need to buy a domain from somewhere like godaddy.co.uk. You can buy
+> hosting from them too if you want, or I can find a free host for you which
+> won't be quite as fast or reliable, but it would still be fine. Yo can
+> decide if you want to pay for the hosting, you should only need the basic
+> hosting package, but just check with me before you pay for it so I can check
+> it has the right features.
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### coderqi - IN PROGRESS
@@ -954,6 +966,24 @@ M:
 > Hello, I'm very sorry for not getting back to you, I had some stuff to get
 > done, but I'm ready to get back to work on your site now. At this point is
 > there anything else you want me to implement other than the CMS?
+> Oliver
+
+C:
+> No problem, I figured you got pretty tied up with your other projects/
+> school. Aside from adding the FAQs tab, I don't have any other notes. So as
+> you said, that just leaves the CMS. A question for you, going forward, would
+> you like to stay involved with our little company? Or do you need to get
+> back to your other projects?
+> Thanks again for all of your help.
+
+M:
+> Hello,
+> Ok, I've nearly got the CMS sorted, I'm using GetSimple CMS with an add on
+> so I can add the columns. I can't remember if you said you wanted the image
+> slider? Do you want it on all pages, just the home page or not at all?
+> I would be happy to stay involved if you want me, do you mean continuing to
+> build upon your website? If so I would be happy to have something to
+> continue working on.
 > Oliver
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
