@@ -116,13 +116,24 @@
 		<title>Editor</title>
 
 		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="../typeplate-unminified.css">
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(".deleteFile").click(function(){ 
+					if(!confirm('Are you sure you want to delete ' +$(this).parent().siblings('a').html()+ ' ?')) {
+						return false;
+					}
+				});
+			});
+		</script>
 	</head>
 	<body>
 <?
 	if ($loggedIn) {
 ?>
 		<h1>Welcome to the wepage editor</h1>
+		<p><a href="<?=$_SERVER['PHP_SELF']?>">Reload</a></p>
 		<section>
 			<h3>Settings:</h3>
 			<form action="<?=$_SERVER['PHP_SELF']?>" method="REQUEST">
@@ -146,9 +157,9 @@
 ?>
 			<li>
 				<a href="../<?=$entry?>" target="_blank"><?=$entry?></a>
-				<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+				<form action="<?=$_SERVER['PHP_SELF']?>#editor" method="post">
 					<input type="submit" value="Edit" name="editFile">
-					<input type="submit" value="Delete" name="deleteFile">
+					<input type="submit" value="Delete" name="deleteFile" class="deleteFile">
 					<input type="text" value="../<?=$entry?>" name="entry" hidden>
 				</form>
 			</li>
@@ -171,7 +182,7 @@
 			<li>
 				<a href="../media/<?=$entry?>" target="_blank"><?=$entry?></a>
 				<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-					<input type="submit" value="Delete" name="deleteFile">
+					<input type="submit" value="Delete" name="deleteFile" class="deleteFile">
 					<input type="text" value="../media/<?=$entry?>" name="entry" hidden>
 				</form>
 			</li>
@@ -188,8 +199,8 @@
 				Upload media file: <input type="file" name="file">
 				<input type="submit" name="submit" value="Upload File">
 			</form>
-			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-				<label>New file: <input type="text" name="entry"></label>
+			<form action="<?=$_SERVER['PHP_SELF']?>#editor" method="post">
+				<label>New file: <input type="text" name="entry" value=".php"></label>
 				<input type="submit" name="newFile" value="Create file">
 				<p>Files should end in .php (eg: 'index.php')</p>
 			</form>
@@ -197,8 +208,9 @@
 <?
 		if (isset($_REQUEST['editFile'])) {
 ?>
-		<section>
+		<section id="editor">
 			<h3>Edit file:</h3>
+			<p><a href="#help">Help!</a></p>
 			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 				<label>Page title: <input type="text" name="title" value="<?=$html[1]?>"></label>
 				<label>Require Login: <input type="checkbox" name="needLogin" <?php if ($html[3] == '<?php include(\'login/lock.php\'); ?>') { echo 'checked'; } ?>></label>
@@ -208,7 +220,9 @@
 				<input type="submit" value="Close">
 			</form>
 		</section>
-		<section>
+		<section id="help">
+			<p><a href="#editor">Back to edit</a></p>
+
 			<h4>Image:</h4>
 			<pre class="code" title="Image">
 &lt;img src="Enter URL of image here" alt="Enter image description here"&gt;

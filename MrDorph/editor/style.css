@@ -8,6 +8,10 @@ form input {
 form input:not([hidden]):not([type="submit"]) {
 	display: block;
 }
+form textarea {
+	width: 850px;
+	height: 450px;
+}
 section {
 	border: 1px solid rgba(0, 0, 0, 0.4);
 	float: left;
