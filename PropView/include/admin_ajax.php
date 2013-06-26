@@ -7,6 +7,10 @@
 			$result = query_DB("SELECT * FROM users WHERE username='{$username}'");
 			echo json_encode(mysqli_fetch_assoc($result));
 			break;
+		case 'getAccount':
+			$result = query_DB("SELECT * FROM users WHERE subscription='0'");
+			echo json_encode(mysqli_fetch_assoc($result));
+			break;
 		case 'deleteUser':
 			$username = addslashes($_GET['user']);
 			$result = query_DB("DELETE FROM users WHERE username='{$username}'");
@@ -42,7 +46,27 @@
 			$result = query_DB($query);
 			if ($result){
 				echo 'success';
-				echo $password;
+			}
+			break;
+		case 'editAccount':
+			$query = "UPDATE users SET {updateString} WHERE subscription='0'";
+			$updateString = '';
+			$formData = json_decode($_GET['formData']);
+			foreach ($formData as $item){
+				if ($item->value != ''){
+					if ($item->name == 'password'){
+						$value = hash('sha512',addslashes($_GET['user']).hash('sha512',addslashes($item->value)));
+					} else {
+						$value = addslashes($item->value);
+					}
+					$name = addslashes($item->name);
+					$updateString .= "{$name}='{$value}',";
+				}
+			}
+			$query = str_replace('{updateString}',substr($updateString, 0, -1),$query);
+			$result = query_DB($query);
+			if ($result){
+				echo 'success';
 			}
 			break;
 		case 'getUsers':

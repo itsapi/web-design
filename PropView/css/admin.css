@@ -20,5 +20,22 @@
 				width: 200px;
 			}
 			.editUser button {
+				display: block;
+				margin-top: 10px;
+			}
+		.editAccount {
+
+		}
+			.editAccount .pure-g-r {
+				overflow: hidden;
+			}
+				.editAccount .pure-u-1-2 {
+					float: left;
+				}
+			.editAccount input, .editAccount textarea, .editAccount select {
+				width: 200px;
+			}
+			.editAccount button {
+				display: block;
 				margin-top: 10px;
 			}
