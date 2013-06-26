@@ -3,45 +3,72 @@ function getUsers() {
 		func: 'getUsers'
 	}).done(function(data) {
 		console.log(data);
-		$('select#user').html('');
+		$('.viewUser #user').html('');
 		$.each(data, function(){
-			$('select#user').append('<option value="'+this['username']+'">'+this['username']+'</option>');
+			$('.viewUser #user').append('<option value="'+this['username']+'">'+this['username']+'</option>');
 		});
 	});
 }
 
 $(document).ready(function(){
+	$('.editAccount').hide();
 	var button;
 	getUsers();
-	$('.viewButton').click(function(){
+	$('#addUser').click(function(){
+		if ($('.editUser').is(':hidden')){
+			$('.editAccount').hide();
+			$('.editUser').show();
+		}
+		$('.editUser').trigger('reset');
+	});
+	$('#editAccount').click(function(){
+		if ($('.editAccount').is(':hidden')){
+			$('.editUser').hide();
+			$('.editAccount').show();
+		}
+		$.getJSON('include/admin_ajax.php', {
+			func: 'getAccount'
+		}).done(function(data) {
+			console.log(data);
+			$('.editAccount #username').val(data['username']);
+			$('.editAccount #email').val(data['email']);
+			$('.editAccount #firstname').val(data['firstname']);
+			$('.editAccount #surname').val(data['surname']);
+		});
+	});
+	$('.viewUser .viewButton').click(function(){
 		button = 'viewButton';
 	});
-	$('.deleteButton').click(function(){
+	$('.viewUser .deleteButton').click(function(){
 		button = 'deleteButton';
 	});
 	$('.viewUser').submit(function() {
 		if (button == 'viewButton'){
+			if ($('.editUser').is(':hidden')){
+				$('.editAccount').hide();
+				$('.editUser').show();
+			}
 			$.getJSON('include/admin_ajax.php', {
 				func: 'getInfo',
-				user: $('select#user').val()
+				user: $('.viewUser #user').val()
 			}).done(function(data) {
 				console.log(data);
-				$('#username').val(data['username']);
-				$('#email').val(data['email']);
-				$('#firstname').val(data['firstname']);
-				$('#surname').val(data['surname']);
-				$('#address').val(data['address']);
-				$('#addressb').val(data['addressb']);
-				$('#subscription').val(data['subscription']);
-				$('#payment').val(data['payment']);
+				$('.editUser #username').val(data['username']);
+				$('.editUser #email').val(data['email']);
+				$('.editUser #firstname').val(data['firstname']);
+				$('.editUser #surname').val(data['surname']);
+				$('.editUser #address').val(data['address']);
+				$('.editUser #addressb').val(data['addressb']);
+				$('.editUser #subscription').val(data['subscription']);
+				$('.editUser #payment').val(data['payment']);
 			});
 		} else {
-			if (confirm('Are you sure you want to delete ' + $('select#user').val() + '?')){
+			if (confirm('Are you sure you want to delete ' + $('.viewUser #user').val() + '?')){
 				$.ajax({
 					url: 'include/admin_ajax.php',
 					data: {
 						func: 'deleteUser',
-						user: $('select#user').val()
+						user: $('.viewUser #user').val()
 					}
 				}).done(function() {
 					alert('Successfully deleted user');
@@ -61,7 +88,7 @@ $(document).ready(function(){
 			url: 'include/admin_ajax.php',
 			data: {
 				func: 'editUser',
-				user: $('#username').val(),
+				user: $('.editUser #username').val(),
 				formData: JSON.stringify(formItems)
 			}
 		}).done(function() {
@@ -72,6 +99,28 @@ $(document).ready(function(){
 		}).always(function(){
 			getUsers();
 		});
+		return false;
+	});
+	$('.editAccount').submit(function() {
+		console.log($(this).serializeArray());
+		if ($('.editAccount #password').val() == $('.editAccount #passwordc').val()){
+			formItems = $(this).serializeArray();
+			$.ajax({
+				url: 'include/admin_ajax.php',
+				data: {
+					func: 'editAccount',
+					user: $('.editAccount #username').val(),
+					formData: JSON.stringify(formItems)
+				}
+			}).done(function() {
+				$('#addUser').click();
+				alert('Successfully saved user');
+			}).fail(function(jqXHR, textStatus){
+				alert('Failed to save user: ' + textStatus);
+			});
+		} else {
+			alert('Passwords must be the same');
+		}
 		return false;
 	});
 });
