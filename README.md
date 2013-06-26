@@ -1,6 +1,6 @@
 Web Design
 ==========
-
+ 
 Repo for our web designs
 
 Websites
@@ -531,6 +531,18 @@ M:
 > We'll now have to wait 24h to find out if it's worked...
 > Then we can do the final stage.
 
+C:
+> it said up to 72, how will i know if its worked?
+
+M:
+> When you visit the domain, it should switch from 123-reg to get free
+> hosting. It you keep checking every so often, and message me when it
+> switches. If it takes longer than 1-2 days, it's probably not working, then
+> I'll help you some more.
+
+C:
+> no worries will let you know.
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### coderqi - IN PROGRESS
@@ -1020,6 +1032,30 @@ M:
 > I would be happy to stay involved if you want me, do you mean continuing to
 > build upon your website? If so I would be happy to have something to
 > continue working on.
+> Oliver
+
+C:
+> Oliver, The image slider is great for the home page, but I dont think it is
+> necessary for the other pages. I am not too familiar with GetSimple CMS, but
+> I am sure I can figure it out. With regards to staying involved in the
+> project, I would appreciate any help you would be willing to offer. But in
+> the interest of being open and honest, I dont have any budget for paid web
+> development currently. Right now, all of my time, effort, and capital is
+> focused on getting the product trial launched this week (or next) and
+> setting up the banking and payment systems. I guess that is a long way of
+> saying, if you are still willing to help "pro-bono", than welcome to the
+> team. But if you would like to be paid.... it will most likely be months
+> before we have the resources available to pay someone to administer the
+> website.
+
+M:
+> I'm just finishing setting up the CMS and the blog, then I'll push that all
+> to the server, for you to start playing with. After that I think it will be
+> ready to go live on your site, if you're ready.
+>
+> I am happy to help for free as long as you need me, I don't expect to be
+> paid as I was offering a free service.
+>
 > Oliver
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
