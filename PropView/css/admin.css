@@ -1,0 +1,24 @@
+#container {
+
+}
+	#left {
+
+	}
+	#right {
+
+	}
+		.editUser {
+
+		}
+			.editUser .pure-g-r {
+				overflow: hidden;
+			}
+				.editUser .pure-u-1-3 {
+					float: left;
+				}
+			.editUser input, .editUser textarea, .editUser select {
+				width: 200px;
+			}
+			.editUser button {
+				margin-top: 10px;
+			}

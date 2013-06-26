@@ -1,43 +1,40 @@
 #right {
 	padding: 5%;
 }
-#contact_container {
-	width: 400px;
-	text-align: center;
-	margin: auto;
+	#contact_container {
+		width: 400px;
+		text-align: center;
+		margin: auto;
+	}
+		#contact_container figure {
+			float: left;
+		}
+		.contact {
+			width: 200px;
+			float: right;
+		}
+			.contact input {
+				width: 200px;
+			}
+			.contact textarea {
+				width: 200px;
+			}
+			.contact div {
+				display: inline-block;
+				width: 200px;
+			}
+			.contact button {
+				position: relative;
+				bottom: 0;
+				margin: 10px;
+				display: inline;
+			}
+@media screen and (max-width: 550px) {
+	#contact_container {
+		width: 200px;
+	}
+		#contact_container figure {
+			float: none;
+			margin: 0 auto;
+		}
 }
-	#contact_container figure {
-		float: left;
-	}
-.contact {
-	width: 200px;
-	float: right;
-}
-	.contact input {
-		width: 200px;
-	}
-	.contact textarea {
-		width: 200px;
-		padding: .5em .6em;
-		display: inline-block;
-		border: 1px solid #ccc;
-		font-size: .8em;
-		border-radius: 4px;
-		outline: none;
-		-webkit-transition: .3s linear border;
-		-moz-transition: .3s linear border;
-		transition: .3s linear border;
-		-moz-box-shadow: inset 0 1px 3px #ddd;
-		-webkit-box-shadow: inset 0 1px 3px #ddd;
-		box-shadow: inset 0 1px 3px #ddd;
-	}
-	.contact div {
-		display: inline-block;
-		width: 200px;
-	}
-	.contact button {
-		position: relative;
-		bottom: 0;
-		margin: 10px;
-		display: inline;
-	}

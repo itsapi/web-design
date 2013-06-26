@@ -26,3 +26,12 @@
 		margin: 10px;
 		display: inline;
 	}
+@media screen and (max-width: 550px) {
+	#login_container {
+		width: 200px;
+	}
+	#login_container figure {
+		float: none;
+		margin: 0 auto;
+	}
+}
