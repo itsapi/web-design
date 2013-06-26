@@ -466,6 +466,23 @@ C:
 > No I don't think so. On the gallery page can you put 2 buttons like the new
 > recruits one, one for videos and one for images.
 
+M:
+> Hello, sorry for taking a while to get back to you.
+> I think the site is basically ready to be moved over to your server, where I
+> can get the last few things set up and show you how to use the content
+> editor.
+> If you could let me know when you are ready and give me your server details?
+> Olls
+
+C:
+> No worries, I'll purchase the domain name today, then I wouldn't know where
+> to go from there.
+
+M:
+> You are getting hosting as well as just the domain?
+> I can help you find the information you'll need to give me, if you tell me
+> when you've got it.
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### coderqi - IN PROGRESS
@@ -678,6 +695,23 @@ M:
 > Hello, I can take some feedback now, It's mostly done, it just needs some
 > refinement, so your feedback would be very useful at this stage!
 
+C:
+> Hi,
+> It looks very similar to my site, but on the whole the color scheme is fine.
+> As you said, it needs refinement, but I look forward to integrating it into
+> my site!
+> If you could let me know what you're planned timeline for this is, that
+> would be great!
+> Cheers,
+
+M:
+> Sorry for not getting back to you sooner.
+> I've done a bit more on the site, and as far as I'm concerned I think the
+> site is pretty much there, unless I've missed anything, or there's anything
+> else you want me to do. Please let me know if there's anything you want
+> changing.
+> Olls
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### Edge_Sharp - IN PROGRESS
@@ -887,6 +921,39 @@ M:
 >
 > OK, I'll finish up the CMS then it should be nearly there.
 >
+> Oliver
+
+M:
+> Hello,
+> I've fixed up the navigation and shuffled the header around a bit, is this
+> more like what you wanted, or do you want me to make them bigger?
+> Oliver
+
+C:
+> Oliver, this is perfect! I did have a conversation with one of the banks
+> that I am pitching this idea to, they suggested we add a 'FAQs" tab at the
+> top. Would you be able to drop that in? Aside from that one point, I think
+> this will work.
+> Michael
+
+C:
+> Oliver, Sorry for not getting back to you sooner, I smashed my phone and was
+> dealing with in-laws all weekend. The site looks amazing, I really don't
+> know what to say. I really don't have any other suggestions, only one small
+> note from an associate of mine, would it be possible to add a FAQ link
+> between "Product" and "Blog". Other than that, seriously, this is perfect.
+
+C:
+> Oliver, It has been awhile since your last message, so i thought I would
+> follow up with you to see how things are going. Also, if you are getting too
+> busy to continue work on this project, I would be more than happy to take
+> what you have already created. I think you did an amazing job.
+> Let me know, Michael
+
+M:
+> Hello, I'm very sorry for not getting back to you, I had some stuff to get
+> done, but I'm ready to get back to work on your site now. At this point is
+> there anything else you want me to implement other than the CMS?
 > Oliver
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
