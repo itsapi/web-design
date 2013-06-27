@@ -543,6 +543,34 @@ M:
 C:
 > no worries will let you know.
 
+C:
+> hello, looks like its changed, www.eab-wot.co.uk
+
+M:
+> It looks like it's worked, and ready to continue. The next step is to add
+> the domain to your getfreehosting account. If you go to http://cpanel.
+> getfreehosting.co.uk/ and log in, go to addon domains and add your new 
+> domain. Then tell me what happens next.
+
+C:
+> ok, added it on, added a box with site builder and delete as option.
+
+C:
+> also do i need to install any scripts?
+
+M:
+> Sorry, I didn't reply last night, but no you do not need to install any
+> scripts.
+> The next thing you need to do is try putting the files online. This is the
+> part where you're going to have to trust me, I need to FTP the website files
+> into your website, so you're going to have to give me your FTP password (The
+> same as your cpanel password, you might want to change it, and again after
+> I'm done).
+> If you could also copy and paste the section under 'Account Details' in the
+> side bar in to your message, as I'm going to need that too.
+> Then, with that information, I'll put the site on your server and set it all
+> up.
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### coderqi - IN PROGRESS
