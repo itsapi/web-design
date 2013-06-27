@@ -19,30 +19,73 @@
 			}
 			break;
 		case 'editUser':
-			$query = "INSERT INTO users ({cols}) VALUES ({vals}) ON DUPLICATE KEY UPDATE {updateString}";
-			$cols = '';
-			$vals = '';
-			$updateString = '';
+			$username = $_GET['user'];
+			$result = query_DB("SELECT * FROM users WHERE username='{$username}'");
 			$formData = json_decode($_GET['formData']);
+			$data = [];
 			foreach ($formData as $item){
 				if ($item->value != ''){
 					$name = addslashes($item->name);
 					$value = addslashes($item->value);
-					$cols .= "{$name},";
-					$vals .= "'{$value}',";
-					$updateString .= "{$name}=values({$name}),";
+					$data[$name] = $value;
 				}
 			}
-			$cols .= 'password';
-			$password = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"),0,8);
-			$vals .= "'".hash('sha512',addslashes($_GET['user']).hash('sha512',addslashes($password)))."'";
-			$query = str_replace(
-				['{cols}','{vals}','{updateString}'],
-				[$cols,
-				$vals,
-				substr($updateString, 0, -1)],
-				$query
-			);
+			if (mysqli_num_rows($result) > 0){
+				$query = "UPDATE users SET {updateString} WHERE username='$username'";
+				$updateString = '';
+				foreach ($data as $name => $value){
+					$updateString .= "{$name} = '{$value}', ";
+				}
+				$query = str_replace('{updateString}',substr($updateString, 0, -2),$query);
+				$to = [
+					'email' => $data['email'],
+					'name' => ($data['firstname'].' '.$data['surname'])
+				];
+				$from = $mailUser;
+				$subject = 'Updated user information for '.$data['username'];
+				$message = <<<END
+Hello {$to['name']},
+
+Your account details have recently been updated by the admin.
+If you think this was in error, please contact us and we will get it sorted ASAP.
+
+Regards,
+The PropView Team.
+END;
+				email($to, $from, $subject, $message);
+				echo $username.':';
+			} else {
+				$query = "INSERT INTO users ({cols}) VALUES ({vals})";
+				$cols = '';
+				$vals = '';
+				foreach ($data as $name => $value){
+					$cols .= "{$name}, ";
+					$vals .= "'{$value}', ";
+				}
+				$cols .= 'password';
+				$password = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"),0,8);
+				$vals .= "'".hash('sha512',$username.hash('sha512',addslashes($password)))."'";
+				$query = str_replace(['{cols}','{vals}'],[$cols,$vals],$query);
+				$to = [
+					'email' => $data['email'],
+					'name' => ($data['firstname'].' '.$data['surname'])
+				];
+				$from = $mailUser;
+				$subject = 'Welcome to PropView '.$data['username'].'!';
+				$message = <<<END
+Hello {$to['name']},
+
+Thank you for taking interest in PropView!
+
+Your username is {$data['username']} and your password is {$password}.
+Please log in here http://dvbris.no-ip.org/webDesign/PropView and change your password ASAP.
+
+Regards,
+The PropView Team.
+END;
+				email($to, $from, $subject, $message);
+				echo $username.':'.$password.':';
+			}
 			$result = query_DB($query);
 			if ($result){
 				echo 'success';
