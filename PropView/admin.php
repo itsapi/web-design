@@ -57,13 +57,6 @@
 								<textarea id="addressb" name="addressb" required></textarea>
 							</div>
 							<div class="pure-u-1-3">
-								<label for="subscription">Subscription:</label>
-								<select id="subscription" name="subscription">
-									<option value="1">Premium PLUS: 2 weeks/300+ photos</option>
-									<option value="2">Premium: 4 weeks/200 photos</option>
-									<option value="3">Executive: 6 weeks/150 photos</option>
-									<option value="4">Basic: 12 weeks/100 photos</option>
-								</select>
 								<label for="payment">Payment:</label>
 								<select id="payment" name="payment">
 									<option value="1">Invoice</option>

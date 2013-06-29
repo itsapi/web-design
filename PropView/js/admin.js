@@ -57,7 +57,6 @@ $(document).ready(function(){
 				$('.editUser #surname').val(data['surname']);
 				$('.editUser #address').val(data['address']);
 				$('.editUser #addressb').val(data['addressb']);
-				$('.editUser #subscription').val(data['subscription']);
 				$('.editUser #payment').val(data['payment']);
 			});
 		} else {

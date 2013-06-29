@@ -8,7 +8,7 @@
 			echo json_encode(mysqli_fetch_assoc($result));
 			break;
 		case 'getAccount':
-			$result = query_DB("SELECT * FROM users WHERE subscription='0'");
+			$result = query_DB("SELECT * FROM users WHERE admin");
 			echo json_encode(mysqli_fetch_assoc($result));
 			break;
 		case 'deleteUser':
@@ -92,7 +92,7 @@ END;
 			}
 			break;
 		case 'editAccount':
-			$query = "UPDATE users SET {updateString} WHERE subscription='0'";
+			$query = "UPDATE users SET {updateString} WHERE admin";
 			$updateString = '';
 			$formData = json_decode($_GET['formData']);
 			foreach ($formData as $item){
@@ -113,7 +113,7 @@ END;
 			}
 			break;
 		case 'getUsers':
-			$result = query_DB("SELECT username FROM users WHERE subscription!='0'");
+			$result = query_DB("SELECT username FROM users WHERE admin IS NULL");
 			while($row = mysqli_fetch_assoc($result)){
 				 $json[] = $row;
 			}
