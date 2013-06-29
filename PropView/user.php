@@ -21,11 +21,9 @@
 					<figcaption>Virtual Property Supervision</figcaption>
 				</figure>
 				<h4>My Account:</h4>
-				<ul>
-					<li><a href="#">Edit account</a></li>
-					<li><a href="#">Add property</a></li>
-					<li><a href="index.php?logout">Logout</a></li>
-				</ul>
+				<a href="#"><button class="pure-button">Edit account</button></a>
+				<a href="#"><button class="pure-button">Add property</button></a>
+				<a href="index.php?logout"><button class="pure-button">Logout</button></a>
 			</section>
 			<section id="right">
 				

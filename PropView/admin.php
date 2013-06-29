@@ -22,11 +22,9 @@
 					<figcaption>Virtual Property Supervision</figcaption>
 				</figure>
 				<h4>My Account:</h4>
-				<ul>
-					<li><a id="editAccount" href="javascript:void(0)">Edit account</a></li>
-					<li><a id="addUser" href="javascript:void(0)">Add user</a></li>
-					<li><a href="index.php?logout">Logout</a></li>
-				</ul>
+				<a id="editAccount" href="javascript:void(0)"><button class="pure-button">Edit account</button></a>
+				<a id="addUser" href="javascript:void(0)"><button class="pure-button">Add user</button></a>
+				<a href="index.php?logout"><button class="pure-button">Logout</button></a>
 				<form class="pure-form pure-form-stacked viewUser">
 					<fieldset>
 						<label for="user">User:</label>
@@ -40,7 +38,7 @@
 			<section id="right">
 				<form class="pure-form pure-form-stacked editUser">
 					<fieldset>
-						<legend>Edit user:</legend>
+						<legend>Add user:</legend>
 						<div class="pure-g-r">
 							<div class="pure-u-1-3">
 								<label for="username">Username:</label>

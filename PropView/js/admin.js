@@ -17,6 +17,7 @@ $(document).ready(function(){
 	$('#addUser').click(function(){
 		$('.editAccount').hide();
 		$('.editUser').show();
+		$('.editUser legend').html('Add user:');
 		$('.editUser #username, .editUser label[for="username"]').show();
 		$('.editUser').trigger('reset');
 	});
@@ -43,6 +44,7 @@ $(document).ready(function(){
 		if (button == 'viewButton'){
 			$('.editAccount').hide();
 			$('.editUser').show();
+			$('.editUser legend').html('Edit user:');
 			$('.editUser #username, .editUser label[for="username"]').hide();
 			$.getJSON('include/admin_ajax.php', {
 				func: 'getInfo',
