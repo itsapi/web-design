@@ -543,6 +543,63 @@ M:
 C:
 > no worries will let you know.
 
+C:
+> hello, looks like its changed, www.eab-wot.co.uk
+
+M:
+> It looks like it's worked, and ready to continue. The next step is to add
+> the domain to your getfreehosting account. If you go to http://cpanel.
+> getfreehosting.co.uk/ and log in, go to addon domains and add your new 
+> domain. Then tell me what happens next.
+
+C:
+> ok, added it on, added a box with site builder and delete as option.
+
+C:
+> also do i need to install any scripts?
+
+M:
+> Sorry, I didn't reply last night, but no you do not need to install any
+> scripts.
+> The next thing you need to do is try putting the files online. This is the
+> part where you're going to have to trust me, I need to FTP the website files
+> into your website, so you're going to have to give me your FTP password (The
+> same as your cpanel password, you might want to change it, and again after
+> I'm done).
+> If you could also copy and paste the section under 'Account Details' in the
+> side bar in to your message, as I'm going to need that too.
+> Then, with that information, I'll put the site on your server and set it all
+> up.
+
+C
+> username - getfh_13416482 pass - worldoft (was supposed to be worldoftanks
+> but apparently its too long not my usual pass as I presumed you'd need it at
+> some point)
+> FTP hostname: ftp.getfreehosting.co.uk FTP username: getfh_13416482 MySQL
+> hostname: sql104.getfreehosting.co.uk MySQL username: getfh_13416482 Hosting
+> Volume vol13 Home Directory: /home/vol13/getfreehosting.co.uk/getfh_1341648
+> is that everything?
+
+M:
+> Wooo!
+> There you go, the site is now set up, I'll just set up the forum, then we
+> can get started finishing things off.
+
+C:
+> well i'm off to work now and won't be back until 11:30.
+
+C:
+> sent too early, so i presume tomorrow would be better. What is left to do?
+> Set up the last couple of pages?
+
+M:
+> I've got the forum set up now, when you sign up on the main site, you get an
+> account created for you on the forum.
+> All that's left is to get the sign up email verification working and put the
+> last bits of content in.
+> I've got to go for tonight, but I'll be on tomorrow for most of the evening
+> to get it all done.
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 ### coderqi - IN PROGRESS
@@ -1056,6 +1113,18 @@ M:
 > I am happy to help for free as long as you need me, I don't expect to be
 > paid as I was offering a free service.
 >
+> Oliver
+
+C:
+> Oliver, Thats great news and thank you for your offer to continue helping.
+> Is there anything you need from me at this time? Do you have a date in mind
+> when you hope to be done with the CMS?
+> Michael
+
+M:
+> The CMS should be done by Sunday at the latest, I had it working last night,
+> but I need to redo some stuff because I mucked it up. It shouldn't take very
+> long to redo, Sunday at the vary latest!
 > Oliver
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
