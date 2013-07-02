@@ -13,11 +13,18 @@
 			echo json_encode(mysqli_fetch_assoc($result));
 			break;
 		case 'deleteProperty':
-			$username = addslashes($_GET['user']);
-			$result = query_DB("DELETE FROM users WHERE username='{$username}'");
-			if ($result){
-				echo 'success';
-			}
+			$userData = mysqli_fetch_assoc(query_DB("SELECT * FROM users WHERE username='{$_COOKIE['user']}'"));
+			$property = addslashes($_GET['property']);
+			$to = $mailUser;
+				$from = [
+					'email' => $userData['email'],
+					'name' => ($userData['firstname'].' '.$userData['surname'])
+				];
+				$subject = 'Property delete request';
+				$message = <<<END
+{$from['name']} has requested their property called {$property} be deleted.
+END;
+				email($to, $from, $subject, $message);
 			break;
 		case 'editProperty':
 			$id = $_GET['id'];
@@ -44,6 +51,16 @@
 				} else {
 					echo $data['name'].':pending:';
 				}
+				$to = $mailUser;
+				$from = [
+					'email' => $userData['email'],
+					'name' => ($userData['firstname'].' '.$userData['surname'])
+				];
+				$subject = 'Property updated';
+				$message = <<<END
+{$from['name']} has updated their property called {$data['name']}.
+END;
+				email($to, $from, $subject, $message);
 			} else {
 				$query = "INSERT INTO properties ({cols}) VALUES ({vals})";
 				$cols = '';
@@ -69,6 +86,17 @@ It will soon be approved by the admin and will be visible to the public. You wil
 
 Regards,
 The PropView Team.
+END;
+				email($to, $from, $subject, $message);
+				$to = $mailUser;
+				$from = [
+					'email' => $userData['email'],
+					'name' => ($userData['firstname'].' '.$userData['surname'])
+				];
+				$subject = 'Property created';
+				$message = <<<END
+{$from['name']} has created their property called {$data['name']}.
+It is waiting to be approved.
 END;
 				email($to, $from, $subject, $message);
 				echo $data['name'].':new:';

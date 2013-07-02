@@ -63,12 +63,12 @@ $(document).ready(function(){
 				$('.editProperty #subscription').val(data['subscription']);
 			});
 		} else {
-			if (confirm('Are you sure you want to delete ' + $('.viewProperty #property').val() + '?')){
+			if (confirm('Are you sure you want to delete ' + $('.viewProperty #property option:selected').text() + '?')){
 				$.ajax({
 					url: 'include/user_ajax.php',
 					data: {
 						func: 'deleteProperty',
-						property: $('.viewProperty #property').val()
+						property: $('.viewProperty #property option:selected').text()
 					}
 				}).done(function() {
 					alert('Delete property request sent.');
