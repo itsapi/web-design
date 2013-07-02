@@ -10,6 +10,7 @@
 	<head>
 		<title>PropView</title>
 		<? include 'include/head.html' ?>
+		<script><?='var userData = '.json_encode($userData).';'?></script>
 		<script src="js/admin.js"></script>
 		<link rel="stylesheet" href="css/admin.css">
 	</head>
@@ -59,9 +60,9 @@
 							<div class="pure-u-1-3">
 								<label for="payment">Payment:</label>
 								<select id="payment" name="payment">
-									<option value="1">Invoice</option>
-									<option value="2">Cash</option>
-									<option value="3">Credit</option>
+									<option value="1">Monthly</option>
+									<option value="2">Quarterly (5% discount)</option>
+									<option value="3">Yearly (10% discount)</option>
 								</select>
 								<button type="submit" class="pure-button">Update</button>
 							</div>
@@ -73,7 +74,6 @@
 						<legend>Edit account:</legend>
 						<div class="pure-g-r">
 							<div class="pure-u-1-2">
-								<input type="text" id="username" name="username" required style="display:none">
 								<label for="email">Email address:</label>
 								<input type="email" id="email" name="email" required>
 								<label for="firstname">First name:</label>

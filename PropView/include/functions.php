@@ -1,4 +1,7 @@
 <?
+	if (isset($_COOKIE['user'])){
+		$userData = mysqli_fetch_assoc(query_DB("SELECT * FROM users WHERE username='{$_COOKIE['user']}'"));
+	}
 	function email($to, $from, $subject, $message) {
 		require_once('/var/www/phpmailer/class.phpmailer.php');
 		$mail = new PHPMailer();

@@ -3,8 +3,8 @@
 
 	switch ($_GET['func']) {
 		case 'getInfo':
-			$uid = addslashes($_GET['user']);
-			$result = query_DB("SELECT * FROM users WHERE id='{$uid}'");
+			$id = addslashes($_GET['id']);
+			$result = query_DB("SELECT * FROM properties WHERE id='{$id}'");
 			echo json_encode(mysqli_fetch_assoc($result));
 			break;
 		case 'getAccount':
@@ -12,16 +12,17 @@
 			$result = query_DB("SELECT * FROM users WHERE id='{$uid}'");
 			echo json_encode(mysqli_fetch_assoc($result));
 			break;
-		case 'deleteUser':
-			$uid = addslashes($_GET['user']);
-			$result = query_DB("DELETE FROM users WHERE id='{$uid}'");
+		case 'deleteProperty':
+			$username = addslashes($_GET['user']);
+			$result = query_DB("DELETE FROM users WHERE username='{$username}'");
 			if ($result){
 				echo 'success';
 			}
 			break;
-		case 'editUser':
-			$username = $_GET['user'];
-			$result = query_DB("SELECT id FROM users WHERE username='{$username}'");
+		case 'editProperty':
+			$id = $_GET['id'];
+			$result = query_DB("SELECT id, approved FROM properties WHERE id='{$id}'");
+			$userData = mysqli_fetch_assoc(query_DB("SELECT * FROM users WHERE username='{$_COOKIE['user']}'"));
 			$formData = json_decode($_GET['formData']);
 			$data = [];
 			foreach ($formData as $item){
@@ -32,60 +33,45 @@
 				}
 			}
 			if (mysqli_num_rows($result) > 0){
-				$query = "UPDATE users SET {updateString} WHERE username='{$username}'";
+				$query = "UPDATE properties SET {updateString} WHERE id='{$id}'";
 				$updateString = '';
 				foreach ($data as $name => $value){
 					$updateString .= "{$name} = '{$value}', ";
 				}
 				$query = str_replace('{updateString}',substr($updateString, 0, -2),$query);
-				$to = [
-					'email' => $data['email'],
-					'name' => ($data['firstname'].' '.$data['surname'])
-				];
-				$from = $mailUser;
-				$subject = 'Updated user information for '.$data['username'];
-				$message = <<<END
-Hello {$to['name']},
-
-Your account details have recently been updated by the admin.
-If you think this was in error, please contact us and we will get it sorted ASAP.
-
-Regards,
-The PropView Team.
-END;
-				email($to, $from, $subject, $message);
-				echo $username.':';
+				if (mysqli_fetch_assoc($result)['approved']){
+					echo $data['name'].':approved:';
+				} else {
+					echo $data['name'].':pending:';
+				}
 			} else {
-				$query = "INSERT INTO users ({cols}) VALUES ({vals})";
+				$query = "INSERT INTO properties ({cols}) VALUES ({vals})";
 				$cols = '';
 				$vals = '';
 				foreach ($data as $name => $value){
 					$cols .= "{$name}, ";
 					$vals .= "'{$value}', ";
 				}
-				$cols .= 'password';
-				$password = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"),0,8);
-				$vals .= "'".hash('sha512',$username.hash('sha512',addslashes($password)))."'";
+				$cols .= 'uid';
+				$vals .= $userData['id'];
 				$query = str_replace(['{cols}','{vals}'],[$cols,$vals],$query);
 				$to = [
-					'email' => $data['email'],
-					'name' => ($data['firstname'].' '.$data['surname'])
+					'email' => $userData['email'],
+					'name' => ($userData['firstname'].' '.$userData['surname'])
 				];
 				$from = $mailUser;
-				$subject = 'Welcome to PropView '.$data['username'].'!';
+				$subject = 'You have created a property called '.$data['name'];
 				$message = <<<END
 Hello {$to['name']},
 
-Thank you for taking interest in PropView!
-
-Your username is {$data['username']} and your password is {$password}.
-Please log in here http://dvbris.no-ip.org/webDesign/PropView and change your password ASAP.
+You have successfully created a property called {$data['name']} on PropView.
+It will soon be approved by the admin and will be visible to the public. You will be notified when it is approved.
 
 Regards,
 The PropView Team.
 END;
 				email($to, $from, $subject, $message);
-				echo $username.':'.$password.':';
+				echo $data['name'].':new:';
 			}
 			$result = query_DB($query);
 			if ($result){
@@ -114,8 +100,9 @@ END;
 				echo 'success';
 			}
 			break;
-		case 'getUsers':
-			$result = query_DB("SELECT username, id FROM users WHERE admin IS NULL");
+		case 'getProperties':
+			$uid = addslashes($_GET['user']);
+			$result = query_DB("SELECT * FROM properties WHERE uid='{$uid}'");
 			while($row = mysqli_fetch_assoc($result)){
 				 $json[] = $row;
 			}

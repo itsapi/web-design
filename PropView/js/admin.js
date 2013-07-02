@@ -5,7 +5,7 @@ function getUsers() {
 		console.log(data);
 		$('.viewUser #user').html('');
 		$.each(data, function(){
-			$('.viewUser #user').append('<option value="'+this['username']+'">'+this['username']+'</option>');
+			$('.viewUser #user').append('<option value="'+this['id']+'">'+this['username']+'</option>');
 		});
 	});
 }
@@ -25,7 +25,8 @@ $(document).ready(function(){
 		$('.editUser').hide();
 		$('.editAccount').show();
 		$.getJSON('include/admin_ajax.php', {
-			func: 'getAccount'
+			func: 'getAccount',
+			user: userData['id']
 		}).done(function(data) {
 			console.log(data);
 			$('.editAccount #username').val(data['username']);
@@ -60,7 +61,7 @@ $(document).ready(function(){
 				$('.editUser #payment').val(data['payment']);
 			});
 		} else {
-			if (confirm('Are you sure you want to delete ' + $('.viewUser #user').val() + '?')){
+			if (confirm('Are you sure you want to delete ' + $('.viewUser #user option:selected').text() + '?')){
 				$.ajax({
 					url: 'include/admin_ajax.php',
 					data: {
@@ -69,6 +70,11 @@ $(document).ready(function(){
 					}
 				}).done(function() {
 					alert('Successfully deleted user');
+					$('.editAccount').hide();
+					$('.editUser').show();
+					$('.editUser legend').html('Add user:');
+					$('.editUser #username, .editUser label[for="username"]').show();
+					$('.editUser').trigger('reset');
 				}).fail(function(jqXHR, textStatus){
 					alert('Failed to delete user: ' + textStatus);
 				}).always(function(){
@@ -110,14 +116,14 @@ $(document).ready(function(){
 				url: 'include/admin_ajax.php',
 				data: {
 					func: 'editAccount',
-					user: $('.editAccount #username').val(),
+					user: userData['id'],
 					formData: JSON.stringify(formItems)
 				}
 			}).done(function() {
 				$('#addUser').click();
-				alert('Successfully saved user');
+				alert('Successfully saved account');
 			}).fail(function(jqXHR, textStatus){
-				alert('Failed to save user: ' + textStatus);
+				alert('Failed to save account: ' + textStatus);
 			});
 		} else {
 			alert('Passwords must be the same');
