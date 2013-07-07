@@ -1,9 +1,30 @@
 <?
+	set_include_path('/var/www/webDesign/PropView');
+	include 'include/config.php';
+
+	$mailDir = '/var/www/phpmailer/class.phpmailer.php';
+	$domain = 'http://dvbris.no-ip.org/webDesign/PropView';
+
+	if (mysqli_connect_errno($mysqli)){
+		printf("Connect failed: %s\n", mysqli_connect_error());
+	}
+	function query_DB($query){
+		$result = mysqli_query($GLOBALS['mysqli'], $query);
+		if (!$result) {
+			echo 'MySQLi query failed: (' . mysqli_errno($GLOBALS['mysqli']) . ') ' . mysqli_error($GLOBALS['mysqli']);
+			return False;
+		} else {
+			return $result;
+		}
+	}
 	if (isset($_COOKIE['user'])){
-		$userData = mysqli_fetch_assoc(query_DB("SELECT * FROM users WHERE username='{$_COOKIE['user']}'"));
+		$userData = getUserData($_COOKIE['user']);
+	}
+	function getUserData($username){
+		return mysqli_fetch_assoc(query_DB("SELECT * FROM users WHERE username='{$username}'"));
 	}
 	function email($to, $from, $subject, $message) {
-		require_once('/var/www/phpmailer/class.phpmailer.php');
+		require_once($mailDir);
 		$mail = new PHPMailer();
 		$mail->IsSMTP();
 		$mail->Host       = $GLOBALS['smtpHost'];

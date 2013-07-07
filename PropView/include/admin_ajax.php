@@ -1,5 +1,5 @@
 <?
-	include 'config.php';
+	include 'functions.php';
 
 	switch ($_GET['func']) {
 		case 'getInfo':
@@ -53,6 +53,7 @@ If you think this was in error, please contact us and we will get it sorted ASAP
 Regards,
 The PropView Team.
 END;
+
 				email($to, $from, $subject, $message);
 				echo $username.':';
 			} else {
@@ -79,11 +80,12 @@ Hello {$to['name']},
 Thank you for taking interest in PropView!
 
 Your username is {$data['username']} and your password is {$password}.
-Please log in here http://dvbris.no-ip.org/webDesign/PropView and change your password ASAP.
+Please log in here {$GLOBALS['domain']} and change your password ASAP.
 
 Regards,
 The PropView Team.
 END;
+				
 				email($to, $from, $subject, $message);
 				echo $username.':'.$password.':';
 			}

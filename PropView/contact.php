@@ -1,6 +1,6 @@
 <?
 	$msg = '';
-	include 'include/config.php';
+	include 'include/functions.php';
 	if (isset($_POST['submit'])){
 		if ($_POST['name'] == '' || $_POST['email'] == '' || $_POST['message'] == ''){
 			$msg .= 'Inputs must not be empty';

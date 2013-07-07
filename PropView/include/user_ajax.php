@@ -1,5 +1,5 @@
 <?
-	include 'config.php';
+	include 'functions.php';
 
 	switch ($_GET['func']) {
 		case 'getInfo':
@@ -45,7 +45,8 @@ END;
 				foreach ($data as $name => $value){
 					$updateString .= "{$name} = '{$value}', ";
 				}
-				$query = str_replace('{updateString}',substr($updateString, 0, -2),$query);
+				$updateString .= "updated = '".date('Y-m-d H:i:s')."'";
+				$query = str_replace('{updateString}',$updateString,$query);
 				if (mysqli_fetch_assoc($result)['approved']){
 					echo $data['name'].':approved:';
 				} else {
@@ -69,8 +70,8 @@ END;
 					$cols .= "{$name}, ";
 					$vals .= "'{$value}', ";
 				}
-				$cols .= 'uid';
-				$vals .= $userData['id'];
+				$cols .= 'uid, added, updated';
+				$vals .= "'".$userData['id']."', '".date('Y-m-d H:i:s')."', ".date('Y-m-d H:i:s');
 				$query = str_replace(['{cols}','{vals}'],[$cols,$vals],$query);
 				$to = [
 					'email' => $userData['email'],
