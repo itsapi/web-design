@@ -71,7 +71,7 @@ END;
 					$vals .= "'{$value}', ";
 				}
 				$cols .= 'uid, added, updated';
-				$vals .= "'".$userData['id']."', '".date('Y-m-d H:i:s')."', ".date('Y-m-d H:i:s');
+				$vals .= "'".$userData['id']."', '".date('Y-m-d H:i:s')."', '".date('Y-m-d H:i:s')."'";
 				$query = str_replace(['{cols}','{vals}'],[$cols,$vals],$query);
 				$to = [
 					'email' => $userData['email'],
