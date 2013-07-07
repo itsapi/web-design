@@ -20,7 +20,7 @@
 			}
 			break;
 		case 'editUser':
-			$username = $_GET['user'];
+			$username = addslashes($_GET['user']);
 			$result = query_DB("SELECT id FROM users WHERE username='{$username}'");
 			$formData = json_decode($_GET['formData']);
 			$data = [];

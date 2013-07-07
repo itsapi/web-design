@@ -18,13 +18,13 @@
 		}
 	}
 	if (isset($_COOKIE['user'])){
-		$userData = getUserData($_COOKIE['user']);
+		$userData = getUserData('username', $_COOKIE['user']);
 	}
-	function getUserData($username){
-		return mysqli_fetch_assoc(query_DB("SELECT * FROM users WHERE username='{$username}'"));
+	function getUserData($name, $value){
+		return mysqli_fetch_assoc(query_DB("SELECT * FROM users WHERE {$name}='{$value}'"));
 	}
 	function email($to, $from, $subject, $message) {
-		require_once($mailDir);
+		require_once($GLOBALS['mailDir']);
 		$mail = new PHPMailer();
 		$mail->IsSMTP();
 		$mail->Host       = $GLOBALS['smtpHost'];
