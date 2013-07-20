@@ -1,8 +1,8 @@
 <?
 	$msg = '';
 	include 'include/functions.php';
-	if (isset($_GET['user'])){
-		$currUserData = getUserData('username', $_GET['user']);
+	if (isset($_GET['id'])){
+		$currUserData = getUserData('id', $_GET['id']);
 		if ($userData['admin']){
 			$queryExt = " WHERE uid='{$currUserData['id']}'";
 		} else {

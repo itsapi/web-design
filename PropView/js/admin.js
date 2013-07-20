@@ -38,6 +38,9 @@ $(document).ready(function(){
 	$('.viewUser .viewButton').click(function(){
 		button = 'viewButton';
 	});
+	$('.viewUser .viewPropButton').click(function(){
+		button = 'viewPropButton';
+	});
 	$('.viewUser .deleteButton').click(function(){
 		button = 'deleteButton';
 	});
@@ -60,7 +63,9 @@ $(document).ready(function(){
 				$('.editUser #addressb').val(data['addressb']);
 				$('.editUser #payment').val(data['payment']);
 			});
-		} else {
+		} else if (button == 'viewPropButton') {
+			window.location.href = 'view.php?id=' + $('.viewUser #user').val();
+		} else if (button == 'deleteButton') {
 			if (confirm('Are you sure you want to delete ' + $('.viewUser #user option:selected').text() + '?')){
 				$.ajax({
 					url: 'include/admin_ajax.php',
