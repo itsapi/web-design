@@ -64,7 +64,7 @@ $(document).ready(function(){
 				$('.editUser #payment').val(data['payment']);
 			});
 		} else if (button == 'viewPropButton') {
-			window.location.href = 'view.php?id=' + $('.viewUser #user').val();
+			window.location.href = 'view.php?uid=' + $('.viewUser #user').val();
 		} else if (button == 'deleteButton') {
 			if (confirm('Are you sure you want to delete ' + $('.viewUser #user option:selected').text() + '?')){
 				$.ajax({

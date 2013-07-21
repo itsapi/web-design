@@ -1,21 +1,25 @@
 <?
 	$msg = '';
 	include 'include/functions.php';
-	if (isset($_GET['id'])){
-		$currUserData = getUserData('id', $_GET['id']);
-		if ($userData['admin']){
-			$queryExt = " WHERE uid='{$currUserData['id']}'";
-		} else {
-			$queryExt = " WHERE uid='{$currUserData['id']}' AND approved IS NOT NULL";
-		}
+	if (isset($_GET['pid'])){
+		
 	} else {
-		if ($userData['admin']){
-			$queryExt = "";
-		} else  {
-			$queryExt = " WHERE approved IS NOT NULL";
+		if (isset($_GET['uid'])){
+			$currUserData = getUserData('id', $_GET['uid']);
+			if ($userData['admin']){
+				$queryExt = " WHERE uid='{$currUserData['id']}'";
+			} else {
+				$queryExt = " WHERE uid='{$currUserData['id']}' AND approved IS NOT NULL";
+			}
+		} else {
+			if ($userData['admin']){
+				$queryExt = "";
+			} else  {
+				$queryExt = " WHERE approved IS NOT NULL";
+			}
 		}
+		$result = query_DB("SELECT * FROM properties{$queryExt}");
 	}
-	$result = query_DB("SELECT * FROM properties{$queryExt}");
 ?>
 
 <!DOCTYPE html>
