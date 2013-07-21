@@ -15,9 +15,15 @@
 			height: 80px;
 			margin-right: 10px;
 		}
+		#results img.fullImg {
+			float: none;
+			display: block;
+			margin: 5px;
+		}
 		#results h3 {
 			margin-bottom: 0;
 			display: inline;
+			color: rgba(100, 100, 100, 1);
 		}
 		#results p {
 			margin: 0;
@@ -35,6 +41,9 @@
 		#results .forth-line {
 			margin-top: 5px;
 			font-size: 0.8em;
+		}
+		#results .fullView {
+			padding-top: 5px;
 		}
 @media screen and (max-width: 768px) {
 	#left {

@@ -2,7 +2,7 @@
 	$msg = '';
 	include 'include/functions.php';
 	if (isset($_GET['pid'])){
-		
+		$queryExt = " WHERE id='{$_GET['pid']}'";
 	} else {
 		if (isset($_GET['uid'])){
 			$currUserData = getUserData('id', $_GET['uid']);
@@ -18,8 +18,8 @@
 				$queryExt = " WHERE approved IS NOT NULL";
 			}
 		}
-		$result = query_DB("SELECT * FROM properties{$queryExt}");
 	}
+	$result = query_DB("SELECT * FROM properties{$queryExt}");
 ?>
 
 <!DOCTYPE html>
@@ -40,42 +40,81 @@
 				</figure>
 			</section>
 			<section id="right">
+<?
+	if (isset($_GET['pid'])) {
+		$row = mysqli_fetch_assoc($result)
+?>
+				<div id="results">
+					<h3><?=$row['name']?></h3>
+					<p class="subscription"><?
+		switch ($row['subscription']) {
+			case 1:
+				echo 'Premium PLUS';
+				break;
+			case 2:
+				echo 'Premium';
+				break;
+			case 3:
+				echo 'Executive';
+				break;
+			case 4:
+				echo 'Basic';
+				break;
+		}
+					?></p>
+					<img class="fullImg" src="<??>">
+					<p class="fullView">Date added <?=$row['added']?> | Last updated <?=$row['updated']?></p>
+					<p class="fullView">Owner: <?
+		$propUser = getUserData('id', $row['uid']);
+		echo $propUser['firstname'].' '.$propUser['surname'];
+					?></p>
+					<h5>Details:</h5>
+					<p class="fullView"><?=$row['buildings']?> Buildings | <?=$row['size']?> Sq Ft</p>
+					<p class="fullView"><?=$row['address']?></p>
+					<h5>Description:</h5>
+				</div>
+<?
+	} else {
+?>
 				<ul id="results">
 <?
-	while($row = mysqli_fetch_assoc($result)){
+		while($row = mysqli_fetch_assoc($result)){
 ?>
 					<li>
-						<a href="<??>">
+						<a href="view.php?pid=<?=$row['id']?>">
 							<img src="<??>">
 							<h3><?=$row['name']?></h3>
 						</a>
 						<p class="subscription"><?
-							switch ($row['subscription']) {
-								case 1:
-									echo 'Premium PLUS';
-									break;
-								case 2:
-									echo 'Premium';
-									break;
-								case 3:
-									echo 'Executive';
-									break;
-								case 4:
-									echo 'Basic';
-									break;
-							}
-						?></p>
+			switch ($row['subscription']) {
+				case 1:
+					echo 'Premium PLUS';
+					break;
+				case 2:
+					echo 'Premium';
+					break;
+				case 3:
+					echo 'Executive';
+					break;
+				case 4:
+					echo 'Basic';
+					break;
+			}
+					?></p>
 						<p class="first-line"><?=$row['buildings']?> Buildings | <?=$row['size']?> Sq Ft</p>
-						<p class="second-line">Date added <?=$row['added']?> | Last updated <?=$row['updated']?></p>
+						<p>Date added <?=$row['added']?> | Last updated <?=$row['updated']?></p>
 						<p class="forth-line">Owner: <?
-							$propUser = getUserData('id', $row['uid']);
-							echo $propUser['firstname'].' '.$propUser['surname'];
+			$propUser = getUserData('id', $row['uid']);
+			echo $propUser['firstname'].' '.$propUser['surname'];
 						?></p>
 					</li>
 <?
-	}
+		}
 ?>
 				</ul>
+<?
+	}
+?>
 			</section>
 			<? include 'include/footer.html' ?>
 		</div>
