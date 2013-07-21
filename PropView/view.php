@@ -100,7 +100,8 @@
 					echo 'Basic';
 					break;
 			}
-					?></p>
+						?></p>
+						<?= (!$row['approved']) ? '<p class="subscription"><em>PENDING</em></p>' : '' ?>
 						<p class="first-line"><?=$row['buildings']?> Buildings | <?=$row['size']?> Sq Ft</p>
 						<p>Date added <?=$row['added']?> | Last updated <?=$row['updated']?></p>
 						<p class="forth-line">Owner: <?
