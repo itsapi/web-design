@@ -31,7 +31,8 @@
 						<label for="property">Property:</label>
 						<select id="property">
 						</select>
-						<button type="submit" class="pure-button viewButton">View property</button>
+						<button type="submit" class="pure-button viewButton">Edit property</button>
+						<button type="submit" class="pure-button fullViewButton">View property</button>
 						<button type="submit" class="pure-button deleteButton">Delete property</button>
 					</fieldset>
 				</form>

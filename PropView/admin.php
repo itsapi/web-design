@@ -31,7 +31,7 @@
 						<label for="user">User:</label>
 						<select id="user">
 						</select>
-						<button type="submit" class="pure-button viewButton">View user</button>
+						<button type="submit" class="pure-button viewButton">Edit user</button>
 						<button type="submit" class="pure-button viewPropButton">View properties</button>
 						<button type="submit" class="pure-button deleteButton">Delete user</button>
 					</fieldset>

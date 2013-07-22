@@ -40,6 +40,9 @@ $(document).ready(function(){
 	$('.viewProperty .viewButton').click(function(){
 		button = 'viewButton';
 	});
+	$('.viewProperty .fullViewButton').click(function(){
+		button = 'fullViewButton';
+	});
 	$('.viewProperty .deleteButton').click(function(){
 		button = 'deleteButton';
 	});
@@ -62,7 +65,9 @@ $(document).ready(function(){
 				$('.editProperty #buildings').val(data['buildings']);
 				$('.editProperty #subscription').val(data['subscription']);
 			});
-		} else {
+		} else if (button == 'fullViewButton'){
+			window.location.href = 'view.php?pid=' + $('.viewProperty #property').val();
+		} else if (button == 'deleteButton'){
 			if (confirm('Are you sure you want to delete ' + $('.viewProperty #property option:selected').text() + '?')){
 				$.ajax({
 					url: 'include/user_ajax.php',
