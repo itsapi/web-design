@@ -28,6 +28,7 @@
 	<head>
 		<title>PropView</title>
 		<? include 'include/head.html' ?>
+		<script src="js/view.js"></script>
 		<link rel="stylesheet" href="css/view.css">
 	</head>
 	<body>
@@ -42,8 +43,10 @@
 			<section id="right">
 <?
 	if (isset($_GET['pid'])) {
-		$row = mysqli_fetch_assoc($result)
+		$row = mysqli_fetch_assoc($result);
+		$data = json_encode($row);
 ?>
+				<script>var propData = <?=$data ?></script>
 				<div id="results">
 					<h3><?=$row['name']?></h3>
 					<p class="subscription"><?
@@ -62,6 +65,11 @@
 				break;
 		}
 					?></p>
+					<?= (!$row['approved'] && $userData['admin']) ? "<form class=\"pure-form pure-form-stacked approveProp\">
+						<fieldset>
+							<button type=\"submit\" class=\"pure-button\">APPROVE</button>
+						</fieldset>
+					</form>" : '' ?>
 					<img class="fullImg" src="<??>">
 					<p class="fullView">Date added <?=$row['added']?> | Last updated <?=$row['updated']?></p>
 					<p class="fullView">Owner: <?
@@ -101,7 +109,7 @@
 					break;
 			}
 						?></p>
-						<?= (!$row['approved']) ? '<p class="subscription"><em>PENDING</em></p>' : '' ?>
+						<?= (!$row['approved'] && $userData['admin']) ? '<p class="subscription"><em>PENDING</em></p>' : '' ?>
 						<p class="first-line"><?=$row['buildings']?> Buildings | <?=$row['size']?> Sq Ft</p>
 						<p>Date added <?=$row['added']?> | Last updated <?=$row['updated']?></p>
 						<p class="forth-line">Owner: <?
