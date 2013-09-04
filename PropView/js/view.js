@@ -33,4 +33,12 @@ $(document).ready(function(){
 		}
 		return false;
 	});
+	$('.getID').submit(function() {
+		alert("The property ID for this property is " + propData['id']);
+		return false;
+	});
+	$('.map').submit(function() {
+		window.open('maps/' + propData['id']);
+		return false;
+	});
 });

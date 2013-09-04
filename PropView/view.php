@@ -70,11 +70,21 @@
 							<button type=\"submit\" class=\"pure-button\">APPROVE</button>
 						</fieldset>
 					</form>" : '' ?>
-					<?= ($userData['admin']) ? "<form class=\"pure-form pure-form-stacked deleteProp\">
+					<?= (isset($userData) && $userData['admin']) ? "<form class=\"pure-form pure-form-stacked deleteProp\">
 						<fieldset>
 							<button type=\"submit\" class=\"pure-button\">DELETE</button>
 						</fieldset>
 					</form>" : '' ?>
+					<?= (isset($userData) && $userData['admin']) ? "<form class=\"pure-form pure-form-stacked getID\">
+						<fieldset>
+							<button type=\"submit\" class=\"pure-button\">GET ID</button>
+						</fieldset>
+					</form>" : '' ?>
+					<form class="pure-form pure-form-stacked map">
+						<fieldset>
+							<button type="submit" class="pure-button">MAP</button>
+						</fieldset>
+					</form>
 					<img class="fullImg" src="<??>">
 					<p class="fullView">Date added <?=$row['added']?> | Last updated <?=$row['updated']?></p>
 					<p class="fullView">Owner: <?

@@ -28,6 +28,9 @@
 		#results p {
 			margin: 0;
 		}
+		#results button {
+			width: 150px;
+		}
 		#results .subscription {
 			font-size: 1.1em;
 			display: inline;

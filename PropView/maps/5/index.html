@@ -1,0 +1,738 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+    <title>Photo Album 2013-08-26</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/gmap.css" />
+    <style type="text/css">
+    </style>
+ 
+    <script src="js/prototype.js" type="text/javascript"></script>
+    <script src="js/effects.js" type="text/javascript"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;key="></script>
+    <script src="js/gmap.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+
+    var map = null;
+    var placemarks = null;
+
+    var map_markers = [];
+    var selected_marker = null;
+    var hidden_marker = null;
+    
+    var infowin = new google.maps.InfoWindow();
+
+    var timer_loading;
+    var text_loading = null;
+
+    var last_loading_photo_id;
+    
+    var current_select_photo_id = 1;
+    var current_loading_count = 0;
+    var loaded_all = 0;
+    
+    var array_map_type = [];
+    array_map_type[0] = google.maps.MapTypeId.ROADMAP;
+    array_map_type[1] = google.maps.MapTypeId.SATELLITE;
+    array_map_type[2] = google.maps.MapTypeId.HYBRID;
+    array_map_type[3] = google.maps.MapTypeId.TERRAIN;
+        
+    var MARKER_STYLE_DEFAULT = 0;
+    var MARKER_STYLE_SMALL = 1;
+    
+    var icon_small = null;
+    
+    var hide_filmstrip = 0;
+    // $HideFilmstrip$ //hide_filmstrip = 1;
+
+    function getShortText(strText) {
+
+        var strShortText = strText; 
+        
+        // get the first line of the plain text
+        strShortText = strShortText.split(new RegExp("\\n|\\r", "i"))[0];
+                
+        // get the first line of the html text 
+        strShortText = strShortText.split(new RegExp("< *br */? *>", "i"))[0];
+      
+        // remove html tags 
+        strShortText = strShortText.replace(new RegExp("(<([^>]+)>)", "gi"), "");
+        strShortText = strShortText.replace(new RegExp("&quot;", "gi"), "\"");
+        strShortText = strShortText.replace(new RegExp("&amp;", "gi"), "&");
+        strShortText = strShortText.replace(new RegExp("&lt;", "gi"), "<");
+        strShortText = strShortText.replace(new RegExp("&gt;", "gi"), ">");
+
+        // if the text is too long
+        var max_length = 40;
+        if (strShortText.length > max_length) {
+            strShortText = strShortText.substring(0, max_length);
+            var words = strShortText.split(" ");
+            if (words.length > 1) {
+                words.length = words.length - 1;
+                strShortText = words.join(" ");
+            }
+        }
+        
+        return strShortText;
+    }
+    
+    function getDirection(d) {
+        
+        var s = 360.0 / 16;
+        var dir = "";
+        
+        if( d >=0 && d <= 360 ){
+            
+            if (d < s*0.5 ) dir = "N"; 
+            else if (d < s*1.5) dir = "NNE";
+            else if (d < s*2.5) dir = "NE";
+            else if (d < s*3.5) dir = "ENE";
+            else if (d < s*4.5) dir = "E";
+            else if (d < s*5.5) dir = "ESE";
+            else if (d < s*6.5) dir = "SE";
+            else if (d < s*7.5) dir = "SSE";
+            else if (d < s*8.5) dir = "S";
+            else if (d < s*9.5) dir = "SSW";
+            else if (d < s*10.5) dir = "SW";
+            else if (d < s*11.5) dir = "WSW";
+            else if (d < s*12.5) dir = "W";
+            else if (d < s*13.5) dir = "WNW";
+            else if (d < s*14.5) dir = "NW";
+            else if (d < s*15.5) dir = "NNW";
+            else dir = "N";
+        }
+        
+        return dir;
+    }
+    
+    function getDirectionIcon(heading) {
+        
+        var icon = new google.maps.MarkerImage(
+           "images/heading_marker_"+getDirection(heading)+".png",
+           new google.maps.Size(50, 50),
+           new google.maps.Point(0, 0),
+           new google.maps.Point(25, 30));
+        
+        return icon;
+        
+    }
+    
+    function getMarkerIcon(style) {
+        
+        var icon;
+        
+        if (style==MARKER_STYLE_SMALL) {
+            
+            if (icon_small == null) {
+                var icon_small = new google.maps.MarkerImage(
+                   "images/small_red_pin.png",
+                   new google.maps.Size(19, 21),
+                   new google.maps.Point(0,0),
+                   new google.maps.Point(6, 20));
+            }
+            icon = icon_small;
+            
+        } else {
+            icon = null;
+        }
+        
+        return icon;
+    }
+
+    // append point with picture to map
+    function createPhotoMarker(map, i) {
+    
+        var point = getPoint(placemarks[i]);
+        var elevation = getPointElevation(placemarks[i]);
+        var heading = getPointHeading(placemarks[i]);
+        var datetime = getPointDateTime(placemarks[i]);
+        
+        var photoID = getPointName(placemarks[i]);
+        var description = getPointDescription(placemarks[i]);
+        var infoURL = getPointInfoURL(placemarks[i]);
+
+        var image1 = getPointImage1(placemarks[i]);
+        var image2 = getPointImage2(placemarks[i]);
+        var video = getPointVideo(placemarks[i]);
+        var panorama = getPointPanorama(placemarks[i]);
+
+        var imageWidth2 = getPointImageWidth(placemarks[i]);
+        var imageHeight2 = getPointImageHeight(placemarks[i]);
+                
+        var marker = new google.maps.Marker({position:point, icon:getMarkerIcon(1), title:getShortText(description)});
+        
+         // show the info window when it is clicked    
+        google.maps.event.addListener(marker, "click", function() {
+
+            last_loading_photo_id = photoID;
+
+            var point0 = map.getCenter();
+            var bounds0 = map.getBounds();
+            var latRange = Math.abs(bounds0.getNorthEast().lat() - bounds0.getSouthWest().lat());
+            var lngRange = Math.abs(bounds0.getNorthEast().lng() - bounds0.getSouthWest().lng());
+            
+            if ( Math.abs(point0.lat() - point.lat()) > latRange || 
+                 Math.abs(point0.lng() - point.lng()) > lngRange) map.setCenter(point);
+                 
+            if (selected_marker != null) {
+                selected_marker.setMap(null);
+                selected_marker = null;
+            }
+            
+            if (hidden_marker != null) {
+                hidden_marker.setVisible(true);
+                hidden_marker = null;
+            }
+
+            if (heading!=null && heading!="") {
+                selected_marker = new google.maps.Marker({position:point, icon:getDirectionIcon(heading), zIndex:9999});
+
+                google.maps.event.addListener(selected_marker, "click", function() {
+
+                    google.maps.event.trigger(marker,"click");
+                });
+                    
+                selected_marker.setMap(map);
+                marker.setVisible(false);
+                hidden_marker = marker;                    
+            }
+            
+            if (!hide_filmstrip) {
+            
+                var img_current_photo = document.getElementById("img_photo"+current_select_photo_id);
+                var img_photo = document.getElementById("img_photo"+photoID);
+
+                if(photoID!=current_select_photo_id){               
+                    current_select_photo_id = photoID;
+                
+                    img_current_photo.className = "img_normal";
+                    img_photo.className = "img_selected";
+                    
+                    var photo_index = img_photo.getAttribute("index");
+                    onClickMarker(photo_index);
+                    document.getElementById("select_item").selectedIndex = parseInt(photo_index)+1;
+                }
+            
+            } else {
+                
+                var selectItem = document.getElementById("select_item");
+                var n;
+                for (n=0 ; n< selectItem.length ; n++) {
+                    if (selectItem.options[n].value == photoID) {
+                        selectItem.selectedIndex = n;
+                        break;
+                    }
+                }
+            }
+            
+            // show info balloon
+            var img = new Image();            
+            img.onload = function(e) {
+            
+                if (last_loading_photo_id != photoID) return;
+
+                var imageWidth1 = img.width;
+                var imageHeight1 = img.height;
+
+                var imageSizeHTML = "";
+                if (imageWidth1>0 && imageHeight1>0) {
+                    imageSizeHTML = "width='"+imageWidth1+"' height='"+imageHeight1+"'";
+                }
+                
+                var elevationText = "";
+                if (elevation != "") elevationText = elevation + "m";
+                
+                var headingText = "";
+                if (heading != "") headingText = heading + "&deg; " + getDirection(parseFloat(heading));
+                
+                var infoLinkHTML = "";
+                if (infoURL !="") infoLinkHTML = "<a href='"+infoURL+"' target='_blank'><img src='images/blue_arrow.gif' width='30' height='30' border='0' align='right' style='margin-left:10px; margin-top:10px;'></a>";
+                
+                var descriptionHTML = "";
+                if (description!="") descriptionHTML = "<br/>&nbsp;<br/>" + description;
+                
+                var infoHTML = "<div class='div_photo_balloon'><br/>Photo ID: "+photoID+"<br/>Capture Time: "+datetime+"<br/>Longitude: "+point.lng()+"<br/>Latitude: "+point.lat()+"<br/>Elevation: "+elevationText+"<br/>Heading: "+headingText+"</div>";                    
+                var mainHTML;
+                if (video) {
+                    var videoWidth = 640;
+                    var videoHeight = 480;
+                    if (imageWidth2>0 && imageHeight2>0) videoHeight =  parseInt(videoWidth * imageHeight2 / imageWidth2); 
+                    mainHTML = "<div class='div_photo_balloon'><a href='javascript:showDetailVideo(\""+image2+"\",\""+video+"\","+videoWidth+","+videoHeight+")'><img src='"+image1+"' "+imageSizeHTML+" border='0'></a>"+ infoLinkHTML + descriptionHTML +"</div>";
+                } else {
+                    if (panorama) image2 = panorama;
+                    mainHTML = "<div class='div_photo_balloon'><a href='javascript:showDetail(\""+image2+"\")'><img src='"+image1+"' "+imageSizeHTML+" border='0'></a>"+ infoLinkHTML + descriptionHTML +"</div>";
+                }
+                
+                infowin.close();
+                if (false) {
+                    infowin.setContent(mainHTML+infoHTML);
+                } else {
+                    infowin.setContent(mainHTML);
+                }
+                infowin.open(map, marker);
+            };
+            img.src = image1;
+            if (img.width==0 && img.height==0) {
+                                      
+                infowin.close();
+                infowin.setContent("<div class='div_photo_balloon'>Loading...</div>");
+                infowin.open(map, marker); 
+            }
+        });
+                
+        map_markers.push(marker);
+        marker.setMap(map);
+    }
+
+    function getPoint(placemark) {
+        var points = placemark.getElementsByTagName("Point");
+        var coords = points[0].getElementsByTagName("coordinates")[0].firstChild.nodeValue;
+        var array_coord = coords.split(",");
+
+        var point = new google.maps.LatLng(parseFloat(array_coord[1]).toString(),
+                                           parseFloat(array_coord[0]).toString());
+
+        return point;
+    }
+    
+    function getPointElevation(placemark) {
+        var points = placemark.getElementsByTagName("Point");
+        var coords = points[0].getElementsByTagName("coordinates")[0].firstChild.nodeValue;
+        var array_coord = coords.split(",");
+
+        return parseFloat(array_coord[2]).toString();
+    }
+
+    function getPointTag(placemark, tag) {  
+        var node = placemark.getElementsByTagName(tag)[0];
+        if (node == null) return "";
+        if (node.firstChild == null) return "";
+        return node.firstChild.nodeValue;
+    }
+
+    function getPointName(placemark)            { return getPointTag(placemark, "name"); }
+    function getPointImagePreview(placemark)    { return getPointTag(placemark, "description"); }
+    function getPointDescription(placemark)     { return getPointTag(placemark, "gmap_description"); }
+    function getPointInfoURL(placemark)         { return getPointTag(placemark, "gmap_info_url"); }
+    
+    function getPointDateTime(placemark)        { return getPointTag(placemark, "gmap_datetime"); } 
+    function getPointHeading(placemark)         { return getPointTag(placemark, "gmap_heading"); }
+    
+    function getPointImage0(placemark)          { return getPointTag(placemark, "gmap_image0"); }
+    function getPointImage1(placemark)          { return getPointTag(placemark, "gmap_image1"); }
+    function getPointImage2(placemark)          { return getPointTag(placemark, "gmap_image2"); }
+    function getPointVideo(placemark)           { return getPointTag(placemark, "gmap_video"); } 
+    function getPointPanorama(placemark)        { return getPointTag(placemark, "gmap_panorama"); }
+    
+    function getPointImageWidth(placemark)      { return getPointTag(placemark, "gmap_width"); }
+    function getPointImageHeight(placemark)     { return getPointTag(placemark, "gmap_height"); }
+
+    function showAllMarkers() {
+        var min_lat = 90;
+        var min_lng = 180;
+        var max_lat = -90;
+        var max_lng = -180;
+        
+        var my_lat = 0;
+        var my_lng = 0;
+        
+        for (var i=0; i< map_markers.length; i++) {
+            
+            if (map_markers[i] != null) {
+                
+                my_lat = map_markers[i].getPosition().lat();
+                my_lng = map_markers[i].getPosition().lng();
+                
+                if (min_lat > my_lat) min_lat=my_lat;
+                if (min_lng > my_lng) min_lng=my_lng;
+                if (max_lat < my_lat) max_lat=my_lat;
+                if (max_lng < my_lng) max_lng=my_lng;
+            }
+        }
+        
+        if (min_lat <= max_lat && min_lng <= max_lng) {
+            
+            var sw = new google.maps.LatLng(min_lat, min_lng);
+            var ne = new google.maps.LatLng(max_lat, max_lng);
+            var bounds = new google.maps.LatLngBounds(sw, ne);
+            
+            map.fitBounds(bounds);
+        }
+        
+        return bounds;
+    }
+
+    function showDetail(strImage) {
+        document.getElementById("div_photo_indicator").style.visibility = "visible"; 
+        document.getElementById("div_photo_overlay").style.visibility = "visible"; 
+        
+        document.getElementById("img_photo_detail").onload = function(e){
+            
+            var img_photo = document.getElementById("img_photo_detail");
+            var div_photo_outer = document.getElementById("div_photo_outer");
+            var div_photo_inner = document.getElementById("div_photo_inner");
+            
+            var max_outer_width = document.body.clientWidth - 100;
+            
+            if (img_photo.width>max_outer_width) {
+                div_photo_outer.style.width = max_outer_width+"px";
+                div_photo_outer.style.height = img_photo.height+"px";
+                
+                var default_inner_left = (div_photo_outer.clientWidth - img_photo.clientWidth) / 2
+                div_photo_inner.style.left = default_inner_left + "px";
+                div_photo_inner.style.width = img_photo.width+"px";
+                div_photo_inner.style.height = img_photo.height+"px";
+                
+                document.onmousemove = function(e) {
+                    e = e || window.event;
+                    
+                    var act_width = document.body.clientWidth - 150;
+                    var act_left = 75;
+                    
+                    var x = e.clientX;
+                    if (x < act_left) x = act_left;
+                    if (x > act_left + act_width) x = act_left + act_width;
+
+                    var inner_left = (div_photo_outer.clientWidth - img_photo.clientWidth) * (x - act_left) / act_width;
+                    div_photo_inner.style.left = inner_left + "px"; 
+                }
+                
+            } else {
+                div_photo_outer.style.width = img_photo.width+"px";
+                div_photo_outer.style.height = img_photo.height+"px";
+            }
+            
+            document.getElementById("div_photo_indicator").style.visibility = "hidden"; 
+            document.getElementById("div_photo_viewer").style.visibility = "visible"; 
+        };
+        document.getElementById("img_photo_detail").src = strImage;
+    }
+    
+    function hideDetail() {
+        document.onmousemove = function(e){};
+        document.getElementById("img_photo_detail").onload = function(e){};
+        document.getElementById("div_photo_indicator").style.visibility = "hidden"; 
+        document.getElementById("div_photo_viewer").style.visibility = "hidden"; 
+        document.getElementById("div_photo_overlay").style.visibility = "hidden"; 
+        document.getElementById("div_photo_inner").style.left = "0px";
+        document.getElementById("img_photo_detail").src = "";
+    }
+
+    function showDetailVideo(strImage, strVideo, width, height) {
+    
+        var isIE = (navigator.appVersion.indexOf("MSIE") != -1) ? true : false;
+        var isWin = (navigator.appVersion.toLowerCase().indexOf("win") != -1) ? true : false;
+        var isOpera = (navigator.userAgent.indexOf("Opera") != -1) ? true : false;
+        var isAppleIOS = (navigator.userAgent.indexOf("iPad") != -1 || navigator.userAgent.indexOf("iPhone") != -1 || navigator.userAgent.indexOf("iPod") != -1) ? true : false;
+
+        document.getElementById("div_photo_overlay").style.visibility = "visible"; 
+        
+        var jvplayer = document.getElementById("div_jvplayer");
+        jvplayer.style.width = width+"px";
+        jvplayer.style.height = height+"px";
+                
+        var jvplayerHTML = "";
+        if (isAppleIOS) {
+            
+            // HTML5 video player for iOS
+            jvplayerHTML =    
+                "<video src='"+strVideo+"' poster='"+strImage+"' width='"+width+"' height='"+height+"' controls></video>";
+            
+        } else if (isIE && isWin && !isOpera) {
+        
+            // Flash video player (object)
+            jvplayerHTML =  
+                "<object classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000' codebase='http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0' width='"+width+"' height='"+height+"' id='jvplayer' align='middle'>" +
+                "<param name='allowScriptAccess' value='sameDomain' />" +
+                "<param name='allowFullScreen' value='true' />" +
+                "<param name='movie' value='jvplayer.swf?thumbnail="+strImage+"&video="+strVideo+"' />" +
+                "<param name='quality' value='high' />" +
+                "<param name='bgcolor' value='#000000' />" +
+                "</object>";
+        
+        } else {
+        
+            // Flash video player (embed)
+            jvplayerHTML =  
+                "<embed src='jvplayer.swf?thumbnail="+strImage+"&video="+strVideo+"' quality='high' bgcolor='#000000' width='"+width+"' height='"+height+"' name='jvplayer' align='middle' allowScriptAccess='sameDomain' allowFullScreen='true' type='application/x-shockwave-flash' pluginspage='http://www.macromedia.com/go/getflashplayer' />";
+        }
+        
+        var jvplayer_ = document.createElement("div");
+        jvplayer_.setAttribute("id","div_jvplayer_");
+        jvplayer_.innerHTML = jvplayerHTML;
+        jvplayer.appendChild(jvplayer_);
+    
+        document.getElementById("div_video_player").style.visibility = "visible"; 
+
+    }
+    
+    function hideDetailVideo() {
+    
+        document.getElementById("div_photo_overlay").style.visibility = "hidden"; 
+        document.getElementById("div_video_player").style.visibility = "hidden"; 
+        
+        var jvplayer = document.getElementById("div_jvplayer");
+        while ( jvplayer.hasChildNodes()) jvplayer.removeChild(jvplayer.lastChild);
+    }
+
+    function onSelectPhotoItem() {
+        
+        var i = document.getElementById("select_item").selectedIndex;
+        if (i == 0) 
+            return;
+        else {
+            var marker = map_markers[i-1];
+            google.maps.event.trigger(marker, "click");
+        }
+    }
+    
+    function loadPhoto(i) {
+    
+        // load markers on the map
+        createPhotoMarker(map, i );
+
+        var pointLatLng = getPoint(placemarks[i]);
+        var pointName = getPointName(placemarks[i]);
+        var pointDescription = getPointDescription(placemarks[i]);
+        
+        // load list items
+        var selectItem = document.getElementById("select_item");
+        selectItem.options[selectItem.length] = new Option(parseInt(i+1).toString()+" "+getShortText(pointDescription), pointName);
+
+        if (i==0) {
+            map.setCenter(pointLatLng);
+            map.setZoom(14);
+            hideDetail();
+        }
+        
+        if (i==placemarks.length-1) {
+            // $ShowSelectList$ //document.getElementById("div_control").style.visibility = "visible"; 
+            // $ShowAllMarkers$ //showAllMarkers();
+        }
+
+        // load filmstrip items
+        if (!hide_filmstrip) {
+
+            var div_photo = document.createElement("div");
+            var img_photo = document.createElement("img");
+            div_photo.setAttribute("id","div_photo"+pointName);
+            div_photo.className = "div_photo";
+            
+            img_photo.setAttribute("id","img_photo"+pointName);
+            img_photo.setAttribute("photoID",pointName);
+            img_photo.setAttribute("index",i);
+            img_photo.className = "img_normal";
+            img_photo.onmouseout = clearSmoothOpacity;
+            img_photo.onmouseover = smoothOpacity;
+            
+            if(pointName==current_select_photo_id){             
+                img_photo.className = "img_selected";
+            }
+
+            img_photo.onload = function(e){
+                var targ;
+                if (!e) var e = window.event;
+                if (e.target) targ = e.target;
+                else if (e.srcElement) targ = e.srcElement;
+                
+                current_loading_count++;
+                
+                var div_bar_view = document.getElementById("div_slide_view");
+                var div_loading_frame = document.getElementById("div_loading_frame");
+                var div_bar = document.getElementById("div_slide_bar");
+                var count = placemarks.length;
+                var percent = Math.round(eval( "(" + current_loading_count + ") / " + count + "* 100"));
+                text_loading.data = "Loading ... " + percent + "%" ;
+                
+                if(!loaded_all && current_loading_count >= count*0.9 && current_loading_count >= count-5){
+                    loaded_all = 1;
+                    div_bar_view.removeChild(div_loading_frame);
+                    div_bar.className = "div_slide_bar";
+                }
+            };
+            
+            img_photo.src = getPointImage0(placemarks[i]);
+            
+            img_photo.onclick = function(e){
+                var targ;
+                if (!e) var e = window.event;
+                if (e.target) targ = e.target;
+                else if (e.srcElement) targ = e.srcElement;
+                if (targ.nodeType == 3) // defeat Safari bug
+                    targ = targ.parentNode;
+                
+                var index = targ.getAttribute("index");
+                var pointName = targ.getAttribute("photoID");
+                
+                var marker = map_markers[index];
+                google.maps.event.trigger(marker, "click");
+                
+                var img_photo = document.getElementById("img_photo"+pointName);
+                if(pointName==current_select_photo_id){
+                    img_photo.className = "img_selected";
+                    return;
+                }
+                
+                var img_current_photo = document.getElementById("img_photo"+current_select_photo_id);
+
+                current_select_photo_id = pointName;
+                img_current_photo.className = "img_normal";
+                img_photo.className = "img_selected";
+            };
+
+            var div_bar = document.getElementById("div_slide_bar");
+            var table_photo_frame = document.createElement("table");
+
+            table_photo_frame.className = "table_photo_frame";
+            var row = table_photo_frame.insertRow(0);
+            var td = row.insertCell(0);
+            td.setAttribute("align","center");
+            td.setAttribute("valign","middle");
+            td.appendChild(img_photo);
+            
+            div_photo.appendChild(table_photo_frame);
+            div_bar.appendChild(div_photo);
+        
+        }
+    
+        // load next photo
+        if ( (i+1) < placemarks.length) {
+            timer_loading = setTimeout("loadPhoto("+ (i+1) +")",1);
+        }
+    }
+
+    function showError() {
+        var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+        var is_local = location.protocol=="file:";
+        var errmsg;
+        
+        if (is_chrome && is_local) {
+            errmsg = "Unable to open the web gallery locally using Google Chrome. " +
+                     "Please copy the gallery files to a web server and try again to open the web page under a http address. \n\n" +
+                     "(Please use Firefox, Safari or Internet Explorer if need open the web page file from a local disk.)\n";    
+        } else {
+            errmsg = "Failed to load the web gallery.";
+        }
+        
+        alert(errmsg);    
+    }
+        
+    function load() {
+        
+        var mapOptions = {
+            mapTypeId: array_map_type[1],
+            streetViewControl: false
+        };
+        
+        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+        map.setCenter(new google.maps.LatLng(25.0, 0.0)); map.setZoom(2);
+        // $ShowOverviewMap$ //map.setOptions({overviewMapControl: true, overviewMapControlOptions: {opened: true}});
+
+        var onLoadedXML = function(transport) {
+            
+            var data = transport.responseText;
+            if (data=="") {
+                showError();
+                return;
+            }
+            var xml = transport.responseXML;    
+            placemarks = xml.documentElement.getElementsByTagName("Placemark"); 
+            
+            // create the DIV representing our rectangle
+            var div_bar_view = document.getElementById("div_slide_view");
+            var div_bar = document.createElement("div");
+            div_bar.setAttribute("id","div_slide_bar");
+            div_bar.className = "div_slide_bar_hidden";
+            
+            // loading interface
+            // create frame container
+            var div_loading_frame = document.createElement("div");
+            div_loading_frame.setAttribute("id","div_loading_frame");
+            div_loading_frame.className = "div_loading_frame";
+            
+            var table_loading_bar = document.createElement("table");    	
+            table_loading_bar.className = "table_loading_bar";
+              
+            var row_loading = table_loading_bar.insertRow(0);
+            var td_loading = row_loading.insertCell(0);
+            td_loading.setAttribute("align","center");
+            td_loading.setAttribute("valign","middle");
+            td_loading.setAttribute("width", "400px");
+            
+            text_loading = document.createTextNode("Loading ...");
+            td_loading.appendChild(text_loading);
+                
+            div_loading_frame.appendChild(table_loading_bar);
+            div_bar_view.appendChild(div_loading_frame);
+            div_bar_view.appendChild(div_bar);
+                
+            current_select_photo_id = getPointName(placemarks[0]);
+            timer_loading = setTimeout("loadPhoto(0)",1);
+            
+            lMaxCenterPhotoIndex = placemarks.length - 3; //lMaxCenterPhotoIndex defined in the included js file
+        };
+        
+        new Ajax.Request("gmap.xml", {method: 'get', onSuccess: onLoadedXML});
+        
+        
+        
+    }
+    
+    </script>
+    
+</head>
+
+<body onload="load()">
+
+    <div id="map"></div>    
+    <div id="div_bottom">
+    <div id="div_slide_bar_container">
+         <div id="div_nevigation_button_left"><table class="table_nevigation_button" align="center" border="0" cellpadding="0" cellspacing="0">
+            <tr><td align="center" valign="middle"><img src="images/button_prev_5x.gif" onmouseout="this.src='images/button_prev_5x.gif'" onmouseover="this.src='images/button_prev_5x_hover.gif'" onclick="onClickRight5()"></td>
+                <td align="center" valign="middle"><img src="images/button_prev.gif" onmouseout="this.src='images/button_prev.gif'" onmouseover="this.src='images/button_prev_hover.gif'" onclick="onClickRight()"></td>
+            </tr></table>
+        </div>
+        <div id="div_slide_view"></div>
+         <div id="div_nevigation_button_right"><table class="table_nevigation_button" align="center" border="0" cellpadding="0" cellspacing="0">
+            <tr><td align="center" valign="middle"><img src="images/button_next.gif" onmouseout="this.src='images/button_next.gif'" onmouseover="this.src='images/button_next_hover.gif'" onclick="onClickLeft()"></td>
+                <td align="center" valign="middle"><img src="images/button_next_5x.gif" onmouseout="this.src='images/button_next_5x.gif'" onmouseover="this.src='images/button_next_5x_hover.gif'" onclick="onClickLeft5()"></td>
+            </tr></table>
+        </div>
+    </div>
+    </div> 
+    <div id="div_control">
+        <select name="select_item" id="select_item" onchange="onSelectPhotoItem()">
+          <option value="0">Select ...</option>
+        </select>
+    </div>
+
+    <div id="div_photo_overlay"></div>
+
+    <div id="div_photo_indicator">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td height="620" align="center" valign="middle">
+            <a href="javascript:hideDetail()"><img id="img_photo_indicator" src="images/loading.gif" border="0" /></a>
+        </td></tr></table>
+    </div>
+    <div id="div_photo_viewer">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td height="620" align="center" valign="middle">
+            <table border="0" cellspacing="0" cellpadding="0"><tr><td>
+            <div id="div_photo_outer"><div id="div_photo_inner">
+            <a href="javascript:hideDetail()"><img id="img_photo_detail" /></a>
+            </div></div>
+            </td></tr></table>
+        </td></tr></table>
+    </div> 
+
+    <div id="div_video_player">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td height="620" align="center" valign="middle">
+            <table border="0" cellspacing="0" cellpadding="0"><tr><td>
+            <div id="div_jvplayer"></div>
+            <a href="javascript:hideDetailVideo()"><img id="img_video_close" src="images/close_vtab.gif" width="22" height="66" border="0" /></a>
+            </td></tr></table>
+        </td></tr></table>
+    </div>
+
+</body>
+</html>
