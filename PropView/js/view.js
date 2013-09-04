@@ -15,4 +15,20 @@ $(document).ready(function(){
 		});
 		return false;
 	});
+	$('.deleteProp').submit(function() {
+		console.log(propData);
+		$.ajax({
+			url: 'include/view_ajax.php',
+			data: {
+				func: 'deleteProp',
+				propData: propData
+			}
+		}).done(function() {
+			alert('Successfully removed property');
+		}).fail(function(jqXHR, textStatus){
+			alert('Failed to remove property: ' + textStatus);
+		});
+		window.location.href = 'index.php';
+		return false;
+	});
 });

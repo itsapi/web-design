@@ -6,7 +6,7 @@
 	} else {
 		if (isset($_GET['uid'])){
 			$currUserData = getUserData('id', $_GET['uid']);
-			if ($userData['admin']){
+			if (isset($userData['admin']) && $userData['admin']){
 				$queryExt = " WHERE uid='{$currUserData['id']}'";
 			} else {
 				$queryExt = " WHERE uid='{$currUserData['id']}' AND approved IS NOT NULL";
