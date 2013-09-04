@@ -12,7 +12,7 @@
 				$queryExt = " WHERE uid='{$currUserData['id']}' AND approved IS NOT NULL";
 			}
 		} else {
-			if ($userData['admin']){
+			if (isset($userData) && $userData['admin']){
 				$queryExt = "";
 			} else  {
 				$queryExt = " WHERE approved IS NOT NULL";
@@ -68,6 +68,11 @@
 					<?= (!$row['approved'] && $userData['admin']) ? "<form class=\"pure-form pure-form-stacked approveProp\">
 						<fieldset>
 							<button type=\"submit\" class=\"pure-button\">APPROVE</button>
+						</fieldset>
+					</form>" : '' ?>
+					<?= ($userData['admin']) ? "<form class=\"pure-form pure-form-stacked deleteProp\">
+						<fieldset>
+							<button type=\"submit\" class=\"pure-button\">DELETE</button>
 						</fieldset>
 					</form>" : '' ?>
 					<img class="fullImg" src="<??>">
