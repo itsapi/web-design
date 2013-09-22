@@ -38,6 +38,9 @@ $(document).ready(function(){
 	$('.viewUser .viewButton').click(function(){
 		button = 'viewButton';
 	});
+	$('.viewUser .resetPassword').click(function(){
+		button = 'resetPassword';
+	});
 	$('.viewUser .viewPropButton').click(function(){
 		button = 'viewPropButton';
 	});
@@ -63,6 +66,20 @@ $(document).ready(function(){
 				$('.editUser #addressb').val(data['addressb']);
 				$('.editUser #payment').val(data['payment']);
 			});
+		} else if (button == 'resetPassword') {
+			if (confirm('Are you sure you want to reset password of ' + $('.viewUser #user option:selected').text() + '?')){
+				$.ajax({
+					url: 'include/admin_ajax.php',
+					data: {
+						func: 'resetPassword',
+						user: $('.viewUser #user').val()
+					}
+				}).done(function(data) {
+					alert('Successfully reset password to ' + data);
+				}).fail(function(jqXHR, textStatus){
+					alert('Failed to reset password: ' + textStatus);
+				});
+			}
 		} else if (button == 'viewPropButton') {
 			window.location.href = 'view.php?uid=' + $('.viewUser #user').val();
 		} else if (button == 'deleteButton') {

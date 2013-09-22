@@ -32,6 +32,7 @@
 						<select id="user">
 						</select>
 						<button type="submit" class="pure-button viewButton">Edit user</button>
+						<button type="submit" class="pure-button resetPassword">Reset password</button>
 						<button type="submit" class="pure-button viewPropButton">View properties</button>
 						<button type="submit" class="pure-button deleteButton">Delete user</button>
 					</fieldset>

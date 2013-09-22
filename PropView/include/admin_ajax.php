@@ -94,6 +94,32 @@ END;
 				echo 'success';
 			}
 			break;
+		case 'resetPassword':
+			$uid = addslashes($_GET['user']);
+			$userData = mysqli_fetch_assoc(query_DB("SELECT * FROM users WHERE id='{$uid}'"));
+			$password = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"),0,8);
+			$hash = hash('sha512',$userData['username'].hash('sha512',addslashes($password)));
+			$to = [
+				'email' => $userData['email'],
+				'name' => ($userData['firstname'].' '.$userData['surname'])
+			];
+			$from = $mailUser;
+			$subject = 'Password reset';
+			$message = <<<END
+Hello {$to['name']},
+
+Your password has been reset by the admin.
+
+Your username is {$userData['username']} and your password is {$password}.
+Please log in here {$GLOBALS['domain']} and change your password ASAP.
+
+Regards,
+The PropView Team.
+END;
+			email($to, $from, $subject, $message);
+			$query = query_DB("UPDATE users SET password='{$hash}' WHERE id='{$uid}'");
+			echo $password;
+			break;
 		case 'editAccount':
 			$uid = addslashes($_GET['user']);
 			$query = "UPDATE users SET {updateString} WHERE id='{$uid}'";
