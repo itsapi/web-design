@@ -127,9 +127,13 @@ $(document).ready(function(){
 					user: userData['id'],
 					formData: JSON.stringify(formItems)
 				}
-			}).done(function() {
+			}).done(function(data) {
 				$('#addProperty').click();
-				alert('Successfully saved account');
+				if (data == 'success') {
+					alert('Successfully saved account');
+				} else {
+					alert('Failed to save account');	
+				}
 			}).fail(function(jqXHR, textStatus){
 				alert('Failed to save account: ' + textStatus);
 			});

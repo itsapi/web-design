@@ -109,13 +109,14 @@ END;
 			break;
 		case 'editAccount':
 			$uid = addslashes($_GET['user']);
+			$userData = getUserData('id', $uid);
 			$query = "UPDATE users SET {updateString} WHERE id='{$uid}'";
 			$updateString = '';
 			$formData = json_decode($_GET['formData']);
 			foreach ($formData as $item){
-				if ($item->value != ''){
+				if (($item->value != '') && ($item->name != 'passwordc')){
 					if ($item->name == 'password'){
-						$value = hash('sha512',addslashes($_GET['user']).hash('sha512',addslashes($item->value)));
+						$value = hash('sha512',addslashes($userData['username']).hash('sha512',addslashes($item->value)));
 					} else {
 						$value = addslashes($item->value);
 					}
