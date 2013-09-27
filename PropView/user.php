@@ -1,7 +1,7 @@
 <?
 	$msg = '';
 	include 'include/functions.php';
-	if (isset($_COOKIE['user'])){
+	if (isset($_COOKIE['user']) && !$userData['admin']){
 ?>
 
 <!DOCTYPE html>

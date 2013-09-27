@@ -4,23 +4,21 @@
 	if (isset($_GET['pid'])){
 		$queryExt = " WHERE id='{$_GET['pid']}'";
 	} else {
-		if (isset($_GET['uid'])){
-			$currUserData = getUserData('id', $_GET['uid']);
-			if (isset($userData['admin']) && $userData['admin']){
-				$queryExt = " WHERE uid='{$currUserData['id']}'";
+		if (isset($_COOKIE['user'])){
+			if ($userData['admin']){
+				if (isset($_GET['uid'])){
+					$queryExt = " WHERE uid='{$_GET['uid']}'";
+				} else {
+					$queryExt = "";
+				}
 			} else {
-				$queryExt = " WHERE uid='{$currUserData['id']}' AND approved IS NOT NULL";
+				$queryExt = " WHERE uid='{$userData['id']}'";
 			}
 		} else {
-			if (isset($userData) && $userData['admin']){
-				$queryExt = "";
-			} elseif (isset($_COOKIE['user'])) {
-				$queryExt = " WHERE uid='{$userData['id']}'";
-			} else {
-				$queryExt = " WHERE approved IS NOT NULL";
-			}
+			header('location: index.php');
 		}
 	}
+
 	$result = query_DB("SELECT * FROM properties{$queryExt}");
 ?>
 
