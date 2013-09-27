@@ -9,14 +9,14 @@
 <html>
 	<head>
 		<title>PropView</title>
-		<? include 'include/head.html' ?>
+		<? include 'include/head.php' ?>
 		<script><?='var userData = '.json_encode($userData).';'?></script>
 		<script src="js/user.js"></script>
 		<link rel="stylesheet" href="css/user.css">
 	</head>
 	<body>
 		<div id="container">
-			<? include 'include/header.html' ?>
+			<? include 'include/header.php' ?>
 			<section id="left">
 				<figure>
 					<a href="index.php"><img src="files/logo.png" id="logo" alt="PropView Logo"></a>
@@ -89,7 +89,7 @@
 					</fieldset>
 				</form>
 			</section>
-			<? include 'include/footer.html' ?>
+			<? include 'include/footer.php' ?>
 		</div>
 	</body>
 </html>

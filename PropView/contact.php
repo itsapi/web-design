@@ -26,12 +26,12 @@
 <html>
 	<head>
 		<title>PropView</title>
-		<? include 'include/head.html' ?>
+		<? include 'include/head.php' ?>
 		<link rel="stylesheet" href="css/contact.css">
 	</head>
 	<body>
 		<div id="container">
-			<? include 'include/header.html' ?>
+			<? include 'include/header.php' ?>
 			<section id="right">
 				<div id="contact_container">
 					<figure>
@@ -58,7 +58,7 @@
 					</form>
 				</div>
 			</section>
-			<? include 'include/footer.html' ?>
+			<? include 'include/footer.php' ?>
 		</div>
 	</body>
 </html>

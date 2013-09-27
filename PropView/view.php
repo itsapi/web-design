@@ -27,13 +27,13 @@
 <html>
 	<head>
 		<title>PropView</title>
-		<? include 'include/head.html' ?>
+		<? include 'include/head.php' ?>
 		<script src="js/view.js"></script>
 		<link rel="stylesheet" href="css/view.css">
 	</head>
 	<body>
 		<div id="container">
-			<? include 'include/header.html' ?>
+			<? include 'include/header.php' ?>
 			<section id="left">
 				<figure>
 					<a href="index.php"><img src="files/logo.png" id="logo" alt="PropView Logo"></a>
@@ -140,7 +140,7 @@
 	}
 ?>
 			</section>
-			<? include 'include/footer.html' ?>
+			<? include 'include/footer.php' ?>
 		</div>
 	</body>
 </html>
